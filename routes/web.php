@@ -41,8 +41,8 @@ Route::get('results', [ HomeController::class , 'mainSearch'])->name('results');
 
 Route::middleware('auth')->group(function (){
     // Access to the Teacher update form
-Route::get('update-info', [ TeacherController::class , 'getUpdateView']);
-Route::post('update-info', [ TeacherController::class , 'updateInfo'])->name('updateInfo');
+    Route::get('update-info', [ TeacherController::class , 'getUpdateView']);
+    Route::post('update-info', [ TeacherController::class , 'updateInfo'])->name('updateInfo');
 
     // Access order pages
     Route::get('booking/teacher/{id}',[OrderController::class, 'create']);
@@ -58,9 +58,9 @@ Route::post('update-info', [ TeacherController::class , 'updateInfo'])->name('up
 Route::get('teachers/show/{id}', [TeacherController::class, 'show']);
 
 
-/**
+/********************
  * Admin Routes
- */
+ *******************/
 
 Route::group(['middleware' => ['isAdmin']], function (){
 
@@ -110,6 +110,7 @@ Route::group(['middleware' => ['isAdmin']], function (){
     Route::get('admincp/pages/privacy',[PageController::class,'privacy']);
     Route::post('admincp/pages/privacy/sent',[PageController::class,'receivePrivacy']);
     Route::get('admincp/pages/faq',[PageController::class,'faq']);
+    Route::post('admincp/pages/faq/sent',[PageController::class,'receiveFaq']);
     Route::get('admincp/pages/social',[PageController::class,'social']);
 
 
