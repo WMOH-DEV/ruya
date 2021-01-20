@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     //
+    
     public function privacy()
     {
         $privacy = Page::find(1)->privacy;
@@ -47,4 +48,25 @@ class PageController extends Controller
     {
         return view('cp.pages.social');
     }
-}
+
+
+    /**
+     * 
+     * 
+     * Start Site Views
+     * 
+     * 
+     */
+
+    public function privacyIndex(){
+        $privacy = Page::find(1)->privacy;
+
+        return view('main.pages.privacy', compact('privacy'));
+    }
+
+    public function faqIndex(){
+        $faq = Page::find(1)->faq;
+
+        return view('main.pages.faq', compact('faq'));
+    }
+} // End Page Controller
