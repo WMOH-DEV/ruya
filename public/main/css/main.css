@@ -1,0 +1,84 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.m-color{
+    color: #18529c;
+}
+
+.s-color{
+    color: #5eb60c;
+}
+
+.sbg-color{
+    background-color: #5eb60c;
+}
+
+.bg-color{
+    background-color: #18529c;
+}
+
+.m-font-size{
+    font-size: 20px;
+}
+body{
+    box-sizing: border-box;
+    font-family: 'DroidKufi-Regular', serif !important;
+
+}
+
+.main-site{
+    background: url('../imgs/head4.webp') fixed center/cover;
+}
+
+@media screen and (max-width: 1024px) {
+    .main-site{
+        background: url('../imgs/bg-main-mobile.png') fixed center/cover;
+    }
+}
+
+.login-container{
+    background: url('../imgs/bg-main.webp') fixed center/cover;
+}
+
+.teacher-container{
+    background: url('../imgs/bg-list2.png') fixed center/cover;
+}
+
+.updateinfo-container{
+    background: url('../imgs/teacher-bg.png') fixed center/cover;
+}
+.select2-container--default .select2-selection--multiple{
+    border:1px solid rgb(209, 213, 219);
+    padding-bottom: 8px;
+    padding-right: 10px;
+    margin-top: 5px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+    border:1px solid rgb(186, 190, 196);
+}
+
+.select2-right{
+    /* General styling */
+    height: 45px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border-color: #d1d1d1;
+
+    /* Removes the default <select> styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Positions background arrow image */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+}
+
+.select2-right:focus{
+    outline: none;
+}
