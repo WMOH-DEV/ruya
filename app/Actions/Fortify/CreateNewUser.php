@@ -40,7 +40,8 @@ class CreateNewUser implements CreatesNewUsers
             'role_id'=>['required','regex:/^[1-2]$/']
         ])->validate();
 
-        session()->flash('success', 'تم تسجيل العضوية');
+        session()->flash('success', 'تم تسجيل عضوية جديدة، يرجى تفعيل الحساب عبر البريد');
+        //$factory->addWarning('تم تسجيل عضوية جديدة، يرجى تفعيل الحساب عبر البريد');
 
         return User::create([
             'first_name'=> $input['first_name'],

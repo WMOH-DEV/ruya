@@ -45,10 +45,13 @@ Route::get('search', [TeacherController::class, 'results'])->name('search');
 Route::get('results', [HomeController::class, 'mainSearch'])->name('results');
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
     // Access to the Teacher update form
     Route::get('update-info', [TeacherController::class, 'getUpdateView']);
     Route::post('update-info', [TeacherController::class, 'updateInfo'])->name('updateInfo');
+
+    // Show teacher
+    Route::get('teachers/show/{id}', [TeacherController::class, 'show']);
 
     // Access order pages
     Route::get('booking/teacher/{id}', [OrderController::class, 'create']);
@@ -59,8 +62,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-// Show teacher
-Route::get('teachers/show/{id}', [TeacherController::class, 'show']);
+
 
 
 /********************

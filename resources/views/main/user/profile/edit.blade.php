@@ -31,7 +31,7 @@
                     </label>
 
                     @error('email')
-                    <span class="col-span-6 text-red-500 inline-block flex items-center" role="alert">
+                    <span class="col-span-6 text-red-500 flex items-center" role="alert">
                             <i class="icon-attention ml-2"></i>
                               <strong>{{ $message }}</strong>
                          </span>

@@ -84,7 +84,7 @@
                             </a>
                             <!-- stars -->
                             <ul class="flex mx-auto items-center justify-center">
-                                <li class=" m-0 text-yellow-500">
+                                <li cl2ass=" m-0 text-yellow-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                          class="w-5 h-5">
                                         <path
@@ -120,7 +120,6 @@
                                     </svg>
                                 </li>
                             </ul>
-
                             <!-- divider -->
                             <hr class="my-2">
 
@@ -137,7 +136,6 @@
                                         </svg>
                                         <p>{{$teacher->qualification}}</p>
                                     </div>
-
                                     <!-- Teacher Experience -->
                                     <div class="exp flex">
                                         <svg class="w-5 h-5 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -148,7 +146,6 @@
                                             <path
                                                 d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
                                         </svg>
-
                                         <p class="mx-2">الخبــــرة: </p>
                                         <p><span>{{$teacher->experience}}</span> <span> سنوات </span></p>
                                     </div>

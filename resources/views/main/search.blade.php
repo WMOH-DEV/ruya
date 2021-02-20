@@ -145,9 +145,12 @@
                             <span class="text-sm md:text-base lg:text-lg"> ريال لكل ساعة</span>
                         </div>
                         <div class="submit">
+                            <a href="{{url('booking/teacher')}}/{{$teacher->teacher_id}}">
+
                             <button class=" border-gray-200 border rounded shadow-sm py-2 px-3 text-sm md:text-base w-full bg-blue-500 text-white my-3 focus:outline-none hover:bg-blue-600">
                                 احجز الآن
                             </button>
+                            </a>
                         </div>
                     </div>
                 </li>
@@ -197,7 +200,7 @@
                     type: "GET",
                     dataType: "json",
                     success: function(data) {
-                        console.log(data);
+                       // console.log(data);
                         $('#subject_id').empty();
                         $.each(data, function(key, value) {
                             $('#subject_id').append('<option value="' +

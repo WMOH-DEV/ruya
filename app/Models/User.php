@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Dyrynda\Database\Support\CascadeSoftDeletes;
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable, SoftDeletes,CascadeSoftDeletes;
 
