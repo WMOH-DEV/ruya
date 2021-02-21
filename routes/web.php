@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ModController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\StageController;
@@ -119,4 +120,9 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::get('admincp/pages/faq', [PageController::class, 'faq']);
     Route::post('admincp/pages/faq/sent', [PageController::class, 'receiveFaq']);
     Route::get('admincp/pages/social', [PageController::class, 'social']);
+
+
+    // Mods
+    Route::get('admincp/moderators', [ModController::class, 'index']);
+
 }); // End Admin routes

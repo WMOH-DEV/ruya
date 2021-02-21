@@ -31,8 +31,8 @@ return [
     ],
     'boolean'              => 'يجب أن تكون قيمة الحقل :attribute إما true أو false ',
     'confirmed'            => 'حقل التأكيد غير مُطابق للحقل :attribute',
-    'date'                 => 'الحقل :attribute ليس تاريخًا صحيحًا',
-    'date_equals'		   => 'The :attribute must be a date equal to :date.',
+    'date'                 => 'حقل :attribute ليس تاريخًا صحيحًا',
+    'date_equals'           => 'The :attribute must be a date equal to :date.',
     'date_format'          => 'لا يتوافق الحقل :attribute مع الشكل :format.',
     'different'            => 'يجب أن يكون الحقلان :attribute و :other مُختلفان',
     'digits'               => 'يجب أن يحتوي الحقل :attribute على :digits رقمًا/أرقام',
@@ -41,20 +41,20 @@ return [
     'distinct'             => 'للحقل :attribute قيمة مُكرّرة.',
     'email'                => 'يجب أن يكون :attribute عنوان بريد إلكتروني صحيح البُنية',
     'ends_with' => 'The :attribute must end with one of the following: :values.',
-    'exists'               => 'الحقل :attribute لاغٍ',
+    'exists'               => 'حقل :attribute غير صحيح',
     'file'                 => 'الـ :attribute يجب أن يكون من ملفا.',
     'filled'               => 'الحقل :attribute إجباري',
-    'gt' => [
-        'numeric' => 'قيمة :attribute لابد أن تكون أكبر من :value',
-        'file' => 'The :attribute must be greater than :value kilobytes.',
-        'string' => 'The :attribute must be greater than :value characters.',
-        'array' => 'The :attribute must have more than :value items.',
+    'gt'                   => [
+        'numeric' => 'يجب أن تكون قيمة :attribute أكبر من :value.',
+        'file'    => 'يجب أن يكون حجم الملف :attribute أكبر من :value كيلوبايت.',
+        'string'  => 'يجب أن يكون طول النّص :attribute أكثر من :value حروفٍ/حرفًا.',
+        'array'   => 'يجب أن يحتوي :attribute على أكثر من :value عناصر/عنصر.',
     ],
-    'gte' => [
-        'numeric' => 'The :attribute must be greater than or equal :value.',
-        'file' => 'The :attribute must be greater than or equal :value kilobytes.',
-        'string' => 'The :attribute must be greater than or equal :value characters.',
-        'array' => 'The :attribute must have :value items or more.',
+    'gte'                  => [
+        'numeric' => 'يجب أن تكون قيمة :attribute مساوية أو أكبر من :value.',
+        'file'    => 'يجب أن يكون حجم الملف :attribute على الأقل :value كيلوبايت.',
+        'string'  => 'يجب أن يكون طول النص :attribute على الأقل :value حروفٍ/حرفًا.',
+        'array'   => 'يجب أن يحتوي :attribute على الأقل على :value عُنصرًا/عناصر.',
     ],
     'image'                => 'يجب أن يكون الحقل :attribute صورةً',
     'in'                   => 'الحقل :attribute لاغٍ',
@@ -64,19 +64,19 @@ return [
     'ipv4'                 => 'يجب أن يكون الحقل :attribute عنوان IPv4 ذا بنية صحيحة.',
     'ipv6'                 => 'يجب أن يكون الحقل :attribute عنوان IPv6 ذا بنية صحيحة.',
     'json'                 => 'يجب أن يكون الحقل :attribute نصا من نوع JSON.',
-    'lt' => [
-        'numeric' => 'The :attribute must be less than :value.',
-        'file' 	  => 'The :attribute must be less than :value kilobytes.',
-        'string'  => 'The :attribute must be less than :value characters.',
-        'array'   => 'The :attribute must have less than :value items.',
+    'lt'                   => [
+        'numeric' => 'يجب أن تكون قيمة :attribute أصغر من :value.',
+        'file'    => 'يجب أن يكون حجم الملف :attribute أصغر من :value كيلوبايت.',
+        'string'  => 'يجب أن يكون طول النّص :attribute أقل من :value حروفٍ/حرفًا.',
+        'array'   => 'يجب أن يحتوي :attribute على أقل من :value عناصر/عنصر.',
     ],
-    'lte' => [
-        'numeric' => 'The :attribute must be less than or equal :value.',
-        'file' 	  => 'The :attribute must be less than or equal :value kilobytes.',
-        'string'  => 'The :attribute must be less than or equal :value characters.',
-        'array'   => 'The :attribute must not have more than :value items.',
+    'lte'                  => [
+        'numeric' => 'يجب أن تكون قيمة :attribute مساوية أو أصغر من :value.',
+        'file'    => 'يجب أن لا يتجاوز حجم الملف :attribute :value كيلوبايت.',
+        'string'  => 'يجب أن لا يتجاوز طول النّص :attribute :value حروفٍ/حرفًا.',
+        'array'   => 'يجب أن لا يحتوي :attribute على أكثر من :value عناصر/عنصر.',
     ],
-      'max'                  => [
+    'max'                  => [
         'numeric' => 'يجب أن تكون قيمة الحقل :attribute مساوية أو أصغر لـ :max.',
         'file'    => 'يجب أن لا يتجاوز حجم الملف :attribute :max كيلوبايت',
         'string'  => 'يجب أن لا يتجاوز طول نص :attribute :max حروفٍ/حرفًا',
@@ -90,14 +90,14 @@ return [
         'string'  => 'يجب أن يكون طول نص :attribute على الأقل :min حروفٍ/حرفًا',
         'array'   => 'يجب أن يحتوي الحقل :attribute على الأقل على :min عُنصرًا/عناصر',
     ],
-    'multiple_of'    	   => 'The :attribute must be a multiple of :value',
-    'not_in' 			   => 'الـ :attribute التي تم إختياره غير صحيح',
+    'multiple_of'           => 'The :attribute must be a multiple of :value',
+    'not_in'                => 'الـ :attribute التي تم إختياره غير صحيح',
     'not_regex'            => 'The :attribute format is invalid.',
     'numeric'              => 'يجب على الحقل :attribute أن يكون رقمًا',
-    'password'			   => 'كلمة المرور غير صحيحة.',
+    'password'               => 'كلمة المرور غير صحيحة.',
     'present'              => 'يجب تقديم الحقل :attribute',
     'regex'                => 'صيغة الحقل :attribute .غير صحيحة',
-    'required'             => 'الحقل :attribute مطلوب.',
+    'required'             => 'حقل :attribute مطلوب.',
     'required_if'          => 'الحقل :attribute مطلوب في حال ما إذا كان :other يساوي :value.',
     'required_unless'      => 'الحقل :attribute مطلوب في حال ما لم يكن :other يساوي :values.',
     'required_with'        => 'الحقل :attribute إذا توفّر :values.',
@@ -111,13 +111,13 @@ return [
         'string'  => 'يجب أن يحتوي النص :attribute على :size حروفٍ/حرفًا بالظبط',
         'array'   => 'يجب أن يحتوي الحقل :attribute على :size عنصرٍ/عناصر بالظبط',
     ],
-    'starts_with'		   => ':attribute لابد أن تبدأ بأحدى هذه القيّم :values',
+    'starts_with'           => ':attribute لابد أن تبدأ بأحدى هذه القيّم :values',
     'string'               => 'يجب أن يكون الحقل :attribute نصآ.',
     'timezone'             => 'يجب أن يكون :attribute نطاقًا زمنيًا صحيحًا',
     'unique'               => 'قيمة الحقل :attribute مُستخدمة من قبل',
     'uploaded'             => 'فشل في تحميل الـ :attribute',
     'url'                  => 'صيغة الرابط :attribute غير صحيحة',
-    'uuid'				   => 'The :attribute must be a valid UUID.',
+    'uuid'                 => ':attribute يجب أن يكون بصيغة UUID سليمة.',
 
     /*
     |--------------------------------------------------------------------------
@@ -182,7 +182,7 @@ return [
     |
     */
 
-    
+
     'attributes' => [
         'name'                  => 'الاسم',
         'username'              => 'اسم المُستخدم',

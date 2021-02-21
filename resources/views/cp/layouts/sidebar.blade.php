@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="{{url('admincp')}}" class="brand-link">
         <img src="{{asset('cp')}}/img/AdminLTELogo.png" alt="AdminLTE Logo"
-             class="brand-image img-circle elevation-3"
+             class="brand-image"
              style="opacity: .8">
         <span class="brand-text font-weight-light" style="font-family: 'cairo', sans-serif;">دليل الطالب</span>
     </a>
@@ -34,17 +34,7 @@
                     </a>
                 </li>
 
-
                 <li class="nav-header">الأقسام الرئيسية</li>
-            {{--                    <li class="nav-item">--}}
-            {{--                        <a href="pages/calendar.html" class="nav-link">--}}
-            {{--                            <i class="nav-icon far fa-calendar-alt"></i>--}}
-            {{--                            <p>--}}
-            {{--                                Calendar--}}
-            {{--                                <span class="badge badge-info right">2</span>--}}
-            {{--                            </p>--}}
-            {{--                        </a>--}}
-            {{--                    </li>--}}
 
             <!-- Students -->
                 <li class="nav-item has-treeview">
@@ -149,6 +139,30 @@
                 </li>
 
                 <li class="nav-header">الأقسام الإدارية</li>
+
+                <!-- Mods -->
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user nav-icon"></i>
+                        <p>المشرفين
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{url('admincp/moderators')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>قائمة المشرفين</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('admincp/moderators/suspended')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>مشرفين موقوفين</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link" >

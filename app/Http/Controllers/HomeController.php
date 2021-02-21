@@ -74,4 +74,6 @@ class HomeController extends Controller
         return view('main.results', compact('stages', 'teachersCount','teachers' ));
 
     }
-}
+
+
+}// End HomeController
