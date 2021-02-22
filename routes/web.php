@@ -124,5 +124,6 @@ Route::group(['middleware' => ['isAdmin']], function () {
 
     // Mods
     Route::get('admincp/moderators', [ModController::class, 'index']);
+    Route::post('admincp/moderators/add', [ModController::class, 'store']);
 
 }); // End Admin routes

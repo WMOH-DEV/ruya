@@ -170,3 +170,8 @@ body{
 .select2-right:focus{
     outline: none;
 }
+
+.select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow{
+    right: unset;
+    left: 3px;
+}

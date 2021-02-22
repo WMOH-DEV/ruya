@@ -71,8 +71,6 @@
                                     </div>
                                 </form>
 
-
-                                <hr class=" border-gray-300 col-span-6 mt-3">
                                 <div class="forget-password col-span-6 mt-3 p-2 text-center">
                                         <span>هل نسيت كلمة المرور ؟ <a href="{{route('password.request')}}"
                                                                        class="hover:text-gray-500">إضغط هنا</a></span>

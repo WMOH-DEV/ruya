@@ -188,7 +188,9 @@ return [
         'username'              => 'اسم المُستخدم',
         'email'                 => 'البريد الالكتروني',
         'first_name'            => 'الاسم',
+        'firstName'             => 'الاسم',
         'last_name'             => 'اسم العائلة',
+        'lastName'              => 'اسم العائلة',
         'password'              => 'كلمة المرور',
         'password_confirmation' => 'تأكيد كلمة المرور',
         'city'                  => 'المدينة',
@@ -222,6 +224,8 @@ return [
 		'pphour'				=> 'ثمن الساعة',
 		'subject'				=> 'المادة',
 		'notes'					=> 'الملاحظات',
+		'phone_number'			=> 'رقم الهاتف',
+		'whatsapp'			    => 'الواتسآب',
     ],
 
 

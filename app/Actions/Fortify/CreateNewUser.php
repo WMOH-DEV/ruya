@@ -22,22 +22,21 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         Validator::make($input, [
-            'first_name' => ['required', 'string', 'max:100'],
-            'last_name' => ['required', 'string', 'max:100'],
-            'email' => [
-                'required',
-                'string',
-                'email',
-                'max:255',
-                Rule::unique(User::class),
+            'first_name'    => ['required', 'string', 'max:100'],
+            'last_name'     => ['required', 'string', 'max:100'],
+            'email'         => [
+                                'required',
+                                'string',
+                                'email',
+                                'max:255',
+                                Rule::unique(User::class),
             ],
-//            'photo' => 'mimes:jpg,bmp,png'
-            'password' => $this->passwordRules(),
-            'phone_number'=>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
-            'whatsapp'=>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
-            'gender'=>['required', 'string', 'regex:/^(male|female)$/'],
-            'country_id'=>['required', 'regex:/^1?[0-9]$/'],
-            'role_id'=>['required','regex:/^[1-2]$/']
+            'password'      => $this->passwordRules(),
+            'phone_number'  =>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
+            'whatsapp'      =>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
+            'gender'        =>['required', 'string', 'regex:/^(male|female)$/'],
+            'country_id'    =>['required', 'regex:/^1?[0-9]$/'],
+            'role_id'       =>['required','regex:/^[1-2]$/']
         ])->validate();
 
         session()->flash('success', 'تم تسجيل عضوية جديدة، يرجى تفعيل الحساب عبر البريد');

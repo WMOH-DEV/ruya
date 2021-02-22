@@ -34,7 +34,6 @@ class StudentController extends Controller
     {
 
         $students = User::onlyTrashed()->where('role_id','2')->paginate(5);
-
         //dd($students);
         return view('cp.students.suspended', compact('students'));
     }
