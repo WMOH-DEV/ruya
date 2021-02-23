@@ -78,10 +78,75 @@
             <div class="col-lg-3 col-6">
                 <!-- info box -->
                 <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="far fa-copy"></i></span>
+                    <div class="info-box-content">
+                        <a href="{{url('admincp/messages')}}" class="text-decoration-none">
+                            <span class="info-box-text">رسائل جديدة</span>
+                            <span class="info-box-number">{{$openOrders}}</span>
+                        </a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <!-- info box -->
+                <div class="info-box">
+                    <span class="info-box-icon bg-success"><i class="far fa-copy"></i></span>
+                    <div class="info-box-content">
+                        <a href="{{url('admincp/messages')}}" class="text-decoration-none">
+                        <span class="info-box-text">لم يتم الرد</span>
+                        <span class="info-box-number">{{$closedOrders}}</span>
+                        </a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <!-- info box -->
+                <div class="info-box">
+                    <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+                    <div class="info-box-content">
+                        <a href="{{url('admincp/messages')}}" class="text-decoration-none">
+                        <span class="info-box-text">تم الرد عليها</span>
+                        <span class="info-box-number">{{$refusedOrders}}</span>
+                        </a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- info box -->
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="far fa-copy"></i></span>
+                    <div class="info-box-content">
+                        <a href="{{url('admincp/messages')}}" class="text-decoration-none">
+                            <span class="info-box-text">إجمالي الوارد</span>
+                            <span class="info-box-number">{{$allOrders}}</span>
+                        </a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Requests Row -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- info box -->
+                <div class="info-box">
                     <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
                     <div class="info-box-content">
+                        <a href="{{url('admincp/orders')}}" class="text-decoration-none">
                         <span class="info-box-text">الطلبات المفتوحة</span>
                         <span class="info-box-number">{{$openOrders}}</span>
+                        </a>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -93,8 +158,10 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-success"><i class="far fa-envelope"></i></span>
                     <div class="info-box-content">
+                        <a href="{{url('admincp/orders')}}" class="text-decoration-none">
                         <span class="info-box-text">الطلبات المغلقة</span>
                         <span class="info-box-number">{{$closedOrders}}</span>
+                        </a>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -106,8 +173,10 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-warning"><i class="far fa-envelope"></i></span>
                     <div class="info-box-content">
+                        <a href="{{url('admincp/orders')}}" class="text-decoration-none">
                         <span class="info-box-text">الطلبات المرفوضة</span>
                         <span class="info-box-number">{{$refusedOrders}}</span>
+                        </a>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -118,8 +187,10 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
                     <div class="info-box-content">
+                        <a href="{{url('admincp/orders')}}" class="text-decoration-none">
                         <span class="info-box-text">إجمالي الطلبات</span>
                         <span class="info-box-number">{{$allOrders}}</span>
+                        </a>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -127,13 +198,12 @@
             <!-- ./col -->
         </div>
         <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
 
 
-            <!-- right col -->
-        </div>
 
+
+
+        <!-- LAst Teacher & last requests -->
         <div class="row">
             <!-- Left col -->
             <section class="col-lg-6 connectedSortable">

@@ -1,12 +1,14 @@
-<div class="header-icon d-none d-md-inline-block">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-{{--    <a href="#"><i class="fab fa-youtube"></i></a>--}}
+
+@auth
+<div class="header-reg d-none d-md-inline-block">
+    <a href="{{url('/user/profile')}}"><i class="fal fa-user-circle"></i>{{Auth::user()->first_name}}</a>
+
 </div>
+@endauth
 @guest()
 <div class="header-sing d-none d-md-inline-block">
     <a href="{{url('login')}}">
-        <i class="far fa-user-circle"></i>تسجيل دخول</a
-    >
+        <i class="far fa-user-circle"></i>تسجيل دخول</a>
 </div>
 
 <div class="header-reg d-none d-md-inline-block ml-1">
@@ -20,9 +22,20 @@
 @if(Auth::user()->role_id == 3 OR Auth::user()->role_id == 4)
 <div class="header-reg d-none d-md-inline-block ml-1">
     <a href="{{url('admincp')}}">
-        <i class="far fa-users-cog"></i>لوحة التحكم</a
-    >
+        <i class="far fa-users-cog"></i>لوحة التحكم</a>
 </div>
+    @elseif(Auth::user()->role_id == 2)
+    <div class="header-reg d-none d-md-inline-block ml-1">
+        <a href="{{url('user/student/cp')}}">
+            <i class="far fa-users-cog"></i>لوحة التحكم</a
+        >
+    </div>
+    @elseif(Auth::user()->role_id == 1)
+    <div class="header-reg d-none d-md-inline-block ml-1">
+        <a href="{{url('user/teacher/cp')}}">
+            <i class="far fa-users-cog"></i>لوحة التحكم</a
+        >
+    </div>
 @endif
 
 <div class="header-icon d-none d-md-inline-block mr-2">

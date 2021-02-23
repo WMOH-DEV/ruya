@@ -29,7 +29,8 @@ class Order extends Model
         'stage_id',
         'user_id',
         'teacher_id',
-        'subject_name'
+        'subject_name',
+        'status'
     ];
 
     /*

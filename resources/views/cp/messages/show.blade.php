@@ -46,7 +46,7 @@
                         <h5 class="my-2">{{$message->title}}</h5>
                         <h6 class="my-2">
                             <span>رقم واتسآب التواصل: </span>
-                            <span>{{$message->whatsapp}}</span>
+                            <span>{{$message->whatsapp ?? 'لم يسجل رقم واتسآب'}}</span>
                         </h6>
                         <h6>البريد الإلكتروني : {{$message->email}}
                             <span class="mailbox-read-time float-right">{{$message->created_at}}</span></h6>

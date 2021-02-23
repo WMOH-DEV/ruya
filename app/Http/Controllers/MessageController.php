@@ -70,14 +70,22 @@ class MessageController extends Controller
     public function contactStore(Request $request, ToastrFactory $factory)
     {
         $message = $request->validate([
-            'fullName'  => ['required', 'string'],
-            'email'     => ['required', 'string', 'email'],
-            'whatsapp'  => ['required', 'string'],
-            'title'     => ['string', 'max:255','nullable'],
-            'message'    => ['string', 'max:1000'],
+            'fullName'      => ['required', 'string'],
+            'email'         => ['required', 'string', 'email'],
+            'whatsapp'      => ['nullable', 'string'],
+            'title'         => ['string', 'max:255','required'],
+            'message'       => ['string', 'max:1000'],
+            'g-recaptcha-response' => 'required|captcha'
         ]);
 
-        Message::create($message);
+        Message::create([
+            'fullName'      => $request->fullName,
+            'email'         => $request->email,
+            'whatsapp'      => $request->whatsapp,
+            'title'         => $request->title,
+            'message'       => $request->message,
+
+        ]);
 
         $factory->addSuccess('تم إرسال رسالتكم بنجاح، سيتم مراسلتكم قريباً');
 

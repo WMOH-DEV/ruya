@@ -29,6 +29,7 @@ Route::post('logged_in', [LoginController::class, 'authenticate'])->name('custom
 Route::get('/', [HomeController::class, 'getHome'])->middleware('teacherUpdated');
 
 Route::view('user/profile/edit', 'main.user.profile.edit')->middleware('auth');
+Route::view('user/profile/edit', 'main.user.profile.edit')->middleware('auth');
 
 //Privacy Page
 Route::get('pages/privacy', [PageController::class, 'privacyIndex']);

@@ -25,6 +25,7 @@ class OrderController extends Controller
     {
         //
         $orders = Order::paginate(10);
+        Order::where('status', 0)->update(['status' => 1]);
         return view('cp.orders.index', compact('orders'));
     }
 

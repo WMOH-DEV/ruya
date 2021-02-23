@@ -309,11 +309,17 @@ p {
         margin-top: 140px;
     }
     .home--stages{
-        left: 70px;
+        left: 40px;
     }
-    .home--stages .nice-select{
+    .slider-search-form button{
+        left: 10px;
+        top: 50%;
+        transform: translatey(-50%);
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+    }
 
-    }
 }
 
 
@@ -422,4 +428,14 @@ p {
 
 .subscribe .lg-btn button.c-btn:hover{
     background: #3662ff;
+}
+
+@media (max-width: 767px){
+    .lg-btn.lg-btn-03 button{
+        width: 275px;
+    }
+    .slider-search-form input{
+        padding: 0 15px;
+    }
+
 }

@@ -109,7 +109,6 @@
 <script src="{{asset('main')}}/assets/js/jquery.magnific-popup.min.js"></script>
 <script src="{{asset('main')}}/assets/js/jquery.nice-select.js"></script>
 <script src="{{asset('main')}}/assets/js/jquery.easypiechart.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="{{asset('main')}}/assets/js/main.js"></script>
 @yield('script')
 <script src="{{asset('main')}}/assets/js/app.js"></script>

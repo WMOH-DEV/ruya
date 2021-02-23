@@ -175,3 +175,12 @@ body{
     right: unset;
     left: 3px;
 }
+
+.info-box:hover{
+    background-color: #dddddd80;
+}
+
+.info-box{
+    transition: background-color 0.5s;
+}
+

@@ -89,6 +89,12 @@
                                                   placeholder="محتوى الرسالة">@if(old('message')) {{old('message')}} @endif</textarea>
                                     </div>
                                 </div>
+
+                                <div class="col-12 col-md-6 offset-md-3 mb-3 d-flex justify-content-center ">
+                                    <div class="mx-auto">
+                                        {!! NoCaptcha::display() !!}
+                                    </div>
+                                </div>
                                 <div class="col-12">
                                     <div class="lg-btn lg-btn-03 text-center">
                                         <button class="c-btn" type="submit">إرسال<i class="far fa-long-arrow-alt-left"></i></button>
@@ -114,6 +120,8 @@
 
 
 @section('script')
+    {!! NoCaptcha::renderJs('ar') !!}
+
     <script>
         if($("#errorMsg")){
             $("#errorMsg").delay(5000).slideUp(1000);

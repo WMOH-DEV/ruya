@@ -27,7 +27,7 @@
 <div class="wrapper">
 
     <!-- Navbar -->
-@include('cp.layouts.top-nav')
+    <x-admin-sidebar></x-admin-sidebar>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
@@ -57,7 +57,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2020-2021 <a href="http://daleely">دليل الطالب</a>.</strong>
+        <strong>Copyright &copy; 2020-2021 <a href="https://ruya.academy">أكاديمية رؤية</a>.</strong>
         جميع الحقوق محفوظة
         <div class="float-right d-none d-sm-inline-block">
             2021
