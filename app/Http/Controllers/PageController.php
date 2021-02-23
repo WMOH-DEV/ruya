@@ -8,65 +8,80 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     //
-    
+
     public function privacy()
     {
-        $privacy = Page::find(1)->privacy;
+        $privacy = Page::first()->privacy;
 
         return view('cp.pages.privacy', compact('privacy'));
     }
 
     public function receivePrivacy(Request $request)
     {
-        $page = Page::find(1);
+        $page = Page::first();
         $page->privacy = $request->privacyInput;
         $page->save();
         return 'success';
     }
 
-    public function faq()
+    public function terms()
     {
-        $faq = Page::find(1)->faq;
-        return view('cp.pages.faq', compact('faq'));
+        $terms = Page::first()->terms;
+        return view('cp.pages.terms', compact('terms'));
     }
 
 
-    public function receiveFaq(Request $request)
+    public function receiveTerms(Request $request)
     {
-        $faq = Page::find(1);
+        $terms = Page::first();
 
-        if ($request->faqInput == $faq->faq) {
+        if ($request->termsInput == $terms->terms) {
             return 'nothing to change';
         }
 
-        $faq->faq = $request->faqInput;
-        $faq->save();
+        $terms->terms = $request->termsInput;
+        $terms->save();
         return 'success';
     }
 
-    public function social()
+    public function about()
     {
-        return view('cp.pages.social');
+        $about = Page::first()->about_us;
+        return view('cp.pages.about', compact('about'));
     }
 
+    public function receiveAbout(Request $request)
+    {
+        $about = Page::first();
+
+        if ($request->aboutInput == $about->about_us) {
+            return 'nothing to change';
+        }
+
+        $about->about_us = $request->aboutInput;
+        $about->save();
+        return 'success';
+    }
 
     /**
-     * 
-     * 
+     *
+     *
      * Start Site Views
-     * 
-     * 
+     *
+     *
      */
 
     public function privacyIndex(){
-        $privacy = Page::find(1)->privacy;
+        $privacy = Page::first()->privacy;
 
         return view('main.pages.privacy', compact('privacy'));
     }
 
     public function faqIndex(){
-        $faq = Page::find(1)->faq;
+        $faq = Page::first()->faq;
 
         return view('main.pages.faq', compact('faq'));
     }
+
+
 } // End Page Controller

@@ -1,7 +1,7 @@
 @extends('cp.layout')
 
 @section('title')
-    قائمة الدول
+    قائمة دول الإقامة
 @endsection
 
 @section('content')
@@ -10,13 +10,13 @@
         <div class="content-header">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">قائمة الدول</h1>
+                    <h1 class="m-0 text-dark">قائمة دول الإقامة</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">الرئيسية</li>
-                        <li class="breadcrumb-item">الدول والجنسيات</li>
-                        <li class="breadcrumb-item active">قائمة الدول</li>
+                        <li class="breadcrumb-item">دول الإقامات</li>
+                        <li class="breadcrumb-item active">الإقامات</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -30,21 +30,21 @@
 {{--                        </div>--}}
             <div class="card-body">
 
-                <form action="{{url('admincp/countries/add')}}" method="post" class="form-row">
+                <form action="{{url('admincp/residences/add')}}" method="post" class="form-row">
 
                     @csrf
 
                     <div class="form-group col-12 col-md-4">
-                        <input type="text" placeholder="إضافة دول جديدة للقائمة" class="form-control" name="country_name" autocomplete="off">
+                        <input type="text" placeholder="إضافة دول جديدة للقائمة" class="form-control" name="residence_name" autocomplete="off">
                     </div>
 
 
                     <div class="col-12 col-md-4">
-                        <button type="submit" class="btn btn-primary">إضافة دولة جديدة</button>
-                        @if(session()->has('countryadded'))
-                            <span class="alert"> {{session()->get('countryadded')}} <i class="fa fa-check"></i></span>
+                        <button type="submit" class="btn btn-primary">إضافة دولة إقامة جديدة</button>
+                        @if(session()->has('residenceadded'))
+                            <span class="alert"> {{session()->get('residenceadded')}} <i class="fa fa-check"></i></span>
                         @endif
-                        @if($errors->has('country_name'))
+                        @if($errors->has('residence_name'))
                             <span class="alert xalert"> حدث خطأ <i class="fa fa-times"></i></span>
                         @endif
                     </div>
@@ -59,7 +59,7 @@
                         <thead>
                         <tr class="bg-cyan">
                             <th scope="col">#</th>
-                            <th scope="col">إسم الدولة</th>
+                            <th scope="col">دولة الإقامة</th>
                             <th scope="col">تاريخ الإنشاء</th>
                             <th scope="col">آخر تعديل</th>
                             <th scope="col">الإجراءات</th>
@@ -67,37 +67,37 @@
                         </thead>
                         <tbody>
                         @php $i = 0;  @endphp
-                        @foreach($countries as $country)
+                        @foreach($residences as $residence)
                             @php $i++; @endphp
                             <tr>
                                 <th scope="row">{{$i}}</th>
-                                <td>{{$country->country_name}}</td>
-                                <td>{{$country->created_at}}</td>
-                                <td>{{$country->updated_at}}</td>
+                                <td>{{$residence->residence_name}}</td>
+                                <td>{{$residence->created_at}}</td>
+                                <td>{{$residence->updated_at}}</td>
                                 <td>
                                     <button class="btn btn-primary" data-toggle="modal"
-                                            data-target="#editbtn{{$country->id}}">
+                                            data-target="#editbtn{{$residence->id}}">
                                         <i class="fa fa-edit"></i>
                                     </button>
                                     <!-- Modal -->
-                                    <div class="modal fade" id="editbtn{{$country->id}}" tabindex="-1" role="dialog"
+                                    <div class="modal fade" id="editbtn{{$residence->id}}" tabindex="-1" role="dialog"
                                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">تعديل إسم الدولة</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">تعديل دولة إقامة</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="{{url('admincp/countries/update')}}" method="post">
+                                                <form action="{{url('admincp/residences/update')}}" method="post">
                                                     @csrf
                                                     <div class="modal-body">
-                                                        <input type="text" hidden value="{{$country->id}}" name="country_id">
+                                                        <input type="text" hidden value="{{$residence->id}}" name="residence_id">
                                                         <div class="form-group col-12">
-                                                            <input type="text" value="{{$country->country_name}}"
-                                                                   class="form-control" name="country_name" autocomplete="off">
+                                                            <input type="text" value="{{$residence->residence_name}}"
+                                                                   class="form-control" name="residence_name" autocomplete="off">
                                                         </div>
 
                                                     </div>
@@ -115,12 +115,12 @@
 
                                     <!-- Delete Button -->
                                     <button class="btn btn-danger"  data-toggle="modal"
-                                            data-target="#delbtn{{$country->id}}">
+                                            data-target="#delbtn{{$residence->id}}">
                                         <i class="fa fa-times-circle"></i>
                                     </button>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="delbtn{{$country->id}}" tabindex="-1" role="dialog"
+                                    <div class="modal fade" id="delbtn{{$residence->id}}" tabindex="-1" role="dialog"
                                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
@@ -131,10 +131,10 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="{{url('admincp/countries/suspend')}}" method="post">
+                                                <form action="{{url('admincp/residences/suspend')}}" method="post">
                                                     @csrf
                                                     <div class="modal-body">
-                                                        <input type="text" hidden value="{{$country->id}}" name="country_id">
+                                                        <input type="text" hidden value="{{$residence->id}}" name="residence_id">
 
                                                             <p>هل أنت متأكد من حذف هذه الدولة نهائيا ؟</p>
                                                             <p>سيختفي اسم الدولة من بيانات المُعلم والطالب</p>

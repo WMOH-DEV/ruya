@@ -112,7 +112,7 @@ return [
         'array'   => 'يجب أن يحتوي الحقل :attribute على :size عنصرٍ/عناصر بالظبط',
     ],
     'starts_with'           => ':attribute لابد أن تبدأ بأحدى هذه القيّم :values',
-    'string'               => 'يجب أن يكون الحقل :attribute نصآ.',
+    'string'               => 'يجب أن يكون حقل :attribute نصآ.',
     'timezone'             => 'يجب أن يكون :attribute نطاقًا زمنيًا صحيحًا',
     'unique'               => 'قيمة الحقل :attribute مُستخدمة من قبل',
     'uploaded'             => 'فشل في تحميل الـ :attribute',
@@ -226,6 +226,8 @@ return [
 		'notes'					=> 'الملاحظات',
 		'phone_number'			=> 'رقم الهاتف',
 		'whatsapp'			    => 'الواتسآب',
+		'message_body'			=> 'محتوى الرسالة',
+		'message'			    => 'محتوى الرسالة',
     ],
 
 

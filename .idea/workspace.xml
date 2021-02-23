@@ -5,19 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb078715-45b3-4082-af16-bf30e1276e8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Residence.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_21_174743_create_residences_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ResidenceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/contactResponseMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Message.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_22_172546_create_messages_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_22_215401_add_is_responded_to_messages_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cp/Mails/contactUs-response.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cp/messages/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cp/messages/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cp/residences/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/main/pages/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ModController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ModController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_17_184447_create_pages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_17_184447_create_pages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_21_165343_add_residence_id_to_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_21_174946_add_residence_id_to_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cp/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/cp/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CountryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/ar/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cp/moderators/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/moderators/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/countries/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/countries/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/pages/faq.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/pages/terms.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/pages/social.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/pages/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/main-layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/main-layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,18 +195,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cp/moderators" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/main/pages" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\x\resources\views\main\pages" />
+      <recent name="C:\xampp\htdocs\x\resources\views\cp" />
       <recent name="C:\xampp\htdocs\x\resources\views\cp\moderators" />
       <recent name="C:\xampp\htdocs\x\resources\views\main\layouts" />
       <recent name="C:\xampp\htdocs\x\resources\views\auth" />
-      <recent name="C:\xampp\htdocs\x\resources\views\cp\pages" />
-      <recent name="C:\xampp\htdocs\x\resources\views\cp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\x\resources\views\cp\layouts" />
@@ -250,7 +260,8 @@
       <workItem from="1613757814214" duration="2284000" />
       <workItem from="1613821483717" duration="25816000" />
       <workItem from="1613910922112" duration="27129000" />
-      <workItem from="1613999526712" duration="1556000" />
+      <workItem from="1613999526712" duration="7975000" />
+      <workItem from="1614017692079" duration="20956000" />
     </task>
     <servers />
   </component>
@@ -271,6 +282,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/cp/layouts/sidebar.blade.php</url>
+          <line>195</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -965,10 +965,10 @@
                             <p>إذا كنت مؤسسة تعليمية ,وتبحث عن الانتشار والإعلان لدينا نرحب بكم دائما في الخدمات الإعلانية أو الشراكة.</p>
                         </div>
                         <div class="instructor-button mt-15">
-                            <a class="c-btn btn-theme f-left mr-15" href="contact.html"
+                            <a class="c-btn btn-theme f-left mr-15" href="{{url('/pages/contact')}}"
                             >الإنضمام للمُعلمين </a>
-                            <a class="c-btn btn-white" href="contact.html"
-                            >إعلن لدينا</a
+                            <button class="c-btn btn-white" href="{{url('/pages/contact')}}"
+                            >إعلن لدينا</button
                             >
                         </div>
                     </div>

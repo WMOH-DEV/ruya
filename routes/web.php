@@ -4,9 +4,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ModController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ResidenceController;
 use App\Http\Controllers\StageController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
@@ -34,6 +36,9 @@ Route::get('pages/privacy', [PageController::class, 'privacyIndex']);
 //Faq Page
 Route::get('pages/faq', [PageController::class, 'faqIndex']);
 
+//contact Page
+Route::get('pages/contact', [MessageController::class, 'contactIndex']);
+Route::post('pages/contact/send', [MessageController::class, 'contactStore']);
 
 // Ajax request route
 Route::get('search-stage/{array}', [TeacherController::class, 'getSubjects']);
@@ -110,20 +115,34 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::post('admincp/countries/update', [CountryController::class, 'update']);
     Route::post('admincp/countries/suspend', [CountryController::class, 'destroy']);
 
+    // residence Routes
+    Route::get('admincp/residences', [ResidenceController::class, 'index']);
+    Route::post('admincp/residences/add', [ResidenceController::class, 'create']);
+    Route::post('admincp/residences/update', [ResidenceController::class, 'update']);
+    Route::post('admincp/residences/suspend', [ResidenceController::class, 'destroy']);
+
     // Order
     Route::get('admincp/orders', [OrderController::class, 'index']);
     Route::post('admincp/orders/update', [OrderController::class, 'update']);
 
-    // Social
+    // pages
     Route::get('admincp/pages/privacy', [PageController::class, 'privacy']);
     Route::post('admincp/pages/privacy/sent', [PageController::class, 'receivePrivacy']);
-    Route::get('admincp/pages/faq', [PageController::class, 'faq']);
-    Route::post('admincp/pages/faq/sent', [PageController::class, 'receiveFaq']);
-    Route::get('admincp/pages/social', [PageController::class, 'social']);
+    Route::get('admincp/pages/terms', [PageController::class, 'terms']);
+    Route::post('admincp/pages/terms/sent', [PageController::class, 'receiveTerms']);
+    Route::get('admincp/pages/about', [PageController::class, 'about']);
+    Route::post('admincp/pages/about/sent', [PageController::class, 'receiveAbout']);
 
 
     // Mods
     Route::get('admincp/moderators', [ModController::class, 'index']);
     Route::post('admincp/moderators/add', [ModController::class, 'store']);
+
+    // Contact us
+    Route::get('admincp/messages', [MessageController::class, 'index']);
+    Route::get('admincp/messages/show/{msg}', [MessageController::class, 'show']);
+    Route::post('admincp/messages/response/{message}', [MessageController::class, 'response']);
+    Route::post('admincp/messages/destroy', [MessageController::class, 'destroy']);
+
 
 }); // End Admin routes

@@ -1,10 +1,10 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{url('admincp')}}" class="brand-link">
-        <img src="{{asset('cp')}}/img/AdminLTELogo.png" alt="AdminLTE Logo"
+        <img src="{{asset('cp')}}/img/AdminLTELogo.png" alt="RUYA"
              class="brand-image"
              style="opacity: .8">
-        <span class="brand-text font-weight-light" style="font-family: 'cairo', sans-serif;">دليل الطالب</span>
+        <span class="brand-text font-weight-light" style="font-family: 'cairo', sans-serif;">{{env('app_name')}}</span>
     </a>
 
     <!-- Sidebar -->
@@ -128,6 +128,16 @@
                     </a>
                 </li>
 
+                <!-- Residences -->
+                <li class="nav-item">
+                    <a href="{{url('admincp/residences')}}" class="nav-link">
+                        <i class="nav-icon fa fa-globe"></i>
+                        <p>
+                            دول الإقامة
+                        </p>
+                    </a>
+                </li>
+
                 <!-- Orders -->
                 <li class="nav-item">
                     <a href="{{url('admincp/orders')}}" class="nav-link">
@@ -139,6 +149,31 @@
                 </li>
 
                 <li class="nav-header">الأقسام الإدارية</li>
+                <!-- Messages -->
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-envelope nav-icon"></i>
+                        <p>الرسائل
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <!-- Message List-->
+                        <li class="nav-item">
+                            <a href="{{url('admincp/messages')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>قائمة الرسائل</p>
+                            </a>
+                        </li>
+                        <!-- banned Mods-->
+                        <li class="nav-item">
+                            <a href="{{url('admincp/moderators/suspended')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>مشرفين موقوفين</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <!-- Mods -->
                 <li class="nav-item has-treeview">
@@ -149,12 +184,15 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <!-- Mods List-->
                         <li class="nav-item">
                             <a href="{{url('admincp/moderators')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>قائمة المشرفين</p>
                             </a>
                         </li>
+                        <!-- banned Mods-->
+                        {{--TODO: build Banned Mods--}}
                         <li class="nav-item">
                             <a href="{{url('admincp/moderators/suspended')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -164,6 +202,7 @@
                     </ul>
                 </li>
 
+                <!-- Pages -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link" >
                         <i class="nav-icon fa fa-link"></i>
@@ -173,6 +212,16 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+
+                        <!-- About us -->
+                        <li class="nav-item">
+                            <a href="{{url('admincp/pages/about')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>من نحن</p>
+                            </a>
+                        </li>
+
+                        <!-- Privacy -->
                         <li class="nav-item">
                             <a href="{{url('admincp/pages/privacy')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -180,19 +229,14 @@
                             </a>
                         </li>
 
+                        <!-- Terms -->
                         <li class="nav-item">
-                            <a href="{{url('admincp/pages/faq')}}" class="nav-link">
+                            <a href="{{url('admincp/pages/terms')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>الأسئلة الشائعة</p>
+                                <p>الشروط والأحكام</p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="{{url('admincp/pages/social')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>الصفحات الاجتماعية</p>
-                            </a>
-                        </li>
 
 
                     </ul>

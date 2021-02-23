@@ -377,3 +377,49 @@ p {
 .counter-bg{
     z-index: 2;
 }
+
+.page-title-area{
+    margin-top: 135px;
+    min-height: 200px;
+}
+
+.page-title-area .page-title{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.contact-area{
+    padding-top: 130px;
+}
+
+.section-title h2{
+    font-size: 45px;
+}
+
+.subscribe .input-text .form-control{
+    font-family: unset;
+}
+
+.contact-post-form .input-text::after{
+    right: unset;
+    left: 30px;
+}
+
+.c-btn i{
+    padding-right:15px;
+}
+
+.subscribe .lg-btn button.c-btn{
+    background: #ea5822;
+    color: white;
+    padding: 23px 70px;
+    border: 0;
+}
+
+.lg-btn.lg-btn-03 button{
+    width: 650px;
+}
+
+.subscribe .lg-btn button.c-btn:hover{
+    background: #3662ff;
+}

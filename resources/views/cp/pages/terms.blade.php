@@ -1,7 +1,7 @@
 @extends('cp.layout')
 
 @section('title')
-الأسئلة الشائعة
+    الشروط والأحكام
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
             <div class="card card-outline card-info">
                 <div class="card-header d-flex justify-content-between align-content-center">
                     <h4 class="col-6">
-                        الأسئلة الشائعة
+                        الشروط والأحكام
                     </h4>
                     <div class="buttons col-6 buttons col-6 d-flex justify-content-end">
                         <button id="edit" class="btn btn-primary" onclick="edit()" type="button">تعديل الحالي</button>
@@ -23,8 +23,8 @@
                 <div class="card-body pad">
                     <div class="mb-3">
                         <div class="click2edit p-3 border-0 w-100"></div>
-                        <label for="faqs" class="w-100 privacyLabel">
-                            <textarea name="faqs" class="w-100 border-0" id="faqs">@if(isset($faq)) {{$faq}} @else صفحة الخصوصية لموقع دليل الطالب @endif</textarea>
+                        <label for="terms" class="w-100 privacyLabel">
+                            <textarea name="terms" class="w-100 border-0" id="terms">@if(isset($terms)) {{$terms}} @else صفحة الخصوصية لموقع دليل الطالب @endif</textarea>
                         </label>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
 
 <script>
     $(function() {
-        $('.click2edit').html($('#faqs').val());
+        $('.click2edit').html($('#terms').val());
         $('.privacyLabel').hide();
 
 
@@ -58,7 +58,7 @@
     var edit = function() {
         $('.click2edit').hide();
         $('.privacyLabel').show();
-        $('#faqs').summernote({
+        $('#terms').summernote({
             focus: true,
             //  height: 200,
         });
@@ -67,18 +67,18 @@
     };
 
     var save = function() {
-        var markup = $('#faqs').summernote('code');
-        $('#faqs').summernote('destroy');
+        var markup = $('#terms').summernote('code');
+        $('#terms').summernote('destroy');
         $('.privacyLabel').hide();
-        $('.click2edit').html($('#faqs').val());
+        $('.click2edit').html($('#terms').val());
         $('.click2edit').show()
         //  console.log($('.click2edit').html());
         $.ajax({
-            url: "{{ URL::to('admincp/pages/faq/sent') }}" + '?_token=' + '{{ csrf_token() }}',
+            url: "{{ URL::to('admincp/pages/terms/sent') }}" + '?_token=' + '{{ csrf_token() }}',
             type: "post",
             dataType: "html",
             data: {
-                "faqInput": $('#faqs').val()
+                "termsInput": $('#terms').val()
             },
             success: function(data) {
                 console.log(data);

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Country;
+use App\Models\Residence;
 use Flasher\Toastr\Prime\ToastrFactory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -10,7 +10,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class CountryController extends Controller
+class ResidenceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,10 +19,10 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //show countries on admincp
-        $countries = Country::all();
-        //dd($countries);
-        return view('cp.countries.index', compact('countries'));
+        //show Residences on admincp
+        $residences = Residence::all();
+        //dd($Residences);
+        return view('cp.Residences.index', compact('residences'));
     }
 
     /**
@@ -34,15 +34,15 @@ class CountryController extends Controller
     {
         //
         $request->validate([
-            'country_name' => ['required', 'string', 'max:100'],
+            'Residence_name' => ['required', 'string', 'max:100'],
         ]);
 
 
-        Country::create([
-            'country_name' => $request->country_name
+        Residence::create([
+            'Residence_name' => $request->Residence_name
         ]);
 
-        //session()->flash('countryadded', 'تم إضافة المرحلة !!');
+        //session()->flash('Residenceadded', 'تم إضافة المرحلة !!');
         $factory->addSuccess('تم إضافة دولة جديدة');
 
         return redirect()->back();
@@ -62,10 +62,10 @@ class CountryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Country $country
+     * @param \App\Models\Residence $Residence
      * @return Response
      */
-    public function show(Country $country)
+    public function show(Residence $Residence)
     {
         //
     }
@@ -73,10 +73,10 @@ class CountryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Country $country
+     * @param \App\Models\Residence $Residence
      * @return Response
      */
-    public function edit(Country $country)
+    public function edit(Residence $Residence)
     {
         //
     }
@@ -85,7 +85,7 @@ class CountryController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Country $country
+     * @param \App\Models\Residence $Residence
      * @param ToastrFactory $factory
      * @return Response
      */
@@ -93,13 +93,13 @@ class CountryController extends Controller
     {
         //
         $request->validate([
-            'country_name' => ['required', 'string', 'max:100'],
+            'Residence_name' => ['required', 'string', 'max:100'],
         ]);
 
-        $country = Country::findOrFail($request->country_id);
+        $Residence = Residence::findOrFail($request->Residence_id);
 
-        $country->update([
-            'country_name' => $request->country_name
+        $Residence->update([
+            'Residence_name' => $request->Residence_name
         ]);
 
         $factory->addSuccess('تم تعديل الدولة بنجاح');
@@ -119,10 +119,10 @@ class CountryController extends Controller
     {
 
         //dd($request->all());
-        $country = Country::findOrfail("$request->country_id");
+        $Residence = Residence::findOrfail("$request->Residence_id");
         //dd($stage);
 
-        $country->delete();
+        $Residence->delete();
 
         $factory->addSuccess('تم حذف الدولة');
 
