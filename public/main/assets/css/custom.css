@@ -408,7 +408,7 @@ p {
 
 .contact-post-form .input-text::after{
     right: unset;
-    left: 30px;
+    left: 40px;
 }
 
 .c-btn i{
@@ -426,6 +426,9 @@ p {
     width: 650px;
 }
 
+.register-area .lg-btn.lg-btn-03 button{
+    width: 100%;
+}
 .subscribe .lg-btn button.c-btn:hover{
     background: #3662ff;
 }
@@ -438,4 +441,277 @@ p {
         padding: 0 15px;
     }
 
+}
+
+.contact-post-form .input-text::after{
+    top: 50%;
+    transform: translatey(-50%);
+}
+.password .input-text::after,
+.email .input-text::after
+{
+    top:35px;
+}
+
+
+.register-area .subscribe .input-text .form-control{
+    line-height: 55px;
+    text-align: right !important;
+}
+
+.register-area .nice-select .list{
+    left: unset;
+    right: 0;
+    width: 100%;
+}
+
+.register-area .nice-select .option
+{
+    text-align: right;
+}
+
+.phone .input-text::after{
+    content: '\f4d2';
+}
+
+.password .input-text::after{
+    content: '\f6f3';
+}
+
+.whatsapp .input-text::after{
+    content: '\f232';
+    font-family: "Font Awesome 5 Brands";
+}
+
+.gender .input-text::after{
+    content: '\f227';
+    top: 22px;
+    transform: unset;
+}
+
+.subjects .input-text::after{
+    content: '\f5db';
+    top: 22px;
+    transform: unset;
+}
+
+.experience .input-text::after{
+    top: 22px;
+    content: '\f0b1';
+    transform: unset;
+}
+
+.qualification  .input-text::after{
+    top: 22px;
+    content: '\f19c';
+    transform: unset;
+}
+
+
+.gender{
+    margin-bottom: 30px;
+}
+
+.country{
+    margin-bottom: 30px;
+}
+
+.country .input-text::after{
+    content: '\f57c';
+    top: 22px;
+    transform: unset;
+}
+.residence{
+    margin-bottom: 30px;
+}
+
+.residence .input-text::after{
+    content: '\f024';
+    top: 22px;
+    transform: unset;
+}
+
+.alert{
+    text-align: right;
+}
+
+.alert .alert--content{
+    margin-right: 10px;
+}
+
+.sidebar-buttons .c-btn{
+    padding: 15px;
+    margin: 5px;
+}
+
+.teacher-area .nice-select{
+    text-align: right !important;
+    width: 100%;
+    height: 120%;
+}
+
+.select2-search__field{
+    direction: rtl;
+    text-align: right;
+    border: 1px solid #dedede;
+    position: relative;
+    color: #708389;
+    font-size: 15px;
+    /*line-height: 55px;*/
+    font-weight: 500;
+    /*height: 58px;*/
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    background: transparent;
+    padding-right: 15px !important;
+    outline: #888888;
+}
+
+/*.select2-search__field:focus{*/
+/*    border:none;*/
+/*}*/
+.select2-container--default .select2-selection--multiple{
+    border: none;
+}
+.multi-select:after{
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #999;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    left: 18px;
+    z-index: 999;
+    -webkit-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(
+        45deg
+    );
+    -ms-transform: rotate(45deg);
+    transform: rotate(
+        45deg
+    );
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    width: 5px;
+}
+
+.multi-select:after{
+    top: 50%;
+}
+
+.multi-select,
+.multi-select:focus
+{
+    appearance: none;
+    padding: 10px;
+    border:none;
+    outline: none;
+}
+
+.select2-search__field::placeholder{
+    line-height: 3 !important;
+}
+
+.select2-selection--multiple:focus{
+    border:none;
+}
+.select2-selection__rendered {
+    line-height: 31px !important;
+}
+.select2-container .select2-selection--single {
+    min-height: 68px !important;
+    overflow-y: auto;
+    max-height: 70px !important;
+    line-height: 68px !important;
+
+}
+.select2-selection--multiple {
+    min-height: 68px !important;
+    max-height: 70px !important;
+    line-height: 68px !important;
+}
+
+.select2-selection--multiple::-webkit-scrollbar {
+    display: none;
+}
+.stages .input-text::after{
+    content: '\f078';
+    top: 27px;
+    transform: unset;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+    border:none !important;
+}
+
+.pphour .input-text::after{
+
+    content: '\f51e'  !important;
+    top: 22px;
+    transform: unset;
+    left: 30px;
+}
+
+
+.other_subjects .input-text::after{
+    content: '\f7e8'  !important;
+    top: 22px;
+    transform: unset;
+}
+
+.brief .input-text::after{
+
+    content: '\f303' !important;
+    top: 12px;
+    transform: unset;
+
+}
+
+.profile-btn{
+    color: #062a35;
+    font-weight: 700;
+    font-size: 14px;
+    background: white;
+    padding: 17px 28px;
+    line-height: 1;
+    display: inline-block;
+    margin-left: .5rem;
+    border-radius: 0;
+    transition: background-color 1s;
+}
+
+.profile-btn i{
+    color: #ea5822;
+}
+
+.profile-btn:hover{
+    background: #ea5822;
+    color: white;
+}
+.profile-btn:hover > .fad{
+    color: white;
+}
+
+.profile-btn:after{
+    position: absolute;
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Pro";
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    left: 10px;
+    color: #ea5822;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.dropdown-item:focus, .dropdown-item:hover{
+    color: white;
+    background-color: #ea5822;
 }

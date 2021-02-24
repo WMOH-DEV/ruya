@@ -37,10 +37,10 @@
             @endif
 
             <li>
-                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form-mobile').submit();">
                     <i class="fad fa-sign-out mr-2" style="transform: rotateY(180deg)"></i>تسجيل الخروج</a>
             </li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+            <form id="logout-form-mobile" action="{{ route('logout') }}" method="POST" class="hidden">
                 @csrf
             </form>
 

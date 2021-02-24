@@ -218,6 +218,7 @@ class TeacherController extends Controller
 
         $thisTeacher = User::findOrFail(Auth::user()->id);
         $thisTeacher->isUpdated = 1;
+        $thisTeacher->role_id = 1;
         $thisTeacher->save();
 
        // $request->session()->flash('updated', 'تم تحديث البيانات بنجاح');

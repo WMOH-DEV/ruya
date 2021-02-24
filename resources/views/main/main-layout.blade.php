@@ -21,11 +21,13 @@
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/animate.min.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/magnific-popup.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/nice-select.css" />
+{{--    <link rel="stylesheet" href="{{asset('main')}}/assets/css/nice-search-multiple.css" />--}}
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/themify-icons.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/metisMenu.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/meanmenu.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/slick.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/alerts-css.min.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/main.css" />
     <!-- Main Css File -->
     @yield('css')
@@ -108,7 +110,9 @@
 <script src="{{asset('main')}}/assets/js/imagesloaded.pkgd.min.js"></script>
 <script src="{{asset('main')}}/assets/js/jquery.magnific-popup.min.js"></script>
 <script src="{{asset('main')}}/assets/js/jquery.nice-select.js"></script>
+{{--<script src="{{asset('main')}}/assets/js/jquery.nice-select-with-search-multiple.js"></script>--}}
 <script src="{{asset('main')}}/assets/js/jquery.easypiechart.js"></script>
+<script src="{{asset('main')}}/assets/js/alerts.min.js"></script>
 <script src="{{asset('main')}}/assets/js/main.js"></script>
 @yield('script')
 <script src="{{asset('main')}}/assets/js/app.js"></script>

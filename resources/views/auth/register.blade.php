@@ -1,4 +1,4 @@
-@extends('main.layout')
+@extends('main.main-layout')
 
 @section('title')
     تسجيل عضوية جديدة
@@ -6,147 +6,188 @@
 
 
 @section('content')
-<div class="login-container h-screen flex item-center">
-
-    <div class=" lg:w-5/6 xl:w-4/6  flex flex-col items-center justify-center w-full">
-        <div class="register lg:w-2/3 p-5 md:p-10 xl:px-0 h-2/3 mt-8  w-full">
-            <p class="text-center text-gray-400 text-xl md:text-2xl">تسجيل عضوية جديدة</p>
 
 
-{{--        @if($errors->any())--}}
-{{--            {!! implode('', $errors->all('<div>:message</div>')) !!}--}}
-{{--        @endif--}}
 
-            <!-- form register -->
-            <form action="{{route('register')}}" class="grid grid-cols-6 gap-x-4 gap-y-2 place-content-center " method="post">
-                @csrf
-                <label for="first_name" class="col-span-6 mt-5 md:col-span-3">
+    <!-- contact-area-start -->
+    <div class="contact-area grey-bg pb-100 register-area">
+        <div class="container">
+            @if ($errors->any())
+                <div class=" py-3" id="errorMsg">
+                    <ul class="inline-block py-3 px-3 text-danger rounded-md">
+                        @foreach ($errors->all() as $error)
+                            <li><i class="far fa-exclamation-circle"></i> {{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
+                    <div class="section-title text-center mb-60">
+                        <span><i class="fal fa-ellipsis-h"></i>الإنضمام لنا <i class="fal fa-ellipsis-h"></i></span>
+                        <h1>تسجيل عضوية</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="contact-form-area">
+                        <form action="{{route('register')}}" class="subscribe contact-post-form contact-form" method="post">
+                            @csrf
+                            <div class="row">
 
-                    <!-- First name inout -->
-                    <input type="text" placeholder="الإسم الأول"
-                           class="focus:outline-none shadow-sm appearance-none w-full p-2 rounded-md border-gray-300 border"
-                           name="first_name" required>
-                </label>
-                <label for="last_name" class="col-span-6 mt-5 md:col-span-3">
+                                <!-- first Name -->
+                                <div class="col-xl-6">
+                                    <div class="input-text">
+                                        <input type="text" placeholder="الإسم الأول"
+                                               class="form-control"
+                                               value="{{old('first_name')}}"
+                                               name="first_name" required>
+                                    </div>
+                                </div>
+                                <!-- last Name -->
+                                <div class="col-xl-6">
+                                    <div class="input-text">
+                                        <input type="text" placeholder="الإسم الأخير"
+                                               class="form-control"
+                                               value="{{old('last_name')}}"
+                                               name="last_name" required>
+                                    </div>
+                                </div>
 
-                    <!-- Last name inout -->
-                    <input type="text" placeholder="الإسم الأخير"
-                           class="focus:outline-none shadow-sm  w-full p-2 rounded-md  border-gray-300 border"
-                           name="last_name" required>
-                </label>
-                <!-- Password Input -->
-                <label for="password" class="col-span-3 mt-2">
-                    كلمة المرور
-                    <input type="password" placeholder="********"
-                           class="focus:outline-none mt-1 shadow-sm appearance-none w-full p-2 rounded-md border-gray-300 border"
-                           name="password" required>
-                </label>
-                <label for="password_confirmation" class="col-span-3 mt-2">
-                    إعادة كلمة المرور
-                    <input type="password" placeholder="********"
-                           class="focus:outline-none mt-1 shadow-sm  w-full p-2 rounded-md  border-gray-300 border"
-                           name="password_confirmation" required>
-                </label>
+                                <!-- password -->
+                                <div class="col-xl-6 password">
+                                    <div class="input-text">
+                                        <input type="password" placeholder="كلمة المرور"
+                                               class="form-control"
+                                               name="password" required>
+                                        <small id="emailHelp" class="form-text text-danger">يجب ألا تقل عن 8 حروف أو أرقام</small>
 
-                <!-- Email Input -->
-                <label for="email" class="col-span-6 mt-2">
-                    <input type="email" placeholder="البريد الإلكتروني الخاص بكم"
-                           class="focus:outline-none mt-1 shadow-sm  w-full p-2 rounded-md  border-gray-300 border"
-                           name="email" required>
-                    <span class=" bg-red-100 p-2 w-full rounded-md my-1 text-red-500  @if($errors->has('email')) inline-block @else hidden @endif  ">
-                        <i class="icon-bell-alt"></i>
-                        البريد الإلكتروني خطأ</span>
-                </label>
+                                    </div>
+                                </div>
 
-                <!-- Phone Input -->
-                <label for="phone_number" class="col-span-3 mt-2">
-                    رقم الهاتف
-                    <input type="tel" placeholder="+966xxxxxxxxx"
-                           class="focus:outline-none mt-1 shadow-sm  w-full p-2 rounded-md  border-gray-300 border"
-                           name="phone_number" required>
-                    <span class=" bg-red-100 p-2 w-full rounded-md my-1 text-red-500  @if($errors->has('phone_number')) inline-block @else hidden @endif  ">
-                        <i class="icon-bell-alt"></i>
-                       رقم الهاتف غير صحيح</span>
-                </label>
-                <!-- Whatsapp Input -->
-                <label for="whatsapp" class="col-span-3 mt-2">
-                    رقم الواتسآب
-                    <input type="tel" placeholder="+966xxxxxxxxx"
-                           class="focus:outline-none mt-1 shadow-sm  w-full p-2 rounded-md  border-gray-300 border"
-                           name="whatsapp" required>
-                    <span class=" bg-red-100 p-2 w-full rounded-md my-1 text-red-500  @if($errors->has('whatsapp')) inline-block @else hidden @endif  ">
-                        <i class="icon-bell-alt"></i>
-                       رقم الواتسآب غير صحيح</span>
-                </label>
+                                <!-- password Confirmation -->
+                                <div class="col-xl-6 password">
+                                    <div class="input-text">
+                                        <input type="password" placeholder="تأكيد كلمة المرور"
+                                               class="form-control"
+                                               name="password_confirmation" required>
+                                    </div>
+                                </div>
 
-                <!-- Gender Input -->
-                <label for="gender" class="col-span-2 mt-2">
-                    النوع
-                    <select
-                        class="focus:outline-none mt-1 shadow-sm @if($errors->has('gender')) border-red-700 border-2 @else border-gray-300 border  @endif  w-full p-2 rounded-md  appearance-none"
-                        name="gender" required>
-                        <option value="male">ذكر</option>
-                        <option value="female">أنثى</option>
-                    </select>
+                                <!-- Email -->
+                                <div class="col-xl-12 email">
+                                    <div class="input-text email-text">
+                                        <input class="form-control"
+                                               type="email"
+                                               placeholder="البريد الإلكتروني"
+                                               value="{{old('email')}}"
+                                               required
+                                               name="email">
+                                        <small id="emailHelp2" class="form-text text-danger">العضوية تتطلب تفعيل البريد الإلكتروني، احرص على كتابة بريد صحيح</small>
 
-                </label>
+                                    </div>
+                                </div>
 
-                <!-- Country Input -->
-                <label for="country_id" class="col-span-2 mt-2">
-                    الجنسية
-                    <select
-                        class="focus:outline-none mt-1 shadow-sm  w-full p-2 rounded-md  @if($errors->has('country_id')) border-red-700 border-2 @else border-gray-300 border  @endif  appearance-none"
-                        name="country_id" required>
-                        <option value="1">مصر</option>
-                        <option value="2">السعودية</option>
-                        <option value="3">الإمارات العربية المتحدة</option>
-                        <option value="4">البحرين</option>
-                        <option value="5">عمان</option>
-                        <option value="6"> قطر</option>
-                        <option value="7">الكويت</option>
-                        <option value="8">اليمن</option>
-                        <option value="9">الجزائر</option>
-                        <option value="10">تونس</option>
-                        <option value="11">المغرب</option>
-                        <option value="12">ليبيا</option>
-                        <option value="13">السودان</option>
-                        <option value="14">موريتانيا</option>
-                        <option value="15">الأردن</option>
-                        <option value="16">سوريا</option>
-                        <option value="17">العراق</option>
-                        <option value="18">لبنان</option>
-                        <option value="19">فلسطين</option>
-                    </select>
+                                <!-- phone number -->
+                                <div class="col-xl-4 phone">
+                                    <div class="input-text phone-text">
+                                        <input class="form-control number_ltr"
+                                               type="tel"
+                                               placeholder="رقم الهاتف"
+                                               value="{{old('phone')}}"
+                                               name="phone_number">
+                                    </div>
+                                </div>
 
-                </label>
+                                <!-- whatsapp-->
+                                <div class="col-xl-4 whatsapp">
+                                    <div class="input-text phone-text">
+                                        <input class="form-control number_ltr"
+                                               type="tel"
+                                               placeholder="رقم الواتسآب"
+                                               value="{{old('whatsapp')}}"
+                                               name="whatsapp">
+                                    </div>
+                                </div>
 
-                <!-- Role Input -->
+                                <!-- Gender -->
+                                <div class="col-xl-4 gender">
+                                    <div class="input-text phone-text">
+                                        <select
+                                            class="form-control @if($errors->has('gender')) is-invalid @endif text-right"
+                                            name="gender" required>
+                                            <option data-display="النوع">النوع</option>
+                                            <option value="male">ذكر</option>
+                                            <option value="female">أنثى</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                <label for="role" class="col-span-2 mt-2">
-                    نوع العضوية
-                    <select
-                        class="focus:outline-none mt-1 shadow-sm  w-full p-2 rounded-md  @if($errors->has('role_id')) border-red-700 border-2 @else border-gray-300 border  @endif  appearance-none"
-                        name="role_id" required>
-                        <!--                        <option value="" class="p-2 rounded-t-lg" disabled selected>نوع العضوية</option>-->
-                        <option value="2" class="p-2 rounded-t-lg">طالب</option>
-                        <option value="1" class="p-2 rounded-b-lg">معلم</option>
-                    </select>
+                                <!-- country -->
+                                <div class="col-xl-6 country">
+                                    <div class="input-text phone-text">
+                                        <select
+                                            class="form-control @if($errors->has('country_id')) is-invalid @endif text-right"
+                                            name="country_id" required>
+                                            <option data-display="الجنسية">الجنسية</option>
+                                            @foreach($countries as $country)
+                                                <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
 
-                </label>
+                                <!-- residence -->
+                                <div class="col-xl-6 residence">
+                                    <div class="input-text phone-text">
+                                        <select
+                                            class="form-control @if($errors->has('residence_id')) is-invalid @endif text-right"
+                                            name="residence_id" required>
+                                            <option data-display="دولة الإقامة">دولة الإقامة</option>
+                                            @foreach($residences as $residence)
+                                            <option value="{{$residence->id}}">{{$residence->residence_name}}</option>
+                                                @endforeach
+                                        </select>
+                                    </div>
+                                </div>
 
-                <!-- Submit button -->
-                <button
-                    class="col-span-6 bg-yellow-600 text-white mt-3 hover:bg-yellow-700 p-2 rounded-md  border-gray-300 border">
-                    التسجيل
-                </button>
-
-            </form>
-
-
+                                <div class="col-12 col-md-6 mb-3 d-flex justify-content-center">
+                                    <div class="mx-auto">
+                                        {!! NoCaptcha::display() !!}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="lg-btn lg-btn-03 text-center">
+                                        <button class="c-btn" type="submit">تسجيل<i class="far fa-long-arrow-alt-left"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- contact-area-end -->
 
-</div>
 
 
+
+
+
+@endsection
+
+
+
+
+
+@section('script')
+    {!! NoCaptcha::renderJs('ar') !!}
+
+    <script>
+        if($("#errorMsg")){
+            $("#errorMsg").delay(5000).slideUp(1000);
+        }
+    </script>
 @endsection

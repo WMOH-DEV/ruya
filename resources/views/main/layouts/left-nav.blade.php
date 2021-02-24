@@ -1,9 +1,12 @@
 
 @auth
+
+@if(Auth::user()->role_id == 2)
 <div class="header-reg d-none d-md-inline-block">
-    <a href="{{url('/user/profile')}}"><i class="fal fa-user-circle"></i>{{Auth::user()->first_name}}</a>
+    <a href="{{url('/update-info')}}"><i class="fal fa-graduation-cap"></i>إنضم كمُعلم</a>
 
 </div>
+    @endif
 @endauth
 @guest()
 <div class="header-sing d-none d-md-inline-block">
@@ -25,15 +28,29 @@
         <i class="far fa-users-cog"></i>لوحة التحكم</a>
 </div>
     @elseif(Auth::user()->role_id == 2)
-    <div class="header-reg d-none d-md-inline-block ml-1">
-        <a href="{{url('user/student/cp')}}">
-            <i class="far fa-users-cog"></i>لوحة التحكم</a
-        >
+    <div class="d-none d-md-inline-block dropdown ml-1">
+
+            <button class="btn profile-btn position-relative" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fad fa-user-circle"></i>
+                {{Auth::user()->first_name}}
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a href="{{url('user/student/profile')}}" class="dropdown-item">
+                    <i class="far fa-users-cog mx-1"></i>الملف الشخصي</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                    <i class="fal fa-cog mx-1"></i>لوحة التحكم</a>
+
+
+        </div>
+
+
+
     </div>
     @elseif(Auth::user()->role_id == 1)
     <div class="header-reg d-none d-md-inline-block ml-1">
-        <a href="{{url('user/teacher/cp')}}">
-            <i class="far fa-users-cog"></i>لوحة التحكم</a
+        <a href="{{url('user/teacher/profile')}}">
+            <i class="far fa-users-cog"></i>الملف الشخصي</a
         >
     </div>
 @endif

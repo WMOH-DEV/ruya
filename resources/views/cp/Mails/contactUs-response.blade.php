@@ -8,12 +8,15 @@
     <title>رسالة من أكاديمية رؤية</title>
 </head>
 <body>
-<div class="" dir="rtl">
+<div class="" dir="rtl" style="max-width: 700px; margin:auto">
     <h1> {{ $title  }}</h1>
 
     <p>مرحبا  {{$name}}</p>
     <hr>
     <p> {{ $body }}</p>
+
+    <p>مع التحية,
+        أكاديمية رؤية</p>
 </div>
 
 </body>

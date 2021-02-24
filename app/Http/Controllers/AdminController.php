@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Models\Order;
 use App\Models\Page;
 use App\Models\Teacher;
@@ -40,6 +41,11 @@ class AdminController extends Controller
         $lastOrders = Order::orderBy('id', 'desc')->get()->take(3);
         $lastTeachers = Teacher::orderBy('id', 'desc')->get()->take(3);
 
+        // Messages
+        $newMsgs = Message::where('status','0')->count();
+        $unAnswerMsgs = Message::where('isResponded','0')->count();
+        $answeredMsgs = Message::where('isResponded','0')->count();
+        $allMsgs = Message::all()->count();
 
         //dd($openOrders);
 
@@ -54,7 +60,12 @@ class AdminController extends Controller
                 'allOrders',
                 'lastOrders',
                 'lastTeachers',
-                'femaleTeacher'));
+                'femaleTeacher',
+                'newMsgs',
+                'unAnswerMsgs',
+                'answeredMsgs',
+                'allMsgs',
+            ));
 
        // dd($teachersPending);
 

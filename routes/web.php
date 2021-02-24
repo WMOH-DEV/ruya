@@ -138,6 +138,11 @@ Route::group(['middleware' => ['isAdmin']], function () {
     // Mods
     Route::get('admincp/moderators', [ModController::class, 'index']);
     Route::post('admincp/moderators/add', [ModController::class, 'store']);
+    Route::put('admincp/moderators/update/{user}', [ModController::class, 'update']);
+    Route::post('admincp/moderators/suspend', [ModController::class, 'destroy']);
+    Route::get('admincp/moderators/suspended', [ModController::class, 'suspended']);
+    Route::post('admincp/moderators/restore', [ModController::class, 'restore']);
+    Route::post('admincp/moderators/delete', [ModController::class, 'delete']);
 
     // Contact us
     Route::get('admincp/messages', [MessageController::class, 'index']);

@@ -78,11 +78,11 @@
             <div class="col-lg-3 col-6">
                 <!-- info box -->
                 <div class="info-box">
-                    <span class="info-box-icon bg-info"><i class="far fa-copy"></i></span>
+                    <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
                     <div class="info-box-content">
                         <a href="{{url('admincp/messages')}}" class="text-decoration-none">
                             <span class="info-box-text">رسائل جديدة</span>
-                            <span class="info-box-number">{{$openOrders}}</span>
+                            <span class="info-box-number">{{$newMsgs}}</span>
                         </a>
                     </div>
                     <!-- /.info-box-content -->
@@ -93,11 +93,11 @@
                 <!-- small box -->
                 <!-- info box -->
                 <div class="info-box">
-                    <span class="info-box-icon bg-success"><i class="far fa-copy"></i></span>
+                    <span class="info-box-icon bg-success"><i class="far fa-envelope"></i></span>
                     <div class="info-box-content">
                         <a href="{{url('admincp/messages')}}" class="text-decoration-none">
                         <span class="info-box-text">لم يتم الرد</span>
-                        <span class="info-box-number">{{$closedOrders}}</span>
+                        <span class="info-box-number">{{$unAnswerMsgs}}</span>
                         </a>
                     </div>
                     <!-- /.info-box-content -->
@@ -108,11 +108,11 @@
                 <!-- small box -->
                 <!-- info box -->
                 <div class="info-box">
-                    <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+                    <span class="info-box-icon bg-warning"><i class="far fa-envelope"></i></span>
                     <div class="info-box-content">
                         <a href="{{url('admincp/messages')}}" class="text-decoration-none">
                         <span class="info-box-text">تم الرد عليها</span>
-                        <span class="info-box-number">{{$refusedOrders}}</span>
+                        <span class="info-box-number">{{$answeredMsgs}}</span>
                         </a>
                     </div>
                     <!-- /.info-box-content -->
@@ -122,11 +122,11 @@
             <div class="col-lg-3 col-6">
                 <!-- info box -->
                 <div class="info-box">
-                    <span class="info-box-icon bg-info"><i class="far fa-copy"></i></span>
+                    <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
                     <div class="info-box-content">
                         <a href="{{url('admincp/messages')}}" class="text-decoration-none">
-                            <span class="info-box-text">إجمالي الوارد</span>
-                            <span class="info-box-number">{{$allOrders}}</span>
+                            <span class="info-box-text">إجمالي الرسائل</span>
+                            <span class="info-box-number">{{$allMsgs}}</span>
                         </a>
                     </div>
                     <!-- /.info-box-content -->
@@ -141,7 +141,7 @@
             <div class="col-lg-3 col-6">
                 <!-- info box -->
                 <div class="info-box">
-                    <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+                    <span class="info-box-icon bg-info"><i class="far fa-copy"></i></span>
                     <div class="info-box-content">
                         <a href="{{url('admincp/orders')}}" class="text-decoration-none">
                         <span class="info-box-text">الطلبات المفتوحة</span>
@@ -156,7 +156,7 @@
                 <!-- small box -->
                 <!-- info box -->
                 <div class="info-box">
-                    <span class="info-box-icon bg-success"><i class="far fa-envelope"></i></span>
+                    <span class="info-box-icon bg-success"><i class="far fa-copy"></i></span>
                     <div class="info-box-content">
                         <a href="{{url('admincp/orders')}}" class="text-decoration-none">
                         <span class="info-box-text">الطلبات المغلقة</span>
@@ -171,7 +171,7 @@
                 <!-- small box -->
                 <!-- info box -->
                 <div class="info-box">
-                    <span class="info-box-icon bg-warning"><i class="far fa-envelope"></i></span>
+                    <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
                     <div class="info-box-content">
                         <a href="{{url('admincp/orders')}}" class="text-decoration-none">
                         <span class="info-box-text">الطلبات المرفوضة</span>
@@ -185,7 +185,7 @@
             <div class="col-lg-3 col-6">
                 <!-- info box -->
                 <div class="info-box">
-                    <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+                    <span class="info-box-icon bg-info"><i class="far fa-copy"></i></span>
                     <div class="info-box-content">
                         <a href="{{url('admincp/orders')}}" class="text-decoration-none">
                         <span class="info-box-text">إجمالي الطلبات</span>
@@ -217,7 +217,7 @@
 
                     <div class="card-body">
                         <div class="tab-content p-0">
-                            <table class="table table-hover">
+                            <table class="table table-hover table-responsive">
                                 <tr class="border-top-0">
                                     <th class="border-top-0"></th>
                                     <th class="border-top-0">الإسم</th>
@@ -255,7 +255,7 @@
 
                     <div class="card-body">
                         <div class="tab-content p-0">
-                            <table class="table table-hover">
+                            <table class="table table-hover table-responsive">
                                 <tr class="border-top-0">
                                     <th class="border-top-0">من الطالب</th>
                                     <th class="border-top-0">إلى المُعلم</th>

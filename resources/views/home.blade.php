@@ -29,13 +29,17 @@
                                 <div class="home-msgs">
                                     {{--  <!-- For New users --> --}}
                                     @if( session()->has('success'))
-                                        <div class=" w-full text-right py-3 px-5 text-white">
-                                            <div
-                                                class="inline-block py-3 px-3 shadow-sm text-white bg-blue-400 rounded-md flex justify-between item-center w-1/6">
-                                                <span class="inline-block">{{session()->get('success')}}</span>
-                                                <i class="icon-ok mx-"></i>
-                                            </div>
+                                    <div class="alert alert_info" style="animation-delay: .2s">
+                                        <div class="alert--icon">
+                                            <i class="fas fa-bell"></i>
                                         </div>
+                                        <div class="alert--content">
+                                            {{session()->get('success')}}
+                                        </div>
+                                        <div class="alert--close">
+                                            <i class="far fa-times-circle"></i>
+                                        </div>
+                                    </div>
                                     @endif
 
 
@@ -48,6 +52,10 @@
                                             </ul>
                                         </div>
                                     @endif
+
+
+
+
                                 </div>
                                 <div class="hero-slider-caption">
 											<span data-animation="fadeInUp" data-delay=".5s">

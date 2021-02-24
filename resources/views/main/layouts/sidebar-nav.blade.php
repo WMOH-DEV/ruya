@@ -10,7 +10,10 @@
             <p class="mb-30">
                 أكاديمية رؤية، هي أكاديمية تسعى للإرتقاء بالمستوى التعليمي بتسهيل التواصل بين الطلاب والمعلمين في كافة المواد وكافة الأنشطة التعليمية.
             </p>
-            <a class="c-btn btn-round-02" href="contact.html">تواصل معنا</a>
+            <div class="d-flex sidebar-buttons">
+            <a class="c-btn btn-round-02" href="{{url('pages/contact')}}">تواصل معنا</a>
+            <a class="c-btn btn-round-02" href="{{url('update-info')}}">إنضم للمعلمين</a>
+            </div>
         </div>
     </div>
     <div class="offset-widget mb-30 pr-10">

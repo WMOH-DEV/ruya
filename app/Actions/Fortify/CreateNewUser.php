@@ -35,23 +35,27 @@ class CreateNewUser implements CreatesNewUsers
             'phone_number'  =>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
             'whatsapp'      =>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
             'gender'        =>['required', 'string', 'regex:/^(male|female)$/'],
-            'country_id'    =>['required', 'regex:/^1?[0-9]$/'],
-            'role_id'       =>['required','regex:/^[1-2]$/']
+            'country_id'    =>['required', 'exists:App\Models\country,id'],
+            'residence_id'    =>['required', 'exists:App\Models\residence,id'],
+          //  'role_id'       =>['required','regex:/^[1-2]$/'],
+            'g-recaptcha-response' => 'required|captcha'
+
         ])->validate();
 
         session()->flash('success', 'تم تسجيل عضوية جديدة، يرجى تفعيل الحساب عبر البريد');
         //$factory->addWarning('تم تسجيل عضوية جديدة، يرجى تفعيل الحساب عبر البريد');
 
         return User::create([
-            'first_name'=> $input['first_name'],
-            'last_name'=> $input['last_name'],
-            'email' => $input['email'],
-            'password' => Hash::make($input['password']),
-            'role_id'=> $input['role_id'],
-            'gender'=> $input['gender'],
-            'country_id'=> $input['country_id'],
-            'phone_number'=>$input['phone_number'],
-            'whatsapp'=>$input['whatsapp']
+            'first_name'    => $input['first_name'],
+            'last_name'     => $input['last_name'],
+            'email'         => $input['email'],
+            'password'      => Hash::make($input['password']),
+            'role_id'       => 2,
+            'gender'        => $input['gender'],
+            'country_id'    => $input['country_id'],
+            'residence_id'  => $input['residence_id'],
+            'phone_number'  =>$input['phone_number'],
+            'whatsapp'      =>$input['whatsapp']
         ]);
     }
 }

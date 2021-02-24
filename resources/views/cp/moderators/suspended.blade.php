@@ -1,7 +1,7 @@
 @extends('cp.layout')
 
 @section('title')
-    قائمة الطُلاب الموقوفين
+    قائمة المشرفين الموقوفين
 @endsection
 
 @section('content')
@@ -14,13 +14,13 @@
         <div class="content-header">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">قائمة الطلاب الموقوفين</h1>
+                        <h1 class="m-0 text-dark">قائمة المشرفين الموقوفين</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item">الرئيسية</li>
-                            <li class="breadcrumb-item">الطلاب</li>
-                            <li class="breadcrumb-item active">قائمة الطلاب الموقوفين</li>
+                            <li class="breadcrumb-item">المشرفين</li>
+                            <li class="breadcrumb-item active">قائمة المشرفين الموقوفين</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -41,49 +41,52 @@
                             <th scope="col">#</th>
                             <th scope="col">الإسم كامل</th>
                             <th scope="col">البريد</th>
+                            <th scope="col">الواتسآب</th>
                             <th scope="col">الدولة</th>
                             <th scope="col">الجنس</th>
-                            <th scope="col">آخر دخول منذ</th>
+                            <th scope="col">آخر دخول</th>
                             <th scope="col">الإجراءات</th>
                         </tr>
                         </thead>
                         <tbody>
                         @php $i = 0;  @endphp
-                        @foreach($students as $student)
+                        @foreach($mods as $mod)
                             @php $i++; @endphp
-                        <tr>
-                            <th scope="row">{{$i}}</th>
-                            <td>{{$student->first_name. ' ' . $student->last_name}}</td>
-                            <td>{{$student->email}}</td>
-                            <td>{{$student->country->country_name}}</td>
-                            <td>@if($student->gender == 'male') طالب@elseif($student->gender == 'female') طالبة @endif</td>
-                            <td>{{$student->lastLogin()}}</td>
-                            <td>
+                            <tr>
+                                <th scope="row">{{$i}}</th>
+                                <td>{{$mod->fullName()}}</td>
+                                <td>{{$mod->email}}</td>
+                                <td>{{$mod->whatsapp}}</td>
+                                <td>{{$mod->country->country_name}}</td>
+                                <td>@if($mod->gender == 'male') مشرف@elseif($mod->gender == 'female')
+                                        مشرفة @endif</td>
+                                <td>{{$mod->lastLogin()}}</td>
+                                <td>
 
                                 <!-- restore Button -->
                                 <button class="btn btn-info"  data-toggle="modal"
-                                        data-target="#restore{{$student->id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="إستعادة الطالب مرة أخرى">
+                                        data-target="#restore{{$mod->id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="إستعادة المشرف مرة أخرى">
                                     <i class="fas fa-undo"></i>
                                 </button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="restore{{$student->id}}" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="restore{{$mod->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle"></i>استعادة طالب</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle"></i>استعادة مشرف</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form action="{{url('admincp/students/restore')}}" method="post">
+                                            <form action="{{url('admincp/moderators/restore')}}" method="post">
                                                 @csrf
                                                 <div class="modal-body">
-                                                    <input type="text" hidden value="{{$student->id}}" name="student_id">
+                                                    <input type="text" hidden value="{{$mod->id}}" name="mod_id">
 
-                                                    <p>هل أنت متأكد من إستعادة الطالب ؟</p>
+                                                    <p>هل أنت متأكد من إستعادة المشرف ؟</p>
 
 
                                                 </div>
@@ -99,70 +102,29 @@
                                     </div>
                                 </div>
 
-                                <!-- Email btn -->
-                                <button class="btn btn-primary" data-toggle="modal"
-                                        data-target="#editbtn{{$student->id}}">
-                                    <i class="fa fa-envelope"></i>
-
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="editbtn{{$student->id}}" tabindex="-1" role="dialog"
-                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">إرسال رسالة تذكير</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <form action="{{url('admincp/students/send')}}" method="post">
-                                                @csrf
-                                                <div class="modal-body">
-                                                    <input type="text" hidden value="{{$student->id}}" name="student_id">
-                                                    <div class="form-group col-12">
-                                                        هل أنت متأكد من إرسال رسالة تذكير إلى {{$student->fullName()}} ؟
-                                                    </div>
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary">
-                                                        <i class="fa fa-paper-plane"></i>
-                                                        إرسال
-                                                    </button>
-                                                    <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">إلغاء
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <!-- Delete Button -->
                                 <button class="btn btn-danger"  data-toggle="modal"
-                                        data-target="#delbtn{{$student->id}}">
+                                        data-target="#delbtn{{$mod->id}}">
                                     <i class="fa fa-user-alt-slash"></i>
                                 </button>
 
                                 <!-- Delete Modal -->
-                                <div class="modal fade" id="delbtn{{$student->id}}" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="delbtn{{$mod->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle"></i> إنتبه.. حذف طالب</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle"></i> إنتبه.. حذف مشرف</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form action="{{url('admincp/students/suspend')}}" method="post">
+                                            <form action="{{url('admincp/moderators/suspend')}}" method="post">
                                                 @csrf
                                                 <div class="modal-body">
-                                                    <input type="text" hidden value="{{$student->id}}" name="student_id">
-                                                    <p>هل أنت متأكد من حذف هذا الطالب نهائياً؟</p>
+                                                    <input type="text" hidden value="{{$mod->id}}" name="mod_id">
+                                                    <p>هل أنت متأكد من حذف هذا المشرف نهائياً؟</p>
                                                     <span class="badge badge-light text-right">لا يمكن التراجع عن هذا الإجراء</span>
 
                                                 </div>
@@ -186,8 +148,8 @@
                         </tbody>
                     </table>
 
-                    @if(count($students) > 0)
-                        {{$students->links()}}
+                    @if(count($mods) > 0)
+                        {{$mods->links()}}
                     @endif
 
                 </div>

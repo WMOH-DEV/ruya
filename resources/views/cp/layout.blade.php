@@ -27,12 +27,12 @@
 <div class="wrapper">
 
     <!-- Navbar -->
-    <x-admin-sidebar></x-admin-sidebar>
+
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-@include('cp.layouts.sidebar')
-
+    @include('cp.layouts.top-nav')
+    <x-admin-sidebar></x-admin-sidebar>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->

@@ -65,14 +65,14 @@
                                         <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label for="firstName">الإسم الأول</label>
-                                                    <input type="text" class="form-control" id="firstName"
+                                                    <input type="text" class="form-control"
                                                            name="firstName"
                                                            value="{{ old('firstName') }}"
                                                     >
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="lastName">الإسم الأخير</label>
-                                                    <input type="text" class="form-control" id="lastName"
+                                                    <input type="text" class="form-control"
                                                            name="lastName"
                                                            value="{{ old('lastName') }}"
                                                     >
@@ -82,14 +82,14 @@
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label for="email">البريد الإلكتروني</label>
-                                                <input type="email" class="form-control" id="email"
+                                                <input type="email" class="form-control"
                                                        name="email"
                                                        value="{{ old('email') }}"
                                                 >
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="password">كلمة المرور</label>
-                                                <input type="password" class="form-control" id="password"
+                                                <input type="password" class="form-control"
                                                        name="password"
                                                        value="{{ old('password') }}"
                                                 >
@@ -99,12 +99,12 @@
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label for="phone_number">الهاتف الشخصي</label>
-                                                <input type="text" class="form-control" id="phone_number"
+                                                <input type="text" class="form-control"
                                                        name="phone_number">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="whatsapp">رقم الواتسآب</label>
-                                                <input type="text" class="form-control" id="whatsapp"
+                                                <input type="text" class="form-control"
                                                        name="whatsapp"
                                                        value="{{ old('whatsapp') }}"
                                                 >
@@ -114,7 +114,7 @@
                                         <div class="row">
                                             <div class="form-group col-md-4">
                                                 <label for="country_id">الجنسية</label>
-                                                <select class="form-control add_select" id="country_id"
+                                                <select class="form-control add_select"
                                                        name="country_id"
                                                         style="appearance: none"
                                                 >
@@ -125,7 +125,7 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="residence_id">بلد الإقامة</label>
-                                                <select class="form-control add_select" id="residence_id"
+                                                <select class="form-control add_select"
                                                         name="residence_id"
                                                         style="appearance: none"
                                                 >
@@ -136,7 +136,7 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="gender">الجنس</label>
-                                                <select class="form-control" id="gender"
+                                                <select class="form-control"
                                                         name="gender"
                                                         style="appearance: none"
                                                 >
@@ -147,7 +147,7 @@
                                         </div>
 
                                         <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="verified" name="verified">
+                                                <input type="checkbox" class="form-check-input" name="verified">
                                                 <label class="form-check-label" for="verified">يتطلب تفعيل عبر
                                                     البريد؟</label>
                                             </div>
@@ -215,7 +215,7 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="{{url('admincp/moderators/update')}}" method="post">
+                                                <form action="{{url("admincp/moderators/update/$mod->id")}}" method="post">
                                                     @csrf
                                                     @method('put')
                                                     <div class="modal-body">
@@ -224,14 +224,14 @@
                                                             <div class="row">
                                                                 <div class="form-group col-md-6">
                                                                     <label for="firstName">الإسم الأول</label>
-                                                                    <input type="text" class="form-control" id="firstName"
+                                                                    <input type="text" class="form-control"
                                                                            name="firstName"
                                                                            value="{{$mod->first_name}}"
                                                                     >
                                                                 </div>
                                                                 <div class="form-group col-md-6">
                                                                     <label for="lastName">الإسم الأخير</label>
-                                                                    <input type="text" class="form-control" id="lastName"
+                                                                    <input type="text" class="form-control"
                                                                            name="lastName"
                                                                            value="{{$mod->last_name}}"
                                                                     >
@@ -241,16 +241,16 @@
                                                             <div class="row">
                                                                 <div class="form-group col-md-6">
                                                                     <label for="email">البريد الإلكتروني</label>
-                                                                    <input type="email" class="form-control" id="email"
+                                                                    <input type="email" class="form-control"
                                                                            name="email"
                                                                            value="{{$mod->email}}"
                                                                     >
                                                                 </div>
                                                                 <div class="form-group col-md-6">
                                                                     <label for="password">كلمة المرور</label>
-                                                                    <input type="password" class="form-control" id="password"
+                                                                    <input type="password" class="form-control"
                                                                            name="password"
-                                                                           value=""
+
                                                                     >
                                                                 </div>
                                                             </div>
@@ -258,14 +258,14 @@
                                                             <div class="row">
                                                                 <div class="form-group col-md-6">
                                                                     <label for="phone_number">الهاتف الشخصي</label>
-                                                                    <input type="text" class="form-control" id="phone_number"
+                                                                    <input type="text" class="form-control"
                                                                            name="phone_number"
                                                                            value="{{$mod->phone_number}}"
                                                                     >
                                                                 </div>
                                                                 <div class="form-group col-md-6">
                                                                     <label for="whatsapp">رقم الواتسآب</label>
-                                                                    <input type="text" class="form-control" id="whatsapp"
+                                                                    <input type="text" class="form-control"
                                                                            name="whatsapp"
                                                                            value="{{$mod->whatsapp}}"
                                                                     >
@@ -275,7 +275,7 @@
                                                             <div class="row">
                                                                 <div class="form-group col-md-4">
                                                                     <label for="country_id">الجنسية</label>
-                                                                    <select class="form-control edit_select" id="country_id"
+                                                                    <select class="form-control edit_select"
                                                                             name="country_id"
                                                                             style="appearance: none"
                                                                     >
@@ -290,7 +290,7 @@
                                                                 </div>
                                                                 <div class="form-group col-md-4">
                                                                     <label for="residence_id">بلد الإقامة</label>
-                                                                    <select class="form-control edit_select" id="residence_id"
+                                                                    <select class="form-control edit_select"
                                                                             name="residence_id"
                                                                             style="appearance: none"
                                                                     >
@@ -305,7 +305,7 @@
                                                                 </div>
                                                                 <div class="form-group col-md-4">
                                                                     <label for="gender">الجنس</label>
-                                                                    <select class="form-control" id="gender"
+                                                                    <select class="form-control"
                                                                             name="gender"
                                                                             style="appearance: none"
                                                                     >
@@ -324,12 +324,12 @@
                                                             </div>
 
                                                             <div class="form-group form-check">
-                                                                <input type="checkbox" class="form-check-input" id="verified"
+                                                                <input type="checkbox" class="form-check-input"
                                                                        @if($mod->email_verified_at !== null)
                                                                        checked
                                                                        @endif
-                                                                       name="verified">
-                                                                <label class="form-check-label" for="verified">
+                                                                       name="email_verified_at">
+                                                                <label class="form-check-label" for="email_verified_at">
                                                                    مفعل مسبقاً
                                                                 </label>
                                                             </div>

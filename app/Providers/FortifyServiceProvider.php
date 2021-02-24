@@ -6,6 +6,8 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\Country;
+use App\Models\Residence;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 
@@ -40,7 +42,9 @@ class FortifyServiceProvider extends ServiceProvider
 
         // reg
         Fortify::registerView(function () {
-            return view('auth.register');
+            $countries = Country::all();
+            $residences = Residence::all();
+            return view('auth.register', compact('countries', 'residences'));
         });
 
         // forget password

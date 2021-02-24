@@ -47,19 +47,19 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{url('admincp/students')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>قائمة الطلاب</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{url('admincp/students/inactive')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>طلاب خاملين</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{url('admincp/students/suspended')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>طلاب موقوفين</p>
                             </a>
                         </li>
@@ -78,19 +78,19 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{url('admincp/teachers')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>قائمة المعلمين</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{url('admincp/teachers/pending')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>في إنتظار الموافقة</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{url('admincp/teachers/suspended')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>مُعلمين موقوفين</p>
                             </a>
                         </li>
@@ -168,17 +168,11 @@
                         <!-- Message List-->
                         <li class="nav-item">
                             <a href="{{url('admincp/messages')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>قائمة الرسائل</p>
                             </a>
                         </li>
-                        <!-- banned Mods-->
-                        <li class="nav-item">
-                            <a href="{{url('admincp/moderators/suspended')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>مشرفين موقوفين</p>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
 
@@ -194,7 +188,7 @@
                         <!-- Mods List-->
                         <li class="nav-item">
                             <a href="{{url('admincp/moderators')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>قائمة المشرفين</p>
                             </a>
                         </li>
@@ -202,7 +196,7 @@
                         {{--TODO: build Banned Mods--}}
                         <li class="nav-item">
                             <a href="{{url('admincp/moderators/suspended')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>مشرفين موقوفين</p>
                             </a>
                         </li>
@@ -223,7 +217,7 @@
                         <!-- About us -->
                         <li class="nav-item">
                             <a href="{{url('admincp/pages/about')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>من نحن</p>
                             </a>
                         </li>
@@ -231,7 +225,7 @@
                         <!-- Privacy -->
                         <li class="nav-item">
                             <a href="{{url('admincp/pages/privacy')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>سياسة الخصوصية</p>
                             </a>
                         </li>
@@ -239,7 +233,7 @@
                         <!-- Terms -->
                         <li class="nav-item">
                             <a href="{{url('admincp/pages/terms')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
                                 <p>الشروط والأحكام</p>
                             </a>
                         </li>

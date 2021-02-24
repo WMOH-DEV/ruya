@@ -32,6 +32,7 @@ class contactResponseMail extends Mailable
      */
     public function build()
     {
-        return $this->view('cp.Mails.contactUs-response');
+        return $this->view('cp.Mails.contactUs-response')
+            ->subject("رسالة من أكاديمية رؤية - $this->title");
     }
 }
