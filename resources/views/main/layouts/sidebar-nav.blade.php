@@ -12,7 +12,9 @@
             </p>
             <div class="d-flex sidebar-buttons">
             <a class="c-btn btn-round-02" href="{{url('pages/contact')}}">تواصل معنا</a>
-            <a class="c-btn btn-round-02" href="{{url('update-info')}}">إنضم للمعلمين</a>
+                @if(Auth::user()->role_id != 1 )
+                <a class="c-btn btn-round-02" href="{{url('update-info')}}">إنضم للمعلمين</a>
+                    @endif
             </div>
         </div>
     </div>

@@ -217,7 +217,7 @@
 
                     <div class="card-body">
                         <div class="tab-content p-0">
-                            <table class="table table-hover table-responsive">
+                            <table class="table table-hover table-responsive w-100 d-block d-md-table">
                                 <tr class="border-top-0">
                                     <th class="border-top-0"></th>
                                     <th class="border-top-0">الإسم</th>
@@ -255,7 +255,7 @@
 
                     <div class="card-body">
                         <div class="tab-content p-0">
-                            <table class="table table-hover table-responsive">
+                            <table class="table table-hover table-responsive w-100 d-block d-md-table">
                                 <tr class="border-top-0">
                                     <th class="border-top-0">من الطالب</th>
                                     <th class="border-top-0">إلى المُعلم</th>

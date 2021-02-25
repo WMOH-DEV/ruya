@@ -876,10 +876,12 @@
                             <p>إذا كنت مؤسسة تعليمية ,وتبحث عن الانتشار والإعلان لدينا نرحب بكم دائما في الخدمات الإعلانية أو الشراكة.</p>
                         </div>
                         <div class="instructor-button mt-15">
-                            <a class="c-btn btn-theme f-left mr-15" href="{{url('/pages/contact')}}"
+                            @if(Auth::user()->role_id != 1 )
+                            <a class="c-btn btn-theme f-left mr-15" href="{{url('/update-info')}}"
                             >الإنضمام للمُعلمين </a>
-                            <button class="c-btn btn-white" href="{{url('/pages/contact')}}"
-                            >إعلن لدينا</button
+                            @endif
+                            <a class="c-btn btn-white" href="{{url('/pages/contact')}}"
+                            >إعلن لدينا</a
                             >
                         </div>
                     </div>

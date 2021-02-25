@@ -44,8 +44,8 @@
                                                          </div>
                                         @enderror
                                     </div>
-                                    <div class="form-group input-text password ">
-                                        <input type="password" class="form-control position-relative"
+                                    <div class="form-group input-text password  position-relative ">
+                                        <input type="password" class="form-control"
 
                                                name="password"
                                                placeholder="كلمة المرور"

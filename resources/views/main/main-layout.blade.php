@@ -87,7 +87,7 @@
 
 
     <!-- footer-area-start -->
-        @include('main.layouts.footer')
+    <x-main-footer></x-main-footer>
     <!-- footer-area-end -->
 </main>
 

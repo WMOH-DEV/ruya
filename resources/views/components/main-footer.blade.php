@@ -31,16 +31,14 @@
         <div class="row">
             <div class="col-xl-4 col-lg-5 col-md-5 col-12">
                 <div class="footer-widget mb-30">
-                    <h4 class="footer-widget-title mb-25">Our Courses</h4>
+                    <h4 class="footer-widget-title mb-25">آخر الدورات</h4>
                     <ul class="footer-list">
                         <li><a href="#">Wed Development</a></li>
                         <li><a href="#">Business Studies</a></li>
                         <li><a href="#">Computer Engineering</a></li>
                         <li><a href="#">English Learning</a></li>
                         <li><a href="#">Graphics Design</a></li>
-                        <li><a href="">Color Combinitions</a></li>
                         <li><a href="">Software Development</a></li>
-                        <li><a href="">Photography</a></li>
                         <li><a href="">Advance WordPress</a></li>
                         <li><a href="">Basic PSD To HTML</a></li>
                     </ul>
@@ -48,30 +46,23 @@
             </div>
             <div class="col-xl-4 col-lg-2 col-md-2 col-12">
                 <div class="footer-widget widget-center text-center mb-30">
-                    <h4 class="footer-widget-title mb-25">Company</h4>
+                    <h4 class="footer-widget-title mb-25">موقعنا</h4>
                     <ul class="footer-list footer-02-list">
-                        <li><a href="#">About Eduket</a></li>
-                        <li><a href="#">Meet Advisors</a></li>
-                        <li><a href="#">Join A Career</a></li>
-                        <li><a href="#">Latest Courses</a></li>
-                        <li><a href="#">Newsletters</a></li>
+                        <li><a href="/">الرئيسية</a></li>
+                        <li><a href="{{url('pages/faq')}}">الأسئلة الشائعة</a></li>
+                        <li><a href="{{url('pages/privacy')}}">الخصوصية</a></li>
+                        <li><a href="{{url('pages/terms')}}">شروط الإستخدام</a></li>
+                        <li><a href="{{url('pages/contact')}}">إتصل بنا</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5 col-md-5 col-12">
                 <div class="footer-widget mb-30">
-                    <h4 class="footer-widget-title mb-25">Our Courses</h4>
+                    <h4 class="footer-widget-title mb-25">المراحل التعليمية</h4>
                     <ul class="footer-list">
-                        <li><a href="#">Wed Development</a></li>
-                        <li><a href="#">Business Studies</a></li>
-                        <li><a href="#">Computer Engineering</a></li>
-                        <li><a href="#">English Learning</a></li>
-                        <li><a href="#">Graphics Design</a></li>
-                        <li><a href="">Color Combinitions</a></li>
-                        <li><a href="">Software Development</a></li>
-                        <li><a href="">Photography</a></li>
-                        <li><a href="">Advance WordPress</a></li>
-                        <li><a href="">Basic PSD To HTML</a></li>
+                        @foreach($stages as $stage)
+                        <li><a href="#">{{$stage->stage_name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -104,7 +95,7 @@
                                 />
                             </svg>
                             تصميم وبرمجة
-                            <a href="">
+                            <a href="https://www.fb.com/WaelMohElSaid"  data-toggle="tooltip" title="Wael Mohamed ElSaid">
                                 <img src="{{asset('main/assets/img/logo/wael-ar.png')}}" alt="" style="height: 35px">
                             </a>
                         </p>

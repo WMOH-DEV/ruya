@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MessageController;
@@ -35,7 +36,8 @@ Route::view('user/profile/edit', 'main.user.profile.edit')->middleware('auth');
 Route::get('pages/privacy', [PageController::class, 'privacyIndex']);
 
 //Faq Page
-Route::get('pages/faq', [PageController::class, 'faqIndex']);
+// Route::get('pages/faq', [PageController::class, 'faqIndex']);
+Route::get('pages/faq', [FaqController::class, 'mainIndex']);
 
 //contact Page
 Route::get('pages/contact', [MessageController::class, 'contactIndex']);
@@ -133,6 +135,11 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::post('admincp/pages/terms/sent', [PageController::class, 'receiveTerms']);
     Route::get('admincp/pages/about', [PageController::class, 'about']);
     Route::post('admincp/pages/about/sent', [PageController::class, 'receiveAbout']);
+    Route::get('admincp/pages/faq', [FaqController::class, 'index']);
+    Route::post('admincp/pages/faq/store', [FaqController::class, 'store']);
+    Route::put('admincp/pages/faq/update/{ques}', [FaqController::class, 'update']);
+    Route::delete('admincp/pages/faq/delete/{ques}', [FaqController::class, 'destroy']);
+
 
 
     // Mods

@@ -25,7 +25,7 @@
                     <div class="col-xl-3">
                         <div class="input-text">
                             <select name="stage" id="stages"
-                                    class="form-control"
+                                    class="form-control  @if($errors->has('experience')) is-invalid  @endif "
                                     required>
                                 <option data-display="إختيار المرحلة">اختر المرحلة</option>
                                 @foreach($stages as $stage)
@@ -39,7 +39,7 @@
                     <div class="col-xl-3">
                         <div class="input-text">
                             <select name="subject" id="subject_id"
-                                    class="form-control mt-3 mt-md-0"
+                                    class="form-control  @if($errors->has('experience')) is-invalid  @endif "
                                     required>
                                 <option data-display="إختيار المادة">اختر المادة</option>
                             </select>
@@ -50,7 +50,7 @@
                     <div class="col-xl-3">
                         <div class="input-text">
                             <select name="experience" id="experience"
-                                    class="form-control  mt-3 mt-md-0"
+                                    class="form-control  @if($errors->has('experience')) is-invalid  @endif "
                                     required>
                                 <option data-display="إختيارات محددة">إختيارات محددة</option>
                                 <option value="toprank">الأعلى تقييم</option>
@@ -65,7 +65,7 @@
                     <!-- Submit -->
                     <div class="col-xl-3">
                         <div class="lg-btn lg-btn-02 text-center">
-                            <button class="c-btn w-100 mt-3 mt-md-0" type="submit">البحث عن معلم<i class="far fa-long-arrow-alt-left"></i>
+                            <button class="c-btn" type="submit">البحث عن معلم<i class="far fa-long-arrow-alt-left"></i>
                             </button>
                         </div>
                     </div>

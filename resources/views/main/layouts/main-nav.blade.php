@@ -18,13 +18,7 @@
         </li>
         <li><a href="contact.html">البحث عن مُعلم</a></li>
         <li>
-            <a href="#">الأسئلة الشائعة </a>
-            <ul class="sub-menu text-left">
-                <li><a href="about.html">About</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="team-details.html">Team Details</a></li>
-                <li><a href="faq.html">Faq</a></li>
-            </ul>
+            <a href="{{url('pages/faq')}}">الأسئلة الشائعة </a>
         </li>
 
     </ul>

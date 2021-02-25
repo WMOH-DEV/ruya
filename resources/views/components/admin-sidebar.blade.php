@@ -238,6 +238,13 @@
                             </a>
                         </li>
 
+                        <!-- Faq -->
+                        <li class="nav-item">
+                            <a href="{{url('admincp/pages/faq')}}" class="nav-link">
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
+                                <p>الأسئلة الشائعة</p>
+                            </a>
+                        </li>
 
 
                     </ul>
