@@ -1,46 +1,70 @@
-@extends('main.layout')
+@extends('main.main-layout')
 
 @section('title')
-    تفعيل البريد الالكتروني
+    تفعيل البريد الإلكتروني
 @endsection
-
 
 @section('content')
-<div class="login-container h-screen flex item-center">
 
-    <div class=" lg:w-5/6 xl:w-4/6  flex flex-col items-center justify-center w-full">
-        <div class="register md:w-2/3  xl:px-0 h-2/3 md:mt-8  w-full pt-14 px-10">
-            @if(session('status') == "verification-link-sent")
-                <div class="alert text-sm text-red-500">
-                    تم إرسال رابط تحقق جديد إلى عنوان البريد الإلكتروني الذي قمت بالتسجيل به
-                </div>
-            @endif
-            <p class="text-center text-gray-400 md:text-2xl mt-16 text-lg">لقد تم ارسال رسالة تأكيد على بريدكم، يرجى تفعيل بريدكم الإلكتروني لمواصلة تصفح الموقع</p>
-            <!-- form register -->
-
-            <form method="post"  action="{{route('verification.send')}}" class="grid grid-cols-6 gap-x-4 gap-y-2 place-content-center ">
-               @csrf
-
-                <!-- Submit button -->
-                <button id="emailBtn--js" disabled class="col-span-6 bg-yellow-600 text-white mt-8 hover:bg-yellow-700 p-2 rounded-md  border-gray-300 border">إعادة إرسال البريد</button>
-                <div class="text-sm text-red col-span-6 " id="button-text"></div>
-            </form>
-
-
+    <!-- hero-area start -->
+    <section class="hero-area pos-rel">
+        <div class="slider-img d-none d-sm-block">
         </div>
-    </div>
+        <div class="hero-slider">
+            <div
+                class="single-slider slider-height d-flex align-items-center"
+                data-background="{{asset('main')}}/assets/img/slider/01.rtl.jpg"
+            >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-9">
+                            <div class="hero-content mt-80">
 
-</div>
+                                @if(session('status') == "verification-link-sent")
+                                    <div class="alert alert-danger" style="animation-delay: .2s">
+                                        <div class="alert--icon">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div class="alert--content">
+                                            تم إرسال رابط تحقق جديد إلى عنوان البريد الإلكتروني الذي قمت بالتسجيل به
+                                        </div>
+                                        <div class="alert--close">
+                                            <i class="far fa-times-circle"></i>
+                                        </div>
+                                    </div>
 
-@endsection
+                                @endif
 
-@section('script')
+                                <h6 class="text-center" style="margin-top: -50px;padding-bottom: 30px;">
+                                    يرجى تفعيل بريدك الإلكتروني، حتى تتمكن من مواصلة التصفح.
+                                </h6>
 
-    <script>
-        $(function() {
-            setTimeout(function(){ $('#emailBtn--js').attr("disabled", false); }, 10000);
-        });
-    </script>
+
+                                <!-- form register -->
+                                <form method="post" action="{{route('verification.send')}}"
+                                      class="login-form"
+                                >
+                                    @csrf
+
+                                    <div class="col-12">
+                                        <div class="lg-btn lg-btn-02">
+                                            <button class="c-btn w-100" type="submit">إعادة إرسال البريد <i
+                                                    class="far fa-long-arrow-alt-left"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero-area end -->
+
+
 
 
 @endsection

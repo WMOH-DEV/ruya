@@ -17,6 +17,31 @@
             >
                 <div class="container">
                     <div class="row">
+
+                        @if(session('status'))
+                            <div class="alert alert_success" style="
+                                animation-delay: .2s;
+                                position: absolute;
+                                top: 0;
+                                z-index: 999;
+                                width: 50%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                height: 100px;
+
+">
+                                <div class="alert--icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="alert--content">
+                                    {{ session('status') }}
+                                </div>
+                                <div class="alert--close">
+                                    <i class="far fa-times-circle"></i>
+                                </div>
+                            </div>
+
+                        @endif
                         <div class="col-xl-6 col-lg-6 col-md-9">
                             <div class="hero-content mt-80">
                                 <h3 style="

@@ -16,7 +16,7 @@
         <li>
             <a href="{{url('teachers')}}">قائمة المعلمين </a>
         </li>
-        <li><a href="contact.html">البحث عن مُعلم</a></li>
+        <li><a href="{{url('search')}}">البحث عن مُعلم</a></li>
         <li>
             <a href="{{url('pages/faq')}}">الأسئلة الشائعة </a>
         </li>

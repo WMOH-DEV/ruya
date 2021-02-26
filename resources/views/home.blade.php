@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="support-text">
                                                 <span>تواصل معنا</span>
-                                                <h6 class="number_ltr">+12 345 6987</h6>
+                                                <h6 class="number_ltr">{{$home->support_whatsapp}}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                                 <i class="fal fa-users"></i>
                             </div>
                             <div class="counter-text">
-                                <h1><span class="counter">3045</span>+</h1>
+                                <h1><span class="counter">{{$home->trusted_student}}</span>+</h1>
                                 <span>طلاب وثقوا بنا</span>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
                                 <i class="fal fa-books"></i>
                             </div>
                             <div class="counter-text">
-                                <h1><span class="counter">7852</span>+</h1>
+                                <h1><span class="counter">{{$home->courses_student}}</span>+</h1>
                                 <span>دورات متاحة</span>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                                 <i class="fal fa-graduation-cap"></i>
                             </div>
                             <div class="counter-text">
-                                <h1><span class="counter">9862</span>+</h1>
+                                <h1><span class="counter">{{$home->total_teachers}}</span>+</h1>
                                 <span>المُعلمين</span>
                             </div>
                         </div>
@@ -164,7 +164,7 @@
                                 <i class="fal fa-laptop-code"></i>
                             </div>
                             <div class="counter-text">
-                                <h1><span class="counter">8963</span>+</h1>
+                                <h1><span class="counter">{{$home->total_requests}}</span>+</h1>
                                 <span>طلبات الدراسة</span>
                             </div>
                         </div>
@@ -182,10 +182,10 @@
                 <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
                     <div class="section-title text-center mb-60">
 								<span
-                                ><i class="fal fa-ellipsis-h"></i> Popular Categories
+                                ><i class="fal fa-ellipsis-h"></i> آخر التصنيفات
 									<i class="fal fa-ellipsis-h"></i
                                     ></span>
-                        <h2>Course Categories</h2>
+                        <h2>تصنيفات الكورسات</h2>
                     </div>
                 </div>
             </div>
@@ -386,10 +386,10 @@
                 <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
                     <div class="section-title section-title-theme text-center mb-75">
 								<span
-                                ><i class="fal fa-ellipsis-h"></i> Popular Courses
+                                ><i class="fal fa-ellipsis-h"></i> كورسات مميزة
 									<i class="fal fa-ellipsis-h"></i
                                     ></span>
-                        <h2>Available Courses</h2>
+                        <h2>آخر الكورسات المُضافة</h2>
                     </div>
                 </div>
             </div>
@@ -693,7 +693,7 @@
                 <div class="col-xl-12">
                     <div class="course-btn text-center mt-35 mb-30">
                         <a class="c-btn" href="courses.html"
-                        >view all courses <i class="fal fa-long-arrow-left"></i
+                        >مشاهدة المزيد <i class="fal fa-long-arrow-left"></i
                             ></a>
                     </div>
                 </div>
@@ -876,10 +876,17 @@
                             <p>إذا كنت مؤسسة تعليمية ,وتبحث عن الانتشار والإعلان لدينا نرحب بكم دائما في الخدمات الإعلانية أو الشراكة.</p>
                         </div>
                         <div class="instructor-button mt-15">
+                            @auth
                             @if(Auth::user()->role_id != 1 )
                             <a class="c-btn btn-theme f-left mr-15" href="{{url('/update-info')}}"
                             >الإنضمام للمُعلمين </a>
                             @endif
+                            @endauth
+
+                            @guest
+                            <a class="c-btn btn-theme f-left mr-15" href="{{url('/update-info')}}"
+                            >الإنضمام للمُعلمين </a>
+                            @endguest
                             <a class="c-btn btn-white" href="{{url('/pages/contact')}}"
                             >إعلن لدينا</a
                             >
@@ -901,82 +908,41 @@
                 <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
                     <div class="section-title text-center section-title-white mb-60">
 								<span
-                                ><i class="fal fa-ellipsis-h"></i> Students Feedback
+                                ><i class="fal fa-ellipsis-h"></i>
+                                    ماذا قالوا عنا
 									<i class="fal fa-ellipsis-h"></i
                                     ></span>
-                        <h2>What Our Students Say</h2>
+                        <h2>آراء الطلاب والمعلمين</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="testimonial-active">
+                        @foreach($tests as $test)
+
                         <div class="testimonial-wrapper mb-30">
                             <div class="testimonial-text">
-										<span
-                                        >Sed ut perspiciatis unde omnis natus error sit voluptatem
-											accusa ntium dolore mque lauda enim ad minima veniam quis
-											nostrumexe rcitationem ullam corporise</span
-                                        >
+										<span>
+                                            {{$test->full_review}}
+                                        </span>
                                 <p>
-                                    Rnimad minima veniam quis nostreercit ationem ullam
-                                    corporis suscipit laboriosam nisiut
+                                    {{$test->short_review}}
                                 </p>
                                 <div class="clientsay-name">
                                     <div class="client-say-img">
-                                        <img src="{{asset('main')}}/assets/img/testimonial/01.png" alt="" />
+                                        <img src="{{asset('uploads')}}/{{$test->photo}}" alt=""  style="height: 50px; border-radius: 50%; margin-top: 20px"/>
                                     </div>
                                     <div class="client-say-content">
-                                        <h4>Sousa Fernandes</h4>
-                                        <span>CEO & Founder</span>
+                                        <h4> {{$test->owner}}
+                                        </h4>
+                                        <span class="owner_title">{{$test->owner_title}}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="testimonial-wrapper mb-30">
-                            <div class="testimonial-text">
-										<span
-                                        >Sed ut perspiciatis unde omnis natus error sit voluptatem
-											accusa ntium dolore mque lauda enim ad minima veniam quis
-											nostrumexe rcitationem ullam corporise</span
-                                        >
-                                <p>
-                                    Rnimad minima veniam quis nostreercit ationem ullam
-                                    corporis suscipit laboriosam nisiut
-                                </p>
-                                <div class="clientsay-name">
-                                    <div class="client-say-img">
-                                        <img src="{{asset('main')}}/assets/img/testimonial/01.png" alt="" />
-                                    </div>
-                                    <div class="client-say-content">
-                                        <h4>Sousa Fernandes</h4>
-                                        <span>CEO & Founder</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-wrapper mb-30">
-                            <div class="testimonial-text">
-										<span
-                                        >Sed ut perspiciatis unde omnis natus error sit voluptatem
-											accusa ntium dolore mque lauda enim ad minima veniam quis
-											nostrumexe rcitationem ullam corporise</span
-                                        >
-                                <p>
-                                    Rnimad minima veniam quis nostreercit ationem ullam
-                                    corporis suscipit laboriosam nisiut
-                                </p>
-                                <div class="clientsay-name">
-                                    <div class="client-say-img">
-                                        <img src="{{asset('main')}}/assets/img/testimonial/01.png" alt="" />
-                                    </div>
-                                    <div class="client-say-content">
-                                        <h4>Sousa Fernandes</h4>
-                                        <span>CEO & Founder</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">

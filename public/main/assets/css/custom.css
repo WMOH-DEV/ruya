@@ -933,3 +933,15 @@ p {
     margin-left: unset;
     margin-right: 10px;
 }
+
+.publisher-nav-color .privacy-policy{
+    display: none;
+}
+
+.testimonial-text span{
+    font-size: 20px;
+}
+
+.owner_title {
+    font-size: 15px !important;
+}

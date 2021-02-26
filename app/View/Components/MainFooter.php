@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Home;
 use App\Models\Stage;
 use Illuminate\View\Component;
 
@@ -25,6 +26,7 @@ class MainFooter extends Component
     public function render()
     {
         $stages = Stage::all()->take(8);
-        return view('components.main-footer', compact('stages'));
+        $social = Home::first();
+        return view('components.main-footer', compact('stages', 'social'));
     }
 }

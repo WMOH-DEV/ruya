@@ -14,6 +14,7 @@ use App\Http\Controllers\StageController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,7 +55,7 @@ Route::get('search', [TeacherController::class, 'results'])->name('search');
 Route::get('results', [HomeController::class, 'mainSearch'])->name('results');
 
 
-Route::middleware(['auth','verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     // Access to the Teacher update form
     Route::get('update-info', [TeacherController::class, 'getUpdateView']);
     Route::post('update-info', [TeacherController::class, 'updateInfo'])->name('updateInfo');
@@ -78,7 +79,7 @@ Route::middleware(['auth','verified'])->group(function () {
  * Admin Routes
  *******************/
 
-Route::group(['middleware' => ['isAdmin']], function () {
+Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
 
     // Admin Main
     Route::get('admincp', [AdminController::class, 'index']);
@@ -140,6 +141,11 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::put('admincp/pages/faq/update/{ques}', [FaqController::class, 'update']);
     Route::delete('admincp/pages/faq/delete/{ques}', [FaqController::class, 'destroy']);
 
+    Route::get('admincp/pages/testimonials', [TestimonialController::class, 'index']);
+    Route::post('admincp/pages/testimonials/store', [TestimonialController::class, 'store']);
+    Route::put('admincp/pages/testimonials/update/{test}', [TestimonialController::class, 'update']);
+    Route::delete('admincp/pages/testimonials/delete/{test}', [TestimonialController::class, 'destroy']);
+
 
 
     // Mods
@@ -156,6 +162,4 @@ Route::group(['middleware' => ['isAdmin']], function () {
     Route::get('admincp/messages/show/{msg}', [MessageController::class, 'show']);
     Route::post('admincp/messages/response/{message}', [MessageController::class, 'response']);
     Route::post('admincp/messages/destroy', [MessageController::class, 'destroy']);
-
-
 }); // End Admin routes

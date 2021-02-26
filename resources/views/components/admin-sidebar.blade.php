@@ -246,6 +246,15 @@
                             </a>
                         </li>
 
+                        <!-- Testimonial -->
+                        <li class="nav-item">
+                            <a href="{{url('admincp/pages/testimonials')}}" class="nav-link">
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
+                                <p>آراء الزوار</p>
+                            </a>
+                        </li>
+
+
 
                     </ul>
                 </li>

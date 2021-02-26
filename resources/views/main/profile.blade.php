@@ -128,6 +128,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-12">
+                    <div id="disqus_thread"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -142,11 +146,27 @@
 
 
 @section('script')
-    {!! NoCaptcha::renderJs('ar') !!}
+    <script id="dsq-count-scr" src="//ruya-2.disqus.com/count.js" async></script>
 
     <script>
-        if($("#errorMsg")){
-            $("this").delay(5000).slideUp(1000);
-        }
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://ruya-2.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
     </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <script>
+
+            setTimeout(function(){
+                console.log('started')
+                $('.disqus-footer').hide()
+            }, 5000);
+
+
+    </script>
+
 @endsection

@@ -1,65 +1,145 @@
-@extends('main.layout')
+@extends('main.main-layout')
 
 @section('title')
-    تغيير كلمة المرور
+   تغيير كلمة المرور
 @endsection
 
-
 @section('content')
-    <div class="login-container h-screen flex item-center">
 
-        <div class=" lg:w-5/6 xl:w-4/6  flex flex-col items-center justify-center w-full">
-            <div class="register md:w-2/3  xl:px-0 h-2/3 md:mt-8  w-full pt-5 px-10">
-                <p class="text-center text-gray-400 md:text-2xl mt-16 text-lg">{{ __('Reset Password') }}</p>
-                <!-- form reset -->
-                <form method="POST" action="{{ route('password.update') }}"
-                      class="grid grid-cols-6 gap-x-4 gap-y-2 place-content-center ">
-                    @csrf
-                    <input type="hidden" name="token" value="{{ request()->token }}">
+    <!-- hero-area start -->
+    <section class="hero-area pos-rel">
+        <div class="slider-img d-none d-sm-block">
+        </div>
+        <div class="hero-slider">
+            <div
+                class="single-slider slider-height d-flex align-items-center"
+                data-background="{{asset('main')}}/assets/img/slider/01.rtl.jpg"
+            >
+                <div class="container">
+                    <div class="row mb-100">
+                        <div class="col-xl-6">
+                            @if ($errors->any())
+                                <div class=" py-3" id="errorMsg">
+                                    <ul class="inline-block py-3 px-3 text-danger rounded-md">
+                                        @foreach ($errors->all() as $error)
+                                            <li><i class="far fa-exclamation-circle"></i> {{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row">
+                        @if(session('status'))
+                            <div class="alert alert_success" style="
+                                animation-delay: .2s;
+                                position: absolute;
+                                top: 0;
+                                z-index: 999;
+                                width: 50%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                height: 100px;
 
-                    <label for="email" class="col-span-6 mt-10">
-                        {{ __('E-Mail Address') }}
-                        <input id="email" type="email" placeholder="البريد الإلكتروني الخاص بك"
-                               class="focus:outline-none  appearance-none w-full p-2  border-b border-gray-300 "
-                               name="email" value="{{ $email ?? old('email') }}" required autocomplete="email"
-                               autofocus>
-                    </label>
+">
+                                <div class="alert--icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="alert--content">
+                                    {{ session('status') }}
+                                </div>
+                                <div class="alert--close">
+                                    <i class="far fa-times-circle"></i>
+                                </div>
+                            </div>
 
-                    @error('email')
-                    <span class="col-span-6 text-red-500 inline-block flex items-center" role="alert">
-                            <i class="icon-attention ml-2"></i>
-                              <strong>{{ $message }}</strong>
-                         </span>
-                    @enderror
+                        @endif
 
-
-                    <label for="password" class="col-span-6 mt-2">
-                        {{ __('Password') }}
-                        <input id="password" type="password"
-                               class="focus:outline-none mt-1 appearance-none w-full p-2  border-b border-gray-300 "
-                               required autocomplete="new-password" name="password">
-                    </label>
-
-                    @error('password')
-                    <span class="col-span-6 text-red-500 inline-block flex items-center" role="alert">
-                            <i class="icon-attention ml-2"></i>
-                              <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-
-                    <label for="password-confirmation" class="col-span-6 mt-2">
-                        {{ __('Confirm Password') }}
-                        <input id="password" type="password"
-                               class="focus:outline-none mt-1 appearance-none w-full p-2  border-b border-gray-300 "
-                               required autocomplete="new-password" name="password_confirmation">
-                    </label>
+                        <div class="col-xl-6 col-lg-6 col-md-9">
 
 
-                <!-- Submit button -->
-                    <button
-                        class="col-span-6 bg-yellow-600 text-white mt-8 hover:bg-yellow-700 p-2 rounded-md  border-gray-300 border" type="submit">
-                        {{ __('Reset Password') }}
-                    </button>
 
-                </form>
+                            <div class="hero-content mt-80">
+                                <h3 style="
+    margin-top: -50px;
+    padding-bottom: 30px;
+">استعادة كلمة المرور</h3>
+                                <!-- form register -->
+                                <form method="POST" action="{{ route('password.update') }}"
+                                      class="login-form"
+                                >
+                                    @csrf
+                                    <input type="hidden" name="token" value="{{ request()->token }}">
+
+                                    <div class="form-group input-text email-text position-relative">
+                                        <input type="email" class="form-control"
+                                               aria-describedby="emailHelp"
+                                               placeholder="البريد الإلكتروني"
+                                               value="{{ $email ?? old('email') }}"
+                                               name="email"
+                                               required
+                                        >
+                                        @error('email')
+                                        <div class="col-span-6 text-danger mt-1"
+                                             role="alert"
+                                             style="font-size: 12px"
+                                        >
+                                            <i class="fal fa-exclamation-triangle"></i>
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group input-text password  position-relative ">
+                                        <input type="password" class="form-control"
+
+                                               name="password"
+                                               placeholder="كلمة المرور"
+
+                                        >
+                                        @error('password')
+                                        <div class="col-span-6 text-danger mt-1"
+                                             role="alert"
+                                             style="font-size: 12px"
+                                        >
+                                            <i class="fal fa-exclamation-triangle"></i>
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                        @enderror
+
+                                    </div>
+
+                                    <div class="form-group input-text password  position-relative ">
+                                        <input type="password" class="form-control"
+
+                                               name="password_confirmation"
+                                               placeholder=" تأكيد كلمة المرور">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="lg-btn lg-btn-02">
+                                            <button class="c-btn" type="submit">إستعادة كلمة المرور<i class="far fa-long-arrow-alt-left"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero-area end -->
+
+
+
+
+@endsection
+@section('script')
+    <script>
+        if($("#errorMsg")){
+            $("#errorMsg").delay(2000).slideUp(1000);
+        }
+    </script>
 @endsection

@@ -1,50 +1,94 @@
-@extends('main.layout')
+@extends('main.main-layout')
 
 @section('title')
     طلب كلمة مرور
 @endsection
 
-
 @section('content')
-<div class="login-container h-screen flex item-center">
 
-    <div class=" lg:w-5/6 xl:w-4/6  flex flex-col items-center justify-center w-full">
-        <div class="register md:w-2/3  xl:px-0 h-2/3 md:mt-8  w-full pt-14 px-10">
-
-            @if (session('status'))
-                <div class="text-white bg-blue-400 shadow-sm py-2 px-5 rounded-md flex item-center" role="alert">
-                   <i class="icon-right-ok"></i>
-                    <span class="inline-block">{{ session('status') }}</span>
-                </div>
-            @endif
-
-            <p class="text-center text-gray-400 md:text-2xl mt-16 text-lg">يرجى إدخال بريدكم الإلكتروني المسجل لدينا</p>
-            <!-- form register -->
-            <form method="POST" action="{{ route('password.email') }}" class="grid grid-cols-6 gap-x-4 gap-y-2 place-content-center ">
-                @csrf
-                <label for="email" class="col-span-6 mt-10">
-                    <input type="email" placeholder="البريد الإلكتروني"
-                           class="focus:outline-none  appearance-none w-full p-2  border-b border-gray-300 "
-                           name="email" required autofocus value="{{ old('email') }}">
-                </label>
-
-
-                @error('email')
-                <span class="col-span-6 text-red-500 inline-block flex items-center" role="alert">
-                            <i class="icon-attention ml-2"></i>
-                              <strong>{{ $message }}</strong>
-                         </span>
-            @enderror
-
-                <!-- Submit button -->
-                <button class="col-span-6 bg-yellow-600 text-white mt-8 hover:bg-yellow-700 p-2 rounded-md  border-gray-300 border">إستعادة كلمة السر</button>
-
-            </form>
-
-
+    <!-- hero-area start -->
+    <section class="hero-area pos-rel">
+        <div class="slider-img d-none d-sm-block">
         </div>
-    </div>
+        <div class="hero-slider">
+            <div
+                class="single-slider slider-height d-flex align-items-center"
+                data-background="{{asset('main')}}/assets/img/slider/01.rtl.jpg"
+            >
+                <div class="container">
+                    <div class="row">
 
-</div>
+                        @if(session('status'))
+                            <div class="alert alert_success" style="
+                                animation-delay: .2s;
+                                position: absolute;
+                                top: 0;
+                                z-index: 999;
+                                width: 50%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                height: 100px;
+
+">
+                                <div class="alert--icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="alert--content">
+                                    {{ session('status') }}
+                                </div>
+                                <div class="alert--close">
+                                    <i class="far fa-times-circle"></i>
+                                </div>
+                            </div>
+
+                        @endif
+
+                        <div class="col-xl-6 col-lg-6 col-md-9">
+                            <div class="hero-content mt-80">
+                                <h5 style="
+    margin-top: -50px;
+    padding-bottom: 30px;
+">يرجى إدخال بريدكم الإلكتروني المسجل لدينا</h5>
+                                <!-- form register -->
+                                <form method="POST" action="{{ route('password.email') }}"
+                                      class="login-form"
+                                >
+                                    @csrf
+                                    <div class="form-group input-text email-text position-relative">
+                                        <input type="email" class="form-control"
+                                               aria-describedby="emailHelp"
+                                               placeholder="البريد الإلكتروني"
+                                               value="{{ old('email') }}"
+                                               autofocus
+                                               name="email">
+                                        @error('email')
+                                        <div class="col-span-6 text-danger mt-1"
+                                             role="alert"
+                                             style="font-size: 12px"
+                                        >
+                                            <i class="fal fa-exclamation-triangle"></i>
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="lg-btn lg-btn-02">
+                                            <button class="c-btn" type="submit">إستعادة كلمة السر <i
+                                                    class="far fa-long-arrow-alt-left"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero-area end -->
+
+
+
 
 @endsection

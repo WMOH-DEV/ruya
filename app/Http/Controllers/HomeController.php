@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Home;
 use App\Models\Stage;
 use App\Models\Teacher;
+use App\Models\Testimonial;
 use App\Models\User;
 use Flasher\Toastr\Prime\ToastrFactory;
 use Illuminate\Contracts\Foundation\Application;
@@ -26,7 +28,11 @@ class HomeController extends Controller
     public function getHome()
     {
         $stages = Stage::all();
-        return view('home', compact('stages'));
+        $tests = Testimonial::all();
+        $home = Home::first();
+       // dd($home);
+       // dd($tests);
+        return view('home', compact('stages', 'tests', 'home'));
     }
 
 
@@ -75,5 +81,10 @@ class HomeController extends Controller
 
     }
 
+    public function testIndex()
+    {
+        $tests = Testimonial::orderBy('id','desc')->take(5);
+        return view('home', compact('tests'));
+    }
 
 }// End HomeController

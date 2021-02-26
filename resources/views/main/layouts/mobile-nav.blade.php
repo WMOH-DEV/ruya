@@ -1,6 +1,6 @@
 <nav class="side-mobile-menu">
     <ul id="mobile-menu-active">
-        <li class="has-dropdown">
+        <li>
             <a href="{{url(asset('/'))}}">الرئيسية</a>
 
         </li>
@@ -12,7 +12,15 @@
                 <li><a href="courses-details.html">Course Details</a></li>
             </ul>
         </li>
-        <li><a href="contact.html">إتصل بنا</a></li>
+        <li>
+            <a href="{{url('teachers')}}">قائمة المعلمين </a>
+        </li>
+        <li>
+            <a href="{{url('search')}}">البحث عن مُعلم</a>
+        </li>
+        <li>
+            <a href="{{url('pages/faq')}}">الأسئلة الشائعة </a>
+        </li>
 
         @auth
             <li>

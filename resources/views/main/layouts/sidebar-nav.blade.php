@@ -1,6 +1,6 @@
 <div class="offset-sidebar">
     <div class="offset-widget offset-logo mb-30">
-        <a href="index.html">
+        <a href="/">
             <img src="{{asset('main')}}/assets/img/logo/footer-01-logo.png" alt="logo" />
         </a>
     </div>
@@ -12,9 +12,11 @@
             </p>
             <div class="d-flex sidebar-buttons">
             <a class="c-btn btn-round-02" href="{{url('pages/contact')}}">تواصل معنا</a>
+                @auth
                 @if(Auth::user()->role_id != 1 )
                 <a class="c-btn btn-round-02" href="{{url('update-info')}}">إنضم للمعلمين</a>
                     @endif
+                @endauth
             </div>
         </div>
     </div>

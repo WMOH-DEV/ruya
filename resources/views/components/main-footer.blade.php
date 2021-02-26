@@ -13,16 +13,16 @@
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-12">
                 <div class="footer-social-icon text-right pb-70">
-                    <a class="fot-fb active pb-70" href="#"
+                    <a class="fot-fb active pb-70" href="{{URL::to("$social->facebook")}}"
                     ><i class="fab fa-facebook-f"></i> Facebook</a
                     >
-                    <a class="fot-twitter pb-70" href="#"
+                    <a class="fot-twitter pb-70" href="{{$social->twitter}}"
                     ><i class="fab fa-twitter"></i> Twitter</a
                     >
-                    <a class="fot-google pb-70" href="#"
+                    <a class="fot-google pb-70" href="{{$social->youtube}}"
                     ><i class="fab fa-youtube"></i> Youtube</a
                     >
-                    <a class="fot-insta pb-70" href="#"
+                    <a class="fot-insta pb-70" href="{{$social->instagram}}"
                     ><i class="fab fa-instagram"></i> Instagram</a
                     >
                 </div>
@@ -48,10 +48,10 @@
                 <div class="footer-widget widget-center text-center mb-30">
                     <h4 class="footer-widget-title mb-25">موقعنا</h4>
                     <ul class="footer-list footer-02-list">
-                        <li><a href="/">الرئيسية</a></li>
                         <li><a href="{{url('pages/faq')}}">الأسئلة الشائعة</a></li>
-                        <li><a href="{{url('pages/privacy')}}">الخصوصية</a></li>
+                        <li><a href="{{url('pages/privacy')}}">سياسة الخصوصية</a></li>
                         <li><a href="{{url('pages/terms')}}">شروط الإستخدام</a></li>
+                        <li><a href="{{url('pages/contact')}}">من نحن</a></li>
                         <li><a href="{{url('pages/contact')}}">إتصل بنا</a></li>
                     </ul>
                 </div>
