@@ -950,3 +950,56 @@ p {
     margin-right: unset;
     margin-left: 3px;
 }
+
+/*.footer-font {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+
+.course-curriculumn-area .f-right{
+    float: left;
+}
+
+.widget-course-list li a{
+    font-family: unset;
+}
+
+.curriculumn-list li a{
+    font-family: unset;
+}
+
+/*.course-curriculumn-area .f-right{*/
+/*    float: right;*/
+/*}*/
+
+.curriculumn-list li a span{
+    font-family: inherit;
+}
+
+.pr-menu-03 button{
+    font-family: inherit;
+}
+
+
+
+
+.request-post-form {
+    padding: 0 15px 20px 15px;
+}
+@media (max-width: 767px) {
+    .request-post-form {
+        padding: 0 0 20px 0;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .request-post-form {
+        padding: 0 0 20px 0;
+    }
+}
+.request-post-form .input-text {
+    position: relative;
+    margin-bottom: 30px;
+}
+

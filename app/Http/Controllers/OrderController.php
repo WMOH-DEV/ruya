@@ -47,7 +47,7 @@ class OrderController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return RedirectResponse|Response
+     * @return Application|Factory|View|RedirectResponse|Response
      */
     public function store(Request $request, ToastrFactory $factory)
     {
@@ -62,7 +62,8 @@ class OrderController extends Controller
             'hours'=>['required','integer'],
             'contact_way'=>['regex:/^(email|phone|whatsapp)$/'],
             'start_date'=>['date'],
-            'notes'=>['max:200','regex:/^[a-zA-Z\sأبجدهـوزحطيكلمنسعغفصقرشتثخذضظؤاإءئةى]+$/']
+            'notes'=>['max:200','regex:/^[a-zA-Z\sأبجدهـوزحطيكلمنسعغفصقرشتثخذضظؤاإءئةى]+$/'],
+            'g-recaptcha-response' => 'required|captcha'
         ]);
 
         Order::create([
@@ -78,7 +79,7 @@ class OrderController extends Controller
 
         $factory->addSuccess('تم إرسال طلبكم إلى الادارة');
 
-        return redirect()->back();
+        return view('main.booking.thanks');
 
 
     }

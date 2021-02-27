@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Course;
 use Flasher\Toastr\Prime\ToastrFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -70,6 +71,14 @@ class CategoryController extends Controller
         $factory->addSuccess('تم حذف التصنيف');
 
         return redirect()->back();
+    }
+
+
+    public function show()
+    {
+        $cats = Category::all();
+        $courses = Course::orderBy('id','desc')->get();
+        return view('main.courses.index', compact('cats','courses'));
     }
 
 } // End Controller

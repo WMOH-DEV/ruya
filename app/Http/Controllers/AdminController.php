@@ -34,9 +34,9 @@ class AdminController extends Controller
 
 
         // Order Counts Will show at Admin Index
-        $openOrders = Order::where('admin_status','مفتوح')->count();
+        $openOrders = Order::where('admin_status','قيد الانتظار')->count();
         $refusedOrders = Order::where('admin_status','مرفوض')->count();
-        $closedOrders = Order::where('admin_status','تم استلام العمولة')->count();
+        $closedOrders = Order::where('admin_status','مكتمل')->count();
         $allOrders = Order::all()->count();
 
         //last registered Teachers and last Orders

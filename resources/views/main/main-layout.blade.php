@@ -71,7 +71,7 @@
     </div>
 
     <!-- offset-sidebar start -->
-   @include('main.layouts.sidebar-nav')
+    <x-sidebar-nav></x-sidebar-nav>
     <!-- offset-sidebar end -->
 
     <!-- side-mobile-menu start -->

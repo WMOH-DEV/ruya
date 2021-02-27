@@ -267,7 +267,7 @@ $('.brand-active').slick({
 
 	/* nice-select */
 	$('select').niceSelect();
- 
+
 
 	/* counter */
 	$('.counter').counterUp({
@@ -294,6 +294,7 @@ $('.brand-active').slick({
 			var $grid = $('#portfolio-grid').isotope({
 				itemSelector: '.grid-item',
 				percentPosition: true,
+                isOriginLeft: false,
 				masonry: {
 					// use outer width of grid-sizer for columnWidth
 					columnWidth: 1

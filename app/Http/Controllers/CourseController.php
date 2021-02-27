@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CourseRequest;
 use App\Models\Category;
 use App\Models\Course;
 use Flasher\Toastr\Prime\ToastrFactory;
@@ -17,16 +18,12 @@ class CourseController extends Controller
         return view('cp.courses.index', compact('courses', 'cats'));
     } // end index
 
-    public function update(Course $course, Request $request, ToastrFactory $factory)
+    public function update(Course $course, CourseRequest $request, ToastrFactory $factory)
     {
-        $data = $request->validate([
-            'name'          => ['string', 'max:200'],
-            'short_name'    => ['string', 'max:100'],
-            'image'         => ['max:512', 'image'],
-        ]);
-
-        if ($request->hasFile('intro-image')){
-            $data['intro-image'] = Storage::putFile('courses' , $request->file('intro-image'));
+        $data = $request->validated();
+        //dd($data);
+        if ($request->hasFile('intro_image')){
+            $data['intro_image'] = Storage::putFile('courses' , $request->file('intro_image'));
         }
         $data = array_filter($data);
 
@@ -38,25 +35,10 @@ class CourseController extends Controller
         return redirect()->back();
     }
 
-    public function store(Request $request, ToastrFactory $factory)
+    public function store(CourseRequest $request, ToastrFactory $factory)
     {
-        $data = $request->validate([
-            'title'                 => ['required', 'string', 'max:200'],
-            'price'                 => ['required', 'string'],
-            'duration'              => ['required', 'string'],
-            'instructor'            => ['required', 'string'],
-            'about_instructor'      => ['required', 'string'],
-            'how'                   => ['required', 'string'],
-            'lectures'              => ['nullable', 'numeric'],
-            'language'              => ['nullable', 'string'],
-            'intro_video'           => ['nullable', 'string'],
-            'intro_image'           => ['nullable', 'image'],
-            'intro_text'            => ['required', 'string'],
-            'content'               => ['required', 'string'],
-            'for_who'               => ['nullable', 'string'],
-            'requirements'          => ['nullable', 'string'],
-            'category_id'           => ['required', 'numeric'],
-        ]);
+
+        $data = $request->validated();
 
         if ($request->hasFile('intro_image')){
             $data['intro_image'] = Storage::putFile('courses' , $request->file('intro_image'));
@@ -72,15 +54,20 @@ class CourseController extends Controller
 
     }//end Store
 
-    public function destroy(Category $cat, Request $request, ToastrFactory $factory)
+    public function destroy(Course $course, ToastrFactory $factory)
     {
 
-        Storage::delete($cat->image);
+        Storage::delete($course->intro_image);
 
-        $cat->delete();
+        $course->delete();
 
-        $factory->addSuccess('تم حذف التصنيف');
+        $factory->addSuccess('تم حذف الكورس');
 
         return redirect()->back();
+    } // end Destroy
+
+    public function show(Course $course)
+    {
+        return view('main.courses.course', compact('course'));
     }
 }

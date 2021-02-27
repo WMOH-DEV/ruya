@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Course;
 use App\Models\Home;
 use App\Models\Stage;
 use App\Models\Teacher;
@@ -32,8 +33,8 @@ class HomeController extends Controller
         $tests = Testimonial::all();
         $home = Home::first();
         $cats = Category::orderBy('id','desc')->get()->take(8);
-
-        return view('home', compact('stages', 'tests', 'home','cats'));
+        $courses = Course::orderBy('id','desc')->get()->take(3);
+        return view('home', compact('stages', 'tests', 'home','cats','courses'));
     }
 
 
@@ -84,7 +85,7 @@ class HomeController extends Controller
 
     public function testIndex()
     {
-        $tests = Testimonial::orderBy('id','desc')->take(5);
+        $tests = Testimonial::orderBy('id','desc')->take(5)->get();
         return view('home', compact('tests'));
     }
 

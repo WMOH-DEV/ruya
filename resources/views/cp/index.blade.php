@@ -268,7 +268,24 @@
                                             <td>{{$order->user->fullName()}}</td>
                                             <td class="align-middle">{{$order->teacher->user->fullName()}}</td>
                                             <td>{{$order->contact_way}}</td>
-                                            <td class="align-middle text-center">@if($order->admin_status == 'مفتوح') <span class="badge badge-info">{{$order->admin_status}}</span> @elseif($order->admin_status == 'مرفوض') <span class="badge badge-dark">{{$order->admin_status}}</span> @elseif($order->admin_status == 'تم استلام العمولة') <span class="badge badge-primary">{{$order->admin_status}}</span> @endif</td>
+                                            <td class="align-middle text-center">
+                                                @if($order->admin_status == 'قيد الانتظار')
+                                                    <span class="badge badge-info">
+                                                        {{$order->admin_status}}
+                                                    </span>
+                                                @elseif($order->admin_status == 'مرفوض')
+                                                    <span class="badge badge-dark">
+                                                        {{$order->admin_status}}
+                                                    </span>
+                                                @elseif($order->admin_status == 'جاري')
+                                                    <span class="badge badge-primary">
+                                                        {{$order->admin_status}}
+                                                    </span>
+                                                @elseif($order->admin_status == 'مكتمل')
+                                                    <span class="badge badge-secondary">
+                                                        {{$order->admin_status}}
+                                                    </span>
+                                                @endif</td>
                                         </tr>
                                     @endforeach
                                 @endif

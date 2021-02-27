@@ -29,22 +29,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4 col-lg-5 col-md-5 col-12">
+            <div class="col-xl-6 col-lg-5 col-md-5 col-12">
                 <div class="footer-widget mb-30">
                     <h4 class="footer-widget-title mb-25">آخر الدورات</h4>
-                    <ul class="footer-list">
-                        <li><a href="#">Wed Development</a></li>
-                        <li><a href="#">Business Studies</a></li>
-                        <li><a href="#">Computer Engineering</a></li>
-                        <li><a href="#">English Learning</a></li>
-                        <li><a href="#">Graphics Design</a></li>
-                        <li><a href="">Software Development</a></li>
-                        <li><a href="">Advance WordPress</a></li>
-                        <li><a href="">Basic PSD To HTML</a></li>
+                    <ul class="footer-list footer-font">
+                        @foreach($last_courses as $last_course)
+                        <li class="footer-font"><a href="{{url('courses')}}/{{$last_course->id}}">{{$last_course->title}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-2 col-md-2 col-12">
+            <div class="col-xl-3 col-lg-2 col-md-2 col-12">
                 <div class="footer-widget widget-center text-center mb-30">
                     <h4 class="footer-widget-title mb-25">موقعنا</h4>
                     <ul class="footer-list footer-02-list">
@@ -56,7 +51,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-5 col-md-5 col-12">
+            <div class="col-xl-3 col-lg-5 col-md-5 col-12">
                 <div class="footer-widget mb-30">
                     <h4 class="footer-widget-title mb-25">المراحل التعليمية</h4>
                     <ul class="footer-list">

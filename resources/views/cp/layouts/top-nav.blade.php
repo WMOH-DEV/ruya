@@ -18,19 +18,6 @@
         </li>
     </ul>
 
-    <!-- SEARCH FORM -->
-{{--    <form class="form-inline navbar-nav mr-3 navbar"  style=" width: 40%;">--}}
-{{--        <div class="input-group input-group-md w-100">--}}
-{{--            <input class="form-control form-control-navbar" type="search" placeholder="البحث عن طلب .."--}}
-{{--                   aria-label="Search">--}}
-{{--            <div class="input-group-append">--}}
-{{--                <button class="btn btn-navbar" type="submit">--}}
-{{--                    <i class="fas fa-search"></i>--}}
-{{--                </button>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </form>--}}
-
 
     <div class="signout nav-item d-none d-sm-inline-block " style="width: 7% ; margin-right:auto; margin-left:0">
         <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"

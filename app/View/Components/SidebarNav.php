@@ -2,12 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\Course;
 use App\Models\Home;
-use App\Models\Stage;
 use Illuminate\View\Component;
 
-class MainFooter extends Component
+class SidebarNav extends Component
 {
     /**
      * Create a new component instance.
@@ -26,11 +24,7 @@ class MainFooter extends Component
      */
     public function render()
     {
-        $stages = Stage::all()->take(8);
-        $social = Home::first();
-        $last_courses = Course::orderBy('id','desc')->take(3)->get();
-
-        //dd($last_courses);
-        return view('components.main-footer', compact('stages', 'social','last_courses'));
+        $whatsapp = Home::first()->support_whatsapp;
+        return view('components.sidebar-nav',compact('whatsapp'));
     }
 }

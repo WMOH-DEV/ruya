@@ -67,7 +67,7 @@
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="category_id">التصنيف</label>
-                                                <select name="category_id" id="category_id" class="add_select form-group">
+                                                <select name="category_id" class="add_select form-group">
                                                     @foreach($cats as $cat)
                                                         <option value="{{$cat->id}}">{{$cat->name}}</option>
                                                     @endforeach
@@ -245,7 +245,7 @@
                                     <!-- Modal -->
                                     <div class="modal fade" id="editbtn{{$course->id}}" tabindex="-1" role="dialog"
                                          aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-dialog modal-xl text-left" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">تعديل التصنيف</h5>
@@ -254,44 +254,146 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="{{url("admincp/categories/update/$course->id")}}"
+
+                                                <form action="{{url("admincp/courses/update/$course->id")}}"
                                                       enctype="multipart/form-data"
                                                       method="post">
                                                     @csrf
                                                     @method('put')
-                                                    <div class="modal-body text-left">
-                                                        <input type="text" hidden value="{{$course->id}}" name="id">
-                                                            <div class="form-group col-md-12">
-                                                                <label for="name">عنوان الكورس</label>
-                                                                <input type="text" class="form-control"
-                                                                       name="name"
-                                                                       autocomplete="off"
-                                                                       value="{{$course->title}}"
-                                                                >
+                                                    <div class="modal-body">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="form-group col-md-3">
+                                                                    <label for="title">عنوان الكورس</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="title"
+                                                                           value="{{$course->title}}">
+                                                                </div>
+                                                                <div class="form-group col-md-3">
+                                                                    <label for="category_id">التصنيف</label>
+                                                                    <select name="category_id" class="add_select form-group">
+                                                                        @foreach($cats as $cat)
+                                                                            <option value="{{$cat->id}}"
+                                                                            @if($cat->id == $course->category_id)
+                                                                                selected
+                                                                                @endif
+                                                                            >{{$cat->name}}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-2">
+                                                                    <label for="duration">مدة الكورس</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="duration"
+                                                                           value="{{ $course->duration }}">
+                                                                </div>
+                                                                <div class="form-group col-md-2">
+                                                                    <label for="price">ثمن الكورس</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="price"
+                                                                           value="{{ $course->price }}">
+                                                                </div>
+                                                                <div class="form-group col-md-2">
+                                                                    <label for="lectures">عدد المحاضرات </label>
+                                                                    <input type="number" class="form-control"
+                                                                           name="lectures"
+                                                                           value="{{ $course->lectures }}">
+                                                                </div>
+
                                                             </div>
-                                                            <div class="form-group col-md-12">
-                                                                <label for="short_name">التصنيف</label>
-                                                                <input type="text" class="form-control"
-                                                                       name="short_name"
-                                                                       autocomplete="off"
-                                                                       value="{{$course->category->name}}"
-                                                                >
+                                                            <div class="row">
+                                                                <div class="form-group col-md-3">
+                                                                    <label for="instructor">إسم المحاضر</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="instructor"
+                                                                           value="{{ $course->instructor }}">
+                                                                </div>
+                                                                <div class="form-group col-md-3">
+                                                                    <label for="how">وسيلة الشرح</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="how"
+                                                                           value="{{ $course->how }}"
+                                                                    >
+                                                                    <span class="text-success text-sm">مثل زوم او جوجل ميتنج</span>
+                                                                </div>
+                                                                <div class="form-group col-md-3">
+                                                                    <label for="language">اللغة</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="language"
+                                                                           value="{{ $course->language }}">
+                                                                </div>
+                                                                <div class="form-group col-md-3">
+                                                                    <label for="intro_image">صورة الكورس</label>
+                                                                    <input type="file" class="form-control"
+                                                                           name="intro_image"
+                                                                    >
+                                                                    <span class="text-success text-sm">ليس إلزامي</span>
+                                                                </div>
                                                             </div>
-                                                        <div class="form-group col-12">
-                                                            <label for="intro_image">الصورة</label>
-                                                            <img src="{{asset('uploads')}}/courses/{{$course->intro_image}}" class="mb-2" style="height: 50px" alt="image">
-                                                            <input type="file"
-                                                                   class="form-control" name="intro_image" >
+
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="about_instructor">نبذه  عن المحاضر</label>
+                                                                    <textarea type="text" class="form-control" name="about_instructor" cols="5">{{ $course->about_instructor }}</textarea>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="intro_text">مقدمة عن الكورس</label>
+                                                                    <textarea type="text" class="form-control"
+                                                                              name="intro_text"
+                                                                              cols="5">{{ $course->intro_text }}</textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="content">وصف طويل للكورس</label>
+                                                                    <textarea type="text" class="form-control"
+                                                                              name="content"
+                                                                              cols="5">{{ $course->content }}</textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="intro_video">فيديو تعريفي</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="intro_video"
+                                                                           value="{{ $course->intro_video }}">
+                                                                    <span class="text-success text-sm">رابط من يوتيوب - غير الزامي</span>
+
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="for_who">المستفيد</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="for_who"
+                                                                           value="{{ $course->for_who }}">
+                                                                    <span class="text-success text-sm">مثال : مبتدئين ، مستوى متوسط</span>
+
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="requirements">متطلبات</label>
+                                                                    <input type="text" class="form-control"
+                                                                           name="requirements"
+                                                                           value="{{ $course->requirements}}">
+                                                                    <span class="text-success text-sm">مثال : معرفة مسبقة بمحتوى معين</span>
+
+                                                                </div>
+                                                            </div>
+
+
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-primary">تعديل التصنيف
+                                                        <button type="submit" class="btn btn-primary">إضافة
                                                         </button>
+
                                                         <button type="button" class="btn btn-secondary"
                                                                 data-dismiss="modal">إلغاء
                                                         </button>
                                                     </div>
                                                 </form>
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -308,19 +410,19 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle"></i> إنتبه.. حذف تصنيف</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle"></i> إنتبه.. حذف كورس</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="{{url("admincp/categories/delete/$course->id")}}" method="post">
+                                                <form action="{{url("admincp/courses/delete/$course->id")}}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <div class="modal-body">
                                                         <input type="text" hidden value="{{$course->id}}" name="cat_id">
 
-                                                            <p>هل أنت متأكد من حذف هذه التصنيف نهائيا ؟</p>
+                                                            <p>هل أنت متأكد من حذف هذه الكورس نهائيا ؟</p>
 
                                                     </div>
                                                     <div class="modal-footer">

@@ -1,168 +1,216 @@
-@extends('main.layout')
+@extends('main.main-layout')
 
 @section('title')
-    طلب مادة دراسية
+    طلب مادة رئيسية
 @endsection
 
 
+@section('css')
+
+    <link rel="stylesheet" href="{{asset('main')}}/css/dropify.css">
+    <link rel="stylesheet" href="{{asset('main')}}/css/select2.min.css">
+
+@endsection
 
 @section('content')
 
-    <div class="container mx-auto bg-gray-50">
-        <div class="profile-container py-5 lg:py-10 px-5 ">
-            <div class="teacher pt-20 min-h-screen xl:w-3/4  mx-auto">
 
-                <div
-                    class="teacher-head py-5  flex flex-col md:flex-row items-center justify-around md:justify-between space-y-1">
-                    <!-- Teacher Img -->
-                    <h2 class="text-center w-full text-2xl">تقديم طلب جديد</h2>
 
+    <!-- contact-area-start -->
+    <div class="contact-area grey-bg pb-100 teacher-area register-area">
+        <div class="container">
+            @if ($errors->any())
+                <div class=" py-3" id="errorMsg">
+                    <ul class="inline-block py-3 px-3 text-danger rounded-md">
+                        @foreach ($errors->all() as $error)
+                            <li><i class="far fa-exclamation-circle"></i> {{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                <div class="teacher-body py-5 border rounded-2xl bg-white px-2 ">
+            @endif
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-60">
+                        <span><i class="fal fa-ellipsis-h"></i>اهلا بك في منصة رؤية اكادمي <i class="fal fa-ellipsis-h"></i></span>
+                        <h1 class=" mt-2" style="font-size: 1.5rem">يرجى تعبأة بيانات الطلب لإرسالها للإدارة</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="contact-form-area">
+                        <form action="{{ route('create-order') }}"
+                              class="subscribe request-post-form contact-form"
+                              method="post"
+                              enctype="multipart/form-data"
+                        >
+                            @csrf
+                            <div class="row">
+                                <label for="teacher__id">
+                                    <input type="hidden" value="{{$teacher->id}}" name="teacher__id">
+                                </label>
 
-                    @if($errors->any())
-                        <div class="p-5 bg-red-200 rounded-md text-gray-700 mx-5">
-                            <ul class="list-disc pr-10">
-                        {!! implode('', $errors->all('<li>:message</li>')) !!}
-                            </ul>
-                        </div>
-                    @endif
-
-                    <form class="mx-auto px-5 md:mt-5 " method="post" action="{{route('create-order')}}">
-                        @csrf
-
-                        <label for="teacher__id">
-                            <input type="hidden" value="{{$teacher->id}}" name="teacher__id">
-                        </label>
-
-                        <label for="student__id">
-                            <input type="hidden" value="{{Auth::user()->id}}" name="student__id">
-                        </label>
-
-                        <div class="flex flex-wrap">
-                        <label for="stage__id" class="w-full lg:w-1/3 pl-2">
-                            المرحلة التعليمية
-                            <select name="stage__id" class="select2-right appearance-none border w-full rounded border-gray-200 py-2 px-3">
-
-                                @foreach($teacher->stages as $stage)
-                                    <option value="{{$stage->id}}">{{$stage->stage_name}}</option>
-                                @endforeach
-
-                            </select>
-                        </label>
-
-                            <label for="subject" class="w-full lg:w-1/3 pr-0 pl-0 lg:px-2 mt-5 lg:mt-0">
-                                المادة
-                                <input type="text" disabled class="py-2  w-full px-3 border border-gray-300 rounded" value="{{$teacher->subject->subject_name}}" name="subject">
-                                <input type="text" hidden class="py-2  w-full px-3 border border-gray-300 rounded" value="{{$teacher->subject->subject_name}}" name="subject">
-                            </label>
-
-
-                            <label for="hours" class="w-full lg:w-1/3 pr-0 lg:pr-2 mt-5 lg:mt-0">
-                                عدد الساعات المطلوب حجزها
-                                <input type="number" class="py-2 w-full px-3 border border-gray-300 rounded" name="hours" placeholder="0">
-                            </label>
-
-                            <label for="start_date" class="w-full lg:w-1/2 mt-5 xl:mt-8 pl-2">
-                                تاريخ البدء المطلوب
-                                <input type="date" class="py-2  w-full px-3 border border-gray-300 rounded" name="start_date">
-                            </label>
+                                <label for="student__id">
+                                    <input type="hidden" value="{{Auth::user()->id}}" name="student__id">
+                                </label>
+                                <!-- experience -->
+                                <div class="col-xl-4 stage__id mb-4">
+                                    <div class="input-text">
+                                        <label for="subject">المرحلة المطلوبة</label>
+                                        <select name="stage__id" id="stage__id"
+                                                class="form-control  @if($errors->has('stage__id')) is-invalid  @endif "
+                                                required>
+                                            <option data-display="المرحلة التعليمية">المرحلة التعليمية</option>
+                                            @foreach($teacher->stages as $stage)
+                                                <option value="{{$stage->id}}">{{$stage->stage_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
 
 
-                            <label for="contact_way" class="w-full lg:w-1/2  mt-5 xl:mt-8 pr-2">
-                                وسيلة التواصل المفضلة
-                                <select name="contact_way" class="select2-right appearance-none border w-full rounded border-gray-200 py-2 px-3">
-
-                                        <option value="email">البريد الإلكتروني</option>
-                                        <option value="whatsapp">الواتسآب</option>
-                                        <option value="phone">الهاتف</option>
-
-                                </select>
-                            </label>
+                                <!-- Qualification -->
+                                <div class="col-xl-4 subject  mb-4">
+                                    <div class="input-text">
+                                        <label for="subject">مادة الأستاذ الرئيسية</label>
+                                        <input type="text" disabled class="form-control" value="{{$teacher->subject->subject_name}}" name="subject">
+                                        <input type="text" hidden class="form-control" value="{{$teacher->subject->subject_name}}" name="subject">
+                                    </div>
+                                </div>
 
 
-                            <label for="notes" class="w-full mt-5 xl:mt-8 ">
-                                ملاحظات أو اختيار مادة أخرى من المواد الثانوية للمعُلم
-                                <textarea maxlength="200" class="py-2  w-full px-3 border border-gray-300 rounded" name="notes"></textarea>
-                                <span class="text-xs text-red-300">* مسموح بحروف فقط</span>
-                            </label>
+                                <!-- PRice-->
+                                <div class="col-xl-4 hours">
+                                    <div class="input-text email-text " style="margin-bottom: 10px">
+                                        <label for="hours">
+                                            عدد الساعات المطلوب حجزها
+                                        </label>
+                                        <input class="form-control pl-4"
+                                               type="number"
+                                               placeholder="0"
+                                               value="{{old('hours')}}"
+                                               required
+                                               name="hours">
+                                    </div>
+                                </div>
 
-                        <button type="submit" class="w-full py-2 mt-5 px-5 sbg-color text-white hover:bg-yellow-600 row-full rounded">إرسال الطلب</button>
+                                <!-- date-->
+                                <div class="col-xl-6 date mb-20">
+                                    <div class="input-text email-text " style="margin-bottom: 10px">
+                                        <label for="date">
+                                            تاريخ البدء المطلوب
+                                        </label>
+                                        <input class="form-control pl-4"
+                                               type="date"
+                                               value="{{old('start_date')}}"
+                                               required
+                                               name="start_date">
+                                        <small class="form-text text-danger pl-4">التاريخ الذي تود بدء الدراسة به</small>
+                                    </div>
+                                </div>
 
-                        </div>
+                                <!-- way-->
+                                <div class="col-xl-6 contact_way">
+                                    <div class="input-text email-text " style="margin-bottom: 10px">
+                                        <label for="contact_way">
+                                            وسيلة التواصل المفضلة
+                                        </label>
+                                        <select name="contact_way" id="contact_way"
+                                                class="form-control  @if($errors->has('contact_way')) is-invalid  @endif "
+                                                required>
+                                            <option data-display="وسيلة الاتصال بكم">وسيلة الاتصال بكم</option>
+                                            <option value="email">البريد الإلكتروني</option>
+                                            <option value="whatsapp">الواتسآب</option>
+                                            <option value="phone">الهاتف</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                    </form>
+                                <div class="col-xl-12 notes">
+                                    <div class="input-text email-text " style="margin-bottom: 10px">
+                                        <label for="notes">
+                                            ملاحظات أو اختيار مادة أخرى من المواد الثانوية للمعُلم
+                                        </label>
+                                        <textarea name="notes" id="notes" cols="30" maxlength="200">{{old('notes')}}</textarea>
+                                        <small class="form-text text-danger pl-4">تستطيع كتابة أي اضافة أو ملحوظة، مثال: الحجز بالشهر بدلاً من الساعة</small>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-3 d-flex justify-content-center">
+                                    <div class="mx-auto">
+                                        {!! NoCaptcha::display() !!}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="lg-btn lg-btn-03 text-center">
+                                        <button class="c-btn" type="submit">تقديم الطلب<i class="far fa-long-arrow-alt-left"></i></button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
+    <!-- contact-area-end -->
+
+
+
+
 
 
 @endsection
 
-{{--@section('content')--}}
-{{--    <div class="teacher-container px-5  md:px-10  md:px-14 pt-16 lg:pt-32 min-h-screen">--}}
 
-{{--    @if($errors->any())--}}
-{{--        {!! implode('', $errors->all('<div>:message</div>')) !!}--}}
-{{--    @endif--}}
-{{--    <!-- content -->--}}
-{{--        <form class="mx-auto px-5 md:mt-5 " method="post" action="{{url('store')}}">--}}
-{{--            @csrf--}}
-
-{{--            <label for="teacher__id">--}}
-{{--                <input type="hidden" value="{{$teacherID}}" name="teacher__id">--}}
-{{--            </label>--}}
-
-{{--            <label for="student__id">--}}
-{{--                <input type="hidden" value="{{Auth::user()->id}}" name="student__id">--}}
-{{--            </label>--}}
-
-{{--            <label for="teacher__id">--}}
-{{--                <input type="hidden" value="{{$teacherID}}" name="teacher__id">--}}
-{{--            </label>--}}
-
-{{--        </form>--}}
-
-
-{{--        <footer class="mt-10 p-5">--}}
-{{--            <p>جميع الحقوق محفوظة</p>--}}
-{{--        </footer>--}}
-{{--    </div>--}}
-
-{{--@endsection--}}
 
 
 
 @section('script')
-
-
+    <script src="{{asset('main')}}/js/dropify.js"></script>
+    <script src="{{asset('main')}}/js/select2.min.js"></script>
+    {!! NoCaptcha::renderJs('ar') !!}
     <script>
 
-        $(function () {
-            $(document).scroll(function () {
-                let $nav = $(".navbar-top");
-                $nav.removeClass('lg:shadow-none lg:bg-transparent', $(this).scrollTop() > 0);
-                $nav.toggleClass('bg-white shadow-sm', $(this).scrollTop() > 0);
-            });
 
+        $(document).ready(function () {
+
+            if($("#errorMsg")){
+                $("#errorMsg").delay(5000).slideUp(1000);
+            }
+
+            $('.multi-select').niceSelect('destroy');
+            // select 2
+            $(document).ready(function () {
+                $('.multi-select').select2({
+                    placeholder: "متاح إختيار متعدد",
+                    allowClear: false,
+                    width: '100%',
+                    dir: "rtl",
+                    border: 'none',
+                });
+            });
 
             // Ajax for subjects
             let stages = $('#stages');
-            stages.on('change', function () {
+            stages.on('change', function() {
                 let stageId = $(this).val();
                 if (stageId.length >= 1) {
                     $.ajax({
                         url: "{{ URL::to('search-stage') }}/" + stageId,
                         type: "GET",
                         dataType: "json",
-                        success: function (data) {
+                        success: function(data) {
                             console.log(data);
                             $('#subject_id').empty();
-                            $.each(data, function (key, value) {
+                            $.each(data, function(key, value) {
                                 $('#subject_id').append('<option value="' +
                                     key + '">' + value + '</option>');
+                                $('#subject_id').niceSelect('update')
                             });
                         },
                     });
@@ -173,5 +221,4 @@
         });
 
     </script>
-
 @endsection

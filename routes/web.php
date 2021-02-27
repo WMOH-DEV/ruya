@@ -56,6 +56,10 @@ Route::get('teachers', [TeacherController::class, 'getList'])->name('teachers.li
 Route::get('search', [TeacherController::class, 'results'])->name('search');
 Route::get('results', [HomeController::class, 'mainSearch'])->name('results');
 
+// get course
+Route::get('courses/{course}', [CourseController::class, 'show']);
+Route::get('courses', [CategoryController::class, 'show']);
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // Access to the Teacher update form
@@ -70,6 +74,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // create order
     Route::post('booking/teacher/create', [OrderController::class, 'store'])->name('create-order');
+    //Route::get('booking/teacher/done', [OrderController::class, 'store'])->name('thanks-message');
 });
 
 
@@ -160,8 +165,8 @@ Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
 
     Route::get('admincp/courses', [CourseController::class, 'index']);
     Route::post('admincp/courses/add', [CourseController::class, 'store']);
-    Route::put('admincp/courses/update/{cat}', [CourseController::class, 'update']);
-    Route::delete('admincp/courses/delete/{cat}', [CourseController::class, 'destroy']);
+    Route::put('admincp/courses/update/{course}', [CourseController::class, 'update']);
+    Route::delete('admincp/courses/delete/{course}', [CourseController::class, 'destroy']);
 
     // Mods
     Route::get('admincp/moderators', [ModController::class, 'index']);

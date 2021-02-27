@@ -195,7 +195,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <div class="course-cat-wrapper mb-30">
                         <div class="course-cat-img">
-                            <a href="courses-details.html"
+                            <a href="{{url('courses')}}"
                             ><img src="{{asset('uploads')}}/{{$cat->image}}"
                                   style="height: 236px"
                                   alt=""
@@ -203,7 +203,7 @@
                         </div>
                         <div class="course-cat-text">
                             <h4 style="font-size: 18px;">
-                                <a href="courses-details.html">{{$cat->name}}</a>
+                                <a href="{{url('courses')}}">{{$cat->name}}</a>
                             </h4>
                             <span style="font-size: 14px;">{{$cat->short_name}}</span>
                             <div class="course-cat-meta">
@@ -236,27 +236,32 @@
                                 ><i class="fal fa-ellipsis-h"></i> كورسات مميزة
 									<i class="fal fa-ellipsis-h"></i
                                     ></span>
-                        <h2>آخر الكورسات المُضافة</h2>
+                        <h2 class="text-white">آخر الكورسات المُضافة</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
+                @foreach($courses as $course)
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="course-wrapper white-bg mb-30">
                         <div class="course-inner">
                             <div class="course-img pos-rel mb-25">
-                                <a href="courses-details.html"
-                                ><img src="{{asset('main')}}/assets/img/course/c-01.jpg" alt=""
+                                <a href="{{url('courses')}}/{{$course->id}}"
+                                ><img src="{{asset('uploads')}}/{{$course->intro_image}}"
+                                      style="height: 15.6rem"
+                                      alt=""
                                     /></a>
                                 <div
                                     class="course__instructor pos-abl d-flex align-items-center"
                                 >
                                     <div class="course__instructor--thumb">
-                                        <img src="{{asset('main')}}/assets/img/course/instructor1.png" alt="" />
-                                        <h5>Warner</h5>
+                                        <img src="{{asset('uploads/default.png')}}"
+                                             style="height: 50px"
+                                             alt="" />
+                                        <h5 style="font-size: 0.9rem">{{$course->instructor}}</h5>
                                     </div>
                                     <div class="course__instructor--price-tag">
-                                        <span>$59.95</span>
+                                        <span>{{$course->price}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -264,127 +269,29 @@
                                 <div
                                     class="course-cat-meta d-flex align-items-center mb-15"
                                 >
-                                    <span><a href="courses-details.html">english</a></span>
+                                    <span><a href="{{url('courses')}}">{{$course->category->name}}</a></span>
                                     <div class="review-icon">
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
                                         <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
                                     </div>
                                 </div>
                                 <h4 class="semi-title pb-30 mb-20">
-                                    <a href="courses-details.html"
-                                    >Best Courses For Learning English Courses</a
+                                    <a href="{{url('courses')}}"
+                                    >{{$course->title}}</a
                                     >
                                 </h4>
                                 <div class="course-meta">
 											<span class="number_ltr"
                                             ><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span
                                             >
-                                    <span class="number_ltr"
-                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
+                                    <span class="text-sm"
+                                    ><i class="fal fa-clock"></i> <a href="javascript:void(0);" style="font-size: 0.7rem">{{$course->duration}} </a></span
                                     >
-                                    <span class="number_ltr"
-                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-text course-text-02 theme-bg">
-                            <div
-                                class="course-cat-meta course-cat-meta-02 d-flex align-items-center mb-15"
-                            >
-                                <span><a href="courses-details.html">business</a></span>
-                                <div class="review-icon">
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
-                                </div>
-                            </div>
-                            <h4 class="semi-title mb-30">
-                                <a href="courses-details.html"
-                                >Best Courses For Learning English Courses</a
-                                >
-                            </h4>
-                            <div
-                                class="course__instructor d-flex align-items-center mb-25"
-                            >
-                                <div class="course__instructor--thumb">
-                                    <img src="{{asset('main')}}/assets/img/course/instructor1.png" alt="" />
-                                    <h5>Warner</h5>
-                                </div>
-                                <div class="course__instructor--price-tag">
-                                    <span>$59.95</span>
-                                </div>
-                            </div>
-                            <p>
-                                Sed ut perspiciatis unde omnis iste natus error sit
-                                voluptatem accusantium dolorque laudantium totam rem aperiam
-                            </p>
-                            <a class="c-btn mb-50" href="courses-details.html"
-                            >get enrolled <i class="far fa-arrow-right"></i
-                                ></a>
-                            <div class="course-meta">
-                                <span><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span>
-                                <span
-                                ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
-                                >
-                                <span
-                                ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="course-wrapper white-bg mb-30">
-                        <div class="course-inner">
-                            <div class="course-img pos-rel mb-25">
-                                <a href="courses-details.html"
-                                ><img src="{{asset('main')}}/assets/img/course/c-01.jpg" alt=""
-                                    /></a>
-                                <div
-                                    class="course__instructor pos-abl d-flex align-items-center"
-                                >
-                                    <div class="course__instructor--thumb">
-                                        <img src="{{asset('main')}}/assets/img/course/instructor1.png" alt="" />
-                                        <h5>Warner</h5>
-                                    </div>
-                                    <div class="course__instructor--price-tag">
-                                        <span>$59.95</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="course-text">
-                                <div
-                                    class="course-cat-meta d-flex align-items-center mb-15"
-                                >
-                                    <span><a href="courses-details.html">english</a></span>
-                                    <div class="review-icon">
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
-                                    </div>
-                                </div>
-                                <h4 class="semi-title pb-30 mb-20">
-                                    <a href="courses-details.html"
-                                    >Best Courses For Learning English Courses</a
-                                    >
-                                </h4>
-                                <div class="course-meta">
-											<span
-                                            ><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span
-                                            >
-                                    <span
-                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
-                                    >
-                                    <span
-                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
+                                    <span class="text-sm"
+                                    ><i class="fal fa-tv"></i> <a href="javascript:void(0);" style="font-size: 0.7rem"> {{$course->lectures ?? "50"}} محاضرة</a></span
                                     >
                                 </div>
                             </div>
@@ -393,42 +300,42 @@
                             <div
                                 class="course-cat-meta course-cat-meta-02 d-flex align-items-center mb-15"
                             >
-                                <span><a href="courses-details.html">business</a></span>
+                                <span><a href="{{url('courses')}}">{{$course->category->name}}</a></span>
                                 <div class="review-icon">
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
                                     <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
                                 </div>
                             </div>
                             <h4 class="semi-title mb-30">
-                                <a href="courses-details.html"
-                                >Best Courses For Learning English Courses</a
+                                <a href="{{url('courses')}}"
+                                >{{$course->title}}</a
                                 >
                             </h4>
                             <div
                                 class="course__instructor d-flex align-items-center mb-25"
                             >
                                 <div class="course__instructor--thumb">
-                                    <img src="{{asset('main')}}/assets/img/course/instructor1.png" alt="" />
-                                    <h5>Warner</h5>
+                                    <img src="{{asset('uploads/default.png')}}" style="height: 50px" alt="" />
+                                    <h5 style="font-size: 0.9rem">{{$course->instructor}}</h5>
                                 </div>
                                 <div class="course__instructor--price-tag">
-                                    <span>$59.95</span>
+                                    <span>{{$course->price}}</span>
                                 </div>
                             </div>
                             <p>
-                                Sed ut perspiciatis unde omnis iste natus error sit
-                                voluptatem accusantium dolorque laudantium totam rem aperiam
+                                <span>{{substr($course->intro_text, 0, 110)}} ...</span>
                             </p>
-                            <a class="c-btn mb-50" href="courses-details.html"
-                            >get enrolled <i class="far fa-arrow-right"></i
+                            <a class="c-btn mb-50" href="{{url('courses')}}/{{$course->id}}"
+                            >اشترك الآن <i class="far fa-arrow-left"></i
                                 ></a>
                             <div class="course-meta">
                                 <span><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span>
                                 <span
-                                ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
+                                ><i class="fal fa-clock"></i> <a href="javascript:void(0);" style="font-size: 0.7rem">{{$course->duration}}</a></span
+
                                 >
                                 <span
                                 ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
@@ -437,110 +344,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="course-wrapper white-bg mb-30">
-                        <div class="course-inner">
-                            <div class="course-img pos-rel mb-25">
-                                <a href="courses-details.html"
-                                ><img src="{{asset('main')}}/assets/img/course/c-02.jpg" alt=""
-                                    /></a>
-                                <div
-                                    class="course__instructor pos-abl d-flex align-items-center"
-                                >
-                                    <div class="course__instructor--thumb">
-                                        <img src="{{asset('main')}}/assets/img/course/instructor1.png" alt="" />
-                                        <h5>Warner</h5>
-                                    </div>
-                                    <div class="course__instructor--price-tag">
-                                        <span>$59.95</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="course-text">
-                                <div
-                                    class="course-cat-meta d-flex align-items-center mb-15"
-                                >
-                                    <span><a href="courses-details.html">english</a></span>
-                                    <div class="review-icon">
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                        <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
-                                    </div>
-                                </div>
-                                <h4 class="semi-title pb-30 mb-20">
-                                    <a href="courses-details.html"
-                                    >Best Courses For Learning English Courses</a
-                                    >
-                                </h4>
-                                <div class="course-meta">
-											<span
-                                            ><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span
-                                            >
-                                    <span
-                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
-                                    >
-                                    <span
-                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-text course-text-02 theme-bg">
-                            <div
-                                class="course-cat-meta course-cat-meta-02 d-flex align-items-center mb-15"
-                            >
-                                <span><a href="courses-details.html">business</a></span>
-                                <div class="review-icon">
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
-                                </div>
-                            </div>
-                            <h4 class="semi-title mb-30">
-                                <a href="courses-details.html"
-                                >Best Courses For Learning English Courses</a
-                                >
-                            </h4>
-                            <div
-                                class="course__instructor d-flex align-items-center mb-25"
-                            >
-                                <div class="course__instructor--thumb">
-                                    <img src="{{asset('main')}}/assets/img/course/instructor1.png" alt="" />
-                                    <h5>Warner</h5>
-                                </div>
-                                <div class="course__instructor--price-tag">
-                                    <span>$59.95</span>
-                                </div>
-                            </div>
-                            <p>
-                                Sed ut perspiciatis unde omnis iste natus error sit
-                                voluptatem accusantium dolorque laudantium totam rem aperiam
-                            </p>
-                            <a class="c-btn mb-50" href="courses-details.html"
-                            >get enrolled <i class="far fa-arrow-right"></i
-                                ></a>
-                            <div class="course-meta">
-                                <span><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span>
-                                <span
-                                ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
-                                >
-                                <span
-                                ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="row">
                 <div class="col-xl-12">
                     <div class="course-btn text-center mt-35 mb-30">
-                        <a class="c-btn" href="courses.html"
+                        <a class="c-btn" href="{{url('courses')}}"
                         >مشاهدة المزيد <i class="fal fa-long-arrow-left"></i
                             ></a>
                     </div>
@@ -566,7 +376,6 @@
                             <h2>وإنضم لنا ..</h2>
                             <p>
                                 شاركنا النجاح وإنضم إلينا، اذا كنت مُعلم وتقدم محتوى تعليمي متميز، أو اذا كنت مدرب وتقدم دورات مهمة ومطلوبة، فأنت في المكان المناسب، يسعدنا إنضمامك معنا
-
                             </p>
                             <p>إذا كنت مؤسسة تعليمية ,وتبحث عن الانتشار والإعلان لدينا نرحب بكم دائما في الخدمات الإعلانية أو الشراكة.</p>
                         </div>
@@ -688,7 +497,7 @@
     </div>
     <!-- brand-area-end -->
 
-
+    <!-- Breaking news area -->
     <div class="breaking-news-ticker" id="example">
         <div class="bn-label">آخر أخبار الأكاديمية</div>
         <div class="bn-news">
