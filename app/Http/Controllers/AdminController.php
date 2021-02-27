@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Home;
 use App\Models\Message;
 use App\Models\Order;
 use App\Models\Page;
 use App\Models\Teacher;
 use App\Models\User;
+use Flasher\Toastr\Prime\ToastrFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
@@ -72,6 +74,46 @@ class AdminController extends Controller
     }
 
 
+    public function homeStatics()
+    {
+        $home = Home::first();
+        //dd($home);
+        return view('cp.pages.home', compact('home'));
+    }
+
+    public function updateHomeStatics(Home $home, Request $request, ToastrFactory $factory)
+    {
+        $data = $request->validate([
+            'trusted_student'   => ['required', 'numeric'],
+            'courses_student'   => ['required', 'numeric'],
+            'total_teachers'    => ['required', 'numeric'],
+            'total_requests'    => ['required', 'numeric'],
+            'support_whatsapp'  => ['required', 'numeric'],
+            'facebook'          => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+            'youtube'           => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+            'twitter'           => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+            'instagram'         => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+            'new1'              => ['string'],
+            'link1'             => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+            'new2'              => ['string'],
+            'link2'             => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+            'new3'              => ['string'],
+            'link3'             => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+            'new4'              => ['string'],
+            'link4'             => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+            'new5'              => ['string'],
+            'link5'             => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
+
+        ]);
+
+        $data = array_filter($data);
+
+        $home->update($data);
+
+        $factory->addSuccess('تم تعديل الإحصائيات');
+
+        return redirect()->back();
+    }
 
 
 } // End Admin Controller

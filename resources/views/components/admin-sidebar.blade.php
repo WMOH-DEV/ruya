@@ -107,7 +107,6 @@
                     </a>
                 </li>
 
-
                 <!-- subjects -->
                 <li class="nav-item">
                     <a href="{{url('admincp/subjects')}}" class="nav-link">
@@ -118,26 +117,66 @@
                     </a>
                 </li>
 
+                <!-- courses -->
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-graduation-cap"></i>
+                        <p>
+                           الكورسات التعليمية
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{url('admincp/categories')}}" class="nav-link">
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
+                                <p>تصنيفات الكورسات</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{url('admincp/courses')}}" class="nav-link">
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
+                                <p>قائمة الكورسات</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
                 <!-- Countries -->
-                <li class="nav-item">
-                    <a href="{{url('admincp/countries')}}" class="nav-link">
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-flag"></i>
                         <p>
-                            الدول والجنسيات
+                           الإقامة والجنسية
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
-                </li>
 
-                <!-- Residences -->
-                <li class="nav-item">
-                    <a href="{{url('admincp/residences')}}" class="nav-link">
-                        <i class="nav-icon fa fa-globe"></i>
-                        <p>
-                            دول الإقامة
-                        </p>
-                    </a>
-                </li>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{url('admincp/countries')}}" class="nav-link">
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
+                                <p>
+                                    دول الجنسيات
+                                </p>
+                            </a>
+                        </li>
 
+                        <!-- Residences -->
+                        <li class="nav-item">
+                            <a href="{{url('admincp/residences')}}" class="nav-link">
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
+                                <p>
+                                    دول الإقامة
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <!-- Orders -->
                 <li class="nav-item">
                     <a href="{{url('admincp/orders')}}" class="nav-link">
@@ -154,8 +193,8 @@
 
                 <li class="nav-header">الأقسام الإدارية</li>
                 <!-- Messages -->
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                <li class="nav-item">
+                    <a href="{{url('admincp/messages')}}" class="nav-link">
                         <i class="fas fa-envelope nav-icon"></i>
                         <p>الرسائل
                             <i class="fas fa-angle-left right"></i>
@@ -164,16 +203,6 @@
                             @endif
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <!-- Message List-->
-                        <li class="nav-item">
-                            <a href="{{url('admincp/messages')}}" class="nav-link">
-                                <i class="fas fa-arrow-circle-left nav-icon"></i>
-                                <p>قائمة الرسائل</p>
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
 
                 <!-- Mods -->
@@ -193,7 +222,6 @@
                             </a>
                         </li>
                         <!-- banned Mods-->
-                        {{--TODO: build Banned Mods--}}
                         <li class="nav-item">
                             <a href="{{url('admincp/moderators/suspended')}}" class="nav-link">
                                 <i class="fas fa-arrow-circle-left nav-icon"></i>
@@ -213,6 +241,14 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+
+                        <!-- About us -->
+                        <li class="nav-item">
+                            <a href="{{url('admincp/pages/home')}}" class="nav-link">
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
+                                <p>صفحة البداية</p>
+                            </a>
+                        </li>
 
                         <!-- About us -->
                         <li class="nav-item">

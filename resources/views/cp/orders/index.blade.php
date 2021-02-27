@@ -60,7 +60,19 @@
                                     محذوفة @endif</td>
                                 <td class="align-middle">@if($order->hours < 10 ) {{$order->hours}} ساعات @else {{$order->hours}} ساعة @endif</td>
                                 <td class="align-middle">{{$order->created_at}}</td>
-                                <td class="align-middle">@if($order->admin_status == 'مفتوح') <span class="badge badge-info">{{$order->admin_status}}</span> @elseif($order->admin_status == 'مرفوض') <span class="badge badge-dark">{{$order->admin_status}}</span> @elseif($order->admin_status == 'تم استلام العمولة') <span class="badge badge-primary">{{$order->admin_status}}</span> @endif</td>
+                                <td class="align-middle">
+                                    @if($order->admin_status == 'قيد الانتظار')
+                                        <span class="badge badge-info">{{$order->admin_status}}</span>
+                                    @elseif($order->admin_status == 'مرفوض')
+                                        <span class="badge badge-dark">{{$order->admin_status}}</span>
+                                    @elseif($order->admin_status == 'مقبول')
+                                        <span class="badge badge-secondary">{{$order->admin_status}}</span>
+                                    @elseif($order->admin_status == 'جاري')
+                                        <span class="badge badge-info">{{$order->admin_status}}</span>
+                                    @elseif($order->admin_status == 'مكتمل')
+                                        <span class="badge badge-primary">{{$order->admin_status}}</span>
+                                    @endif
+                                </td>
 
                                 <td>
                                     <button class="btn btn-primary py-1 px-2" data-toggle="modal"
@@ -136,9 +148,26 @@
                                                                         <th scope="row">تغيير حالة الطلب</th>
                                                                         <td>
                                                                                 <select name="admin_status" style="" class="select-right">
-                                                                                    <option value="مفتوح" @if($order->admin_status == 'مفتوح') selected @endif>مفتوح</option>
-                                                                                    <option value="مرفوض" @if($order->admin_status == 'مرفوض') selected @endif>مرفوض</option>
-                                                                                    <option value="تم استلام العمولة" @if($order->admin_status == 'تم استلام العمولة') selected @endif>تم استلام العمولة</option>
+
+                                                                                    <option value="قيد الانتظار"
+                                                                                            @if($order->admin_status == 'قيد الانتظار')
+                                                                                            selected @endif>قيد الانتظار</option>
+
+                                                                                    <option value="مرفوض"
+                                                                                            @if($order->admin_status == 'مرفوض')
+                                                                                            selected @endif>مرفوض</option>
+
+                                                                                    <option value="مقبول"
+                                                                                            @if($order->admin_status == 'مقبول')
+                                                                                            selected @endif>مقبول</option>
+
+                                                                                    <option value="جاري"
+                                                                                            @if($order->admin_status == 'جاري')
+                                                                                            selected @endif>جاري</option>
+
+                                                                                    <option value="مكتمل"
+                                                                                            @if($order->admin_status == 'مكتمل')
+                                                                                            selected @endif>مكتمل</option>
                                                                                 </select>
 
                                                                         </td>

@@ -23,9 +23,16 @@ class CreateOrdersTable extends Migration
             $table->date('start_date');
             $table->enum('contact_way',['whatsapp','email','phone'])->default('email');
             $table->text('notes');
-            $table->enum('admin_status',['مفتوح','مرفوض','تم استلام العمولة'])->default('مفتوح');
+            $table->enum('admin_status',[
+                'قيد الانتظار',
+                'مرفوض',
+                'مقبول',
+                'جاري',
+                'مكتمل'
+            ])->default('قيد الانتظار');
             $table->softDeletes();
             $table->timestamps();
+
         });
     }
 

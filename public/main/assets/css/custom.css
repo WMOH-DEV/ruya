@@ -945,3 +945,8 @@ p {
 .owner_title {
     font-size: 15px !important;
 }
+
+.course-cat-meta span i{
+    margin-right: unset;
+    margin-left: 3px;
+}

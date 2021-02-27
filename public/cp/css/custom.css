@@ -190,3 +190,9 @@ body{
 }
 
 
+.alert-dismissible .close, .alert-dismissible .mailbox-attachment-close,
+.alert-dismissible .close
+{
+    right: unset;
+    left: 0;
+}

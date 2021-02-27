@@ -5,41 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb078715-45b3-4082-af16-bf30e1276e8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TestimonialController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Testimonial.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_183203_create_testimonials_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_235017_create_homes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/main/assets/img/testimonial/default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/testimonials/W8XNiN2qA4FpqYjQ6khn2myxxZexUCKsxEkKnsQz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/testimonials/default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cp/pages/testimonials.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/beta/email.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/beta/forgot-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/beta/reset-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/beta/results.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/beta/search.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/beta/verify-email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Course.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_26_024429_create_categories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_26_024450_create_courses_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_26_220119_add_news_to_homes_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/main/assets/css/breaking-news-ticker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/main/assets/img/mini-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/main/assets/js/breaking-news-ticker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/course.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/FRIFzyMvvdpPl6QKhfKrq7sLZJjMtWhzXFwxFJbu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/MM6CQ8y68Mp8Yh8EJKUsIiQbJvQEIgJ0uk7GPs6g.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/NUMq2PcLB52dMdutylQA4a317x73yFlVzKoq48kL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/UnMBScvOofU0sKnbLAAvoruUfvoXcWZ1beOjMr0i.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/VmngRtZJCu4OqRMx0tGfOhKKraj8MxaJf1LMPpvV.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/W7VahagwQ6qJlWZi3aTTicCJzmOVJGezl39MqbgJ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/kLP28wgpDctUkkK7XxMKJSaRhXTWho8blVbCuPrG.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/qUpf0JjNYzkgvjvn4wcLxyaUulB7v26wrOcqgqzK.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/courses/qjatJImb1CvTP2R4FW927MHX8POwdGq16TtbEWB7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cp/courses/cats.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cp/courses/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cp/pages/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/MainFooter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/MainFooter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_31_174410_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_31_174410_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cp/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/cp/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/main/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main/assets/img/testimonial/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/beta/register2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/update-info-reverse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/beta/update-info-reverse.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify-email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/components/admin-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/admin-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/main-footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/main-footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/moderators/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/moderators/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/orders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/orders/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/main-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/main-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/mobile-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/mobile-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/sidebar-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/sidebar-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/results.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/results.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,25 +207,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/main/beta" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cp/courses" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\x\resources\views\cp\courses" />
+      <recent name="C:\xampp\htdocs\x\resources\views\cp\pages" />
       <recent name="C:\xampp\htdocs\x\resources\views\main\beta" />
       <recent name="C:\xampp\htdocs\x\public\uploads\testimonials" />
-      <recent name="C:\xampp\htdocs\x\resources\views\cp\pages" />
       <recent name="C:\xampp\htdocs\x\resources\views\main" />
-      <recent name="C:\xampp\htdocs\x\resources\views\main\v2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\x\public\uploads" />
       <recent name="C:\xampp\htdocs\x\resources\views\main\beta" />
       <recent name="C:\xampp\htdocs\x\resources\views\cp\layouts" />
       <recent name="C:\xampp\htdocs\main-project\resources\views\main\user\profile" />
       <recent name="C:\xampp\htdocs\main-project\resources\views\auth" />
-      <recent name="C:\xampp\htdocs\main-project\public\uploads" />
     </key>
   </component>
   <component name="RunManager">
@@ -278,7 +277,8 @@
       <workItem from="1614085019763" duration="37341000" />
       <workItem from="1614169115540" duration="12278000" />
       <workItem from="1614215976161" duration="9030000" />
-      <workItem from="1614249105830" duration="48118000" />
+      <workItem from="1614249105830" duration="51190000" />
+      <workItem from="1614349521497" duration="34926000" />
     </task>
     <servers />
   </component>

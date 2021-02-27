@@ -34,10 +34,6 @@
         @endif
 
         <div class="card mb-4">
-            {{--            <div class="card-header">--}}
-            {{--                <i class="fas fa-table mr-1"></i>--}}
-            {{--                القائمة--}}
-            {{--            </div>--}}
             <div class="card-body">
 
                 <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addMod">
@@ -419,6 +415,7 @@
     <link rel="stylesheet" href="{{asset('cp/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" integrity="sha256-FdatTf20PQr/rWg+cAKfl6j4/IY3oohFAJ7gVC3M34E=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+
 @endsection
 
 

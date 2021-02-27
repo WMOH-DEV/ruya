@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Home;
 use App\Models\Stage;
 use App\Models\Teacher;
@@ -30,9 +31,9 @@ class HomeController extends Controller
         $stages = Stage::all();
         $tests = Testimonial::all();
         $home = Home::first();
-       // dd($home);
-       // dd($tests);
-        return view('home', compact('stages', 'tests', 'home'));
+        $cats = Category::orderBy('id','desc')->get()->take(8);
+
+        return view('home', compact('stages', 'tests', 'home','cats'));
     }
 
 

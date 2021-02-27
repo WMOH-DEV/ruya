@@ -190,190 +190,37 @@
                 </div>
             </div>
             <div class="row">
+
+                @foreach($cats as $cat)
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <div class="course-cat-wrapper mb-30">
                         <div class="course-cat-img">
                             <a href="courses-details.html"
-                            ><img src="{{asset('main')}}/assets/img/course/01.jpg" alt=""
+                            ><img src="{{asset('uploads')}}/{{$cat->image}}"
+                                  style="height: 236px"
+                                  alt=""
                                 /></a>
                         </div>
                         <div class="course-cat-text">
-                            <h4>
-                                <a href="courses-details.html">Graphics Design (UI)</a>
+                            <h4 style="font-size: 18px;">
+                                <a href="courses-details.html">{{$cat->name}}</a>
                             </h4>
-                            <span>Web Design Course</span>
+                            <span style="font-size: 14px;">{{$cat->short_name}}</span>
                             <div class="course-cat-meta">
 										<span
-                                        ><i class="far fa-users"></i> <a href="#">250</a></span
+                                        ><i class="far fa-users"></i>250</span
                                         >
                                 <span
                                 ><i class="far fa-book"></i>
-											<a href="#">800+ Courses</a></span
+											<a href="javascript:void(0);">كورسات</a></span
                                 >
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="course-cat-wrapper mb-30">
-                        <div class="course-cat-img">
-                            <a href="courses-details.html"
-                            ><img src="{{asset('main')}}/assets/img/course/02.jpg" alt=""
-                                /></a>
-                        </div>
-                        <div class="course-cat-text">
-                            <h4><a href="courses-details.html">Business Studies</a></h4>
-                            <span>Finance Business</span>
-                            <div class="course-cat-meta">
-										<span
-                                        ><i class="far fa-users"></i> <a href="#">250</a></span
-                                        >
-                                <span
-                                ><i class="far fa-book"></i>
-											<a href="#">700+ Courses</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="course-cat-wrapper mb-30">
-                        <div class="course-cat-img">
-                            <a href="courses-details.html"
-                            ><img src="{{asset('main')}}/assets/img/course/03.jpg" alt=""
-                                /></a>
-                        </div>
-                        <div class="course-cat-text">
-                            <h4><a href="courses-details.html">Web Development</a></h4>
-                            <span>Web Design Course</span>
-                            <div class="course-cat-meta">
-										<span
-                                        ><i class="far fa-users"></i> <a href="#">250</a></span
-                                        >
-                                <span
-                                ><i class="far fa-book"></i>
-											<a href="#">800+ Courses</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="course-cat-wrapper mb-30">
-                        <div class="course-cat-img">
-                            <a href="courses-details.html"
-                            ><img src="{{asset('main')}}/assets/img/course/04.jpg" alt=""
-                                /></a>
-                        </div>
-                        <div class="course-cat-text">
-                            <h4>
-                                <a href="courses-details.html">Product Engineering</a>
-                            </h4>
-                            <span>Web Design Course</span>
-                            <div class="course-cat-meta">
-										<span
-                                        ><i class="far fa-users"></i> <a href="#">250</a></span
-                                        >
-                                <span
-                                ><i class="far fa-book"></i>
-											<a href="#">750+ Courses</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="course-cat-wrapper mb-30">
-                        <div class="course-cat-img">
-                            <a href="courses-details.html"
-                            ><img src="{{asset('main')}}/assets/img/course/05.jpg" alt=""
-                                /></a>
-                        </div>
-                        <div class="course-cat-text">
-                            <h4>
-                                <a href="courses-details.html">Graphics Design (UI)</a>
-                            </h4>
-                            <span>Basic Photography</span>
-                            <div class="course-cat-meta">
-										<span
-                                        ><i class="far fa-users"></i> <a href="#">250</a></span
-                                        >
-                                <span
-                                ><i class="far fa-book"></i>
-											<a href="#">800+ Courses</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="course-cat-wrapper mb-30">
-                        <div class="course-cat-img">
-                            <a href="courses-details.html"
-                            ><img src="{{asset('main')}}/assets/img/course/06.jpg" alt=""
-                                /></a>
-                        </div>
-                        <div class="course-cat-text">
-                            <h4><a href="#">Medical & Health</a></h4>
-                            <span>Doctors & Nursing</span>
-                            <div class="course-cat-meta">
-										<span
-                                        ><i class="far fa-users"></i> <a href="#">250</a></span
-                                        >
-                                <span
-                                ><i class="far fa-book"></i>
-											<a href="#">200+ Courses</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="course-cat-wrapper mb-30">
-                        <div class="course-cat-img">
-                            <a href="courses-details.html"
-                            ><img src="{{asset('main')}}/assets/img/course/07.jpg" alt=""
-                                /></a>
-                        </div>
-                        <div class="course-cat-text">
-                            <h4><a href="courses-details.html">Marketing Strategy</a></h4>
-                            <span>Social Media Marketing</span>
-                            <div class="course-cat-meta">
-										<span
-                                        ><i class="far fa-users"></i> <a href="#">250</a></span
-                                        >
-                                <span
-                                ><i class="far fa-book"></i>
-											<a href="#">850+ Courses</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="course-cat-wrapper mb-30">
-                        <div class="course-cat-img">
-                            <a href="courses-details.html"
-                            ><img src="{{asset('main')}}/assets/img/course/08.jpg" alt=""
-                                /></a>
-                        </div>
-                        <div class="course-cat-text">
-                            <h4>
-                                <a href="courses-details.html">Graphics Design (UI)</a>
-                            </h4>
-                            <span>Web Design Course</span>
-                            <div class="course-cat-meta">
-										<span
-                                        ><i class="far fa-users"></i> <a href="#">250</a></span
-                                        >
-                                <span
-                                ><i class="far fa-book"></i>
-											<a href="#">800+ Courses</a></span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </div>
@@ -419,11 +266,11 @@
                                 >
                                     <span><a href="courses-details.html">english</a></span>
                                     <div class="review-icon">
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star-half-alt"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
                                     </div>
                                 </div>
                                 <h4 class="semi-title pb-30 mb-20">
@@ -433,13 +280,13 @@
                                 </h4>
                                 <div class="course-meta">
 											<span class="number_ltr"
-                                            ><i class="far fa-users"></i> <a href="#">25</a></span
+                                            ><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span
                                             >
                                     <span class="number_ltr"
-                                    ><i class="far fa-book"></i> <a href="#">36hr</a></span
+                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
                                     >
                                     <span class="number_ltr"
-                                    ><i class="far fa-book"></i> <a href="#">2.5k</a></span
+                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
                                     >
                                 </div>
                             </div>
@@ -450,11 +297,11 @@
                             >
                                 <span><a href="courses-details.html">business</a></span>
                                 <div class="review-icon">
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star-half-alt"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
                                 </div>
                             </div>
                             <h4 class="semi-title mb-30">
@@ -481,12 +328,12 @@
                             >get enrolled <i class="far fa-arrow-right"></i
                                 ></a>
                             <div class="course-meta">
-                                <span><i class="far fa-users"></i> <a href="#">25</a></span>
+                                <span><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span>
                                 <span
-                                ><i class="far fa-book"></i> <a href="#">36hr</a></span
+                                ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
                                 >
                                 <span
-                                ><i class="far fa-book"></i> <a href="#">2.5k</a></span
+                                ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
                                 >
                             </div>
                         </div>
@@ -517,11 +364,11 @@
                                 >
                                     <span><a href="courses-details.html">english</a></span>
                                     <div class="review-icon">
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star-half-alt"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
                                     </div>
                                 </div>
                                 <h4 class="semi-title pb-30 mb-20">
@@ -531,13 +378,13 @@
                                 </h4>
                                 <div class="course-meta">
 											<span
-                                            ><i class="far fa-users"></i> <a href="#">25</a></span
+                                            ><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span
                                             >
                                     <span
-                                    ><i class="far fa-book"></i> <a href="#">36hr</a></span
+                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
                                     >
                                     <span
-                                    ><i class="far fa-book"></i> <a href="#">2.5k</a></span
+                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
                                     >
                                 </div>
                             </div>
@@ -548,11 +395,11 @@
                             >
                                 <span><a href="courses-details.html">business</a></span>
                                 <div class="review-icon">
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star-half-alt"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
                                 </div>
                             </div>
                             <h4 class="semi-title mb-30">
@@ -579,12 +426,12 @@
                             >get enrolled <i class="far fa-arrow-right"></i
                                 ></a>
                             <div class="course-meta">
-                                <span><i class="far fa-users"></i> <a href="#">25</a></span>
+                                <span><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span>
                                 <span
-                                ><i class="far fa-book"></i> <a href="#">36hr</a></span
+                                ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
                                 >
                                 <span
-                                ><i class="far fa-book"></i> <a href="#">2.5k</a></span
+                                ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
                                 >
                             </div>
                         </div>
@@ -615,11 +462,11 @@
                                 >
                                     <span><a href="courses-details.html">english</a></span>
                                     <div class="review-icon">
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star"></i></a>
-                                        <a href="#"><i class="fas fa-star-half-alt"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                        <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
                                     </div>
                                 </div>
                                 <h4 class="semi-title pb-30 mb-20">
@@ -629,13 +476,13 @@
                                 </h4>
                                 <div class="course-meta">
 											<span
-                                            ><i class="far fa-users"></i> <a href="#">25</a></span
+                                            ><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span
                                             >
                                     <span
-                                    ><i class="far fa-book"></i> <a href="#">36hr</a></span
+                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
                                     >
                                     <span
-                                    ><i class="far fa-book"></i> <a href="#">2.5k</a></span
+                                    ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
                                     >
                                 </div>
                             </div>
@@ -646,11 +493,11 @@
                             >
                                 <span><a href="courses-details.html">business</a></span>
                                 <div class="review-icon">
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star"></i></a>
-                                    <a href="#"><i class="fas fa-star-half-alt"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star"></i></a>
+                                    <a href="javascript:void(0);"><i class="fas fa-star-half-alt"></i></a>
                                 </div>
                             </div>
                             <h4 class="semi-title mb-30">
@@ -677,18 +524,19 @@
                             >get enrolled <i class="far fa-arrow-right"></i
                                 ></a>
                             <div class="course-meta">
-                                <span><i class="far fa-users"></i> <a href="#">25</a></span>
+                                <span><i class="far fa-users"></i> <a href="javascript:void(0);">25</a></span>
                                 <span
-                                ><i class="far fa-book"></i> <a href="#">36hr</a></span
+                                ><i class="far fa-book"></i> <a href="javascript:void(0);">36hr</a></span
                                 >
                                 <span
-                                ><i class="far fa-book"></i> <a href="#">2.5k</a></span
+                                ><i class="far fa-book"></i> <a href="javascript:void(0);">2.5k</a></span
                                 >
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xl-12">
                     <div class="course-btn text-center mt-35 mb-30">
@@ -702,159 +550,6 @@
     </div>
     <!-- course-area-end -->
 
-{{--    <!-- team-area-start -->--}}
-{{--    <div class="team-area grey-bg pt-130 pb-100">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">--}}
-{{--                    <div class="section-title text-center mb-65">--}}
-{{--								<span--}}
-{{--                                ><i class="fal fa-ellipsis-h"></i> Team Members--}}
-{{--									<i class="fal fa-ellipsis-h"></i--}}
-{{--                                    ></span>--}}
-{{--                        <h2>Expert Instructors</h2>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-xl-3 col-lg-3 col-md-6">--}}
-{{--                    <div class="team-wrapper mb-30">--}}
-{{--                        <div class="team-img pos-rel">--}}
-{{--                            <div class="fix">--}}
-{{--                                <img src="{{asset('main')}}/assets/img/team/01.jpg" alt="" />--}}
-{{--                            </div>--}}
-{{--                            <div class="team-02-icon">--}}
-{{--                                <div class="inner-team-icon pos-rel">--}}
-{{--                                    <div class="team-icon">--}}
-{{--                                        <a class="twitter" href="#"--}}
-{{--                                        ><i class="fab fa-twitter"></i--}}
-{{--                                            ></a>--}}
-{{--                                        <a class="google" href="#"--}}
-{{--                                        ><i class="fab fa-youtube"></i--}}
-{{--                                            ></a>--}}
-{{--                                        <a class="fb" href="#"--}}
-{{--                                        ><i class="fab fa-facebook-f"></i--}}
-{{--                                            ></a>--}}
-{{--                                    </div>--}}
-{{--                                    <a href="#"><i class="fal fa-plus"></i></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="team-text">--}}
-{{--                            <h4><a href="team-details.html">Somalia D Silva</a></h4>--}}
-{{--                            <span>Math Teacher</span>--}}
-{{--                            <div class="team-meta">--}}
-{{--										<span--}}
-{{--                                        ><i class="far fa-book"></i--}}
-{{--                                            ><span class="number_ltr"> 750+ </span> دورة تدريبية--}}
-{{--										</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-3 col-lg-3 col-md-6">--}}
-{{--                    <div class="team-wrapper mb-30">--}}
-{{--                        <div class="team-img pos-rel">--}}
-{{--                            <div class="fix">--}}
-{{--                                <img src="{{asset('main')}}/assets/img/team/02.jpg" alt="" />--}}
-{{--                            </div>--}}
-{{--                            <div class="team-02-icon">--}}
-{{--                                <div class="inner-team-icon pos-rel">--}}
-{{--                                    <div class="team-icon">--}}
-{{--                                        <a class="twitter" href="#"--}}
-{{--                                        ><i class="fab fa-twitter"></i--}}
-{{--                                            ></a>--}}
-{{--                                        <a class="google" href="#"--}}
-{{--                                        ><i class="fab fa-youtube"></i--}}
-{{--                                            ></a>--}}
-{{--                                        <a class="fb" href="#"--}}
-{{--                                        ><i class="fab fa-facebook-f"></i--}}
-{{--                                            ></a>--}}
-{{--                                    </div>--}}
-{{--                                    <a href="#"><i class="fal fa-plus"></i></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="team-text">--}}
-{{--                            <h4><a href="team-details.html">David D Warner</a></h4>--}}
-{{--                            <span>English Teacher</span>--}}
-{{--                            <div class="team-meta">--}}
-{{--                                <span><i class="far fa-book"></i> 3850+ Courses</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-3 col-lg-3 col-md-6">--}}
-{{--                    <div class="team-wrapper mb-30">--}}
-{{--                        <div class="team-img pos-rel">--}}
-{{--                            <div class="fix">--}}
-{{--                                <img src="{{asset('main')}}/assets/img/team/03.jpg" alt="" />--}}
-{{--                            </div>--}}
-{{--                            <div class="team-02-icon">--}}
-{{--                                <div class="inner-team-icon pos-rel">--}}
-{{--                                    <div class="team-icon">--}}
-{{--                                        <a class="twitter" href="#"--}}
-{{--                                        ><i class="fab fa-twitter"></i--}}
-{{--                                            ></a>--}}
-{{--                                        <a class="google" href="#"--}}
-{{--                                        ><i class="fab fa-youtube"></i--}}
-{{--                                            ></a>--}}
-{{--                                        <a class="fb" href="#"--}}
-{{--                                        ><i class="fab fa-facebook-f"></i--}}
-{{--                                            ></a>--}}
-{{--                                    </div>--}}
-{{--                                    <a href="#"><i class="fal fa-plus"></i></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="team-text">--}}
-{{--                            <h4><a href="team-details.html">Xavi Toni Crusse</a></h4>--}}
-{{--                            <span>Computer Teacher</span>--}}
-{{--                            <div class="team-meta">--}}
-{{--                                <span><i class="far fa-book"></i> 632+ Courses</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-3 col-lg-3 col-md-6">--}}
-{{--                    <div class="team-wrapper mb-30">--}}
-{{--                        <div class="team-img pos-rel">--}}
-{{--                            <div class="fix">--}}
-{{--                                <img src="{{asset('main')}}/assets/img/team/04.jpg" alt="" />--}}
-{{--                            </div>--}}
-{{--                            <div class="team-02-icon">--}}
-{{--                                <div class="inner-team-icon pos-rel">--}}
-{{--                                    <div class="team-icon">--}}
-{{--                                        <a class="twitter" href="#"--}}
-{{--                                        ><i class="fab fa-twitter"></i--}}
-{{--                                            ></a>--}}
-{{--                                        <a class="google" href="#"--}}
-{{--                                        ><i class="fab fa-youtube"></i--}}
-{{--                                            ></a>--}}
-{{--                                        <a class="fb" href="#"--}}
-{{--                                        ><i class="fab fa-facebook-f"></i--}}
-{{--                                            ></a>--}}
-{{--                                    </div>--}}
-{{--                                    <a href="#"><i class="fal fa-plus"></i></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="team-text">--}}
-{{--                            <h4><a href="team-details.html">Shaine Watson</a></h4>--}}
-{{--                            <span>Math Teacher</span>--}}
-{{--                            <div class="team-meta">--}}
-{{--                                <span><i class="far fa-book"></i> 750+ Courses</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- team-area-end -->--}}
-
-
-    <!-- testimonial-area-start -->
     <!-- instructor-area-start -->
     <div class="instructor-area grey-bg pt-130 pb-100">
         <div class="container">
@@ -955,146 +650,6 @@
     </div>
     <!-- testimonial-area-end -->
 
-
-
-{{--    <!-- blog-area-start -->--}}
-{{--    <div class="blog-area pt-130 pb-100">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">--}}
-{{--                    <div class="section-title text-center mb-60">--}}
-{{--								<span--}}
-{{--                                ><i class="fal fa-ellipsis-h"></i> Artices & Tipes--}}
-{{--									<i class="fal fa-ellipsis-h"></i--}}
-{{--                                    ></span>--}}
-{{--                        <h2>Latest News & Blog</h2>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-xl-4 col-lg-4 col-md-6">--}}
-{{--                    <div class="blog-wrapper mb-30 pos-rel">--}}
-{{--                        <div class="blog-img">--}}
-{{--                            <a href="blog-details.html"--}}
-{{--                            ><img src="{{asset('main')}}/assets/img/blog/01.jpg" alt=""--}}
-{{--                                /></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="blog-text">--}}
-{{--                            <div class="blog-meta">--}}
-{{--										<span--}}
-{{--                                        ><i class="far fa-calendar-alt"></i>--}}
-{{--											<a href="blog-details.html">25 Nov 2020</a></span--}}
-{{--                                        >--}}
-{{--                                <span--}}
-{{--                                ><i class="far fa-comments"></i>--}}
-{{--											<a href="blog-details.html">Com(30)</a></span--}}
-{{--                                >--}}
-{{--                            </div>--}}
-{{--                            <h4>--}}
-{{--                                <a href="blog-details.html"--}}
-{{--                                >Learning Resources In Challenec Times Online Workshops</a--}}
-{{--                                >--}}
-{{--                            </h4>--}}
-{{--                            <div class="inner-blog">--}}
-{{--                                <div class="blog-2-img f-left">--}}
-{{--                                    <img src="{{asset('main')}}/assets/img/blog/01.png" alt="" />--}}
-{{--                                </div>--}}
-{{--                                <div class="blog-content">--}}
-{{--                                    <h5>David Simala</h5>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="blog-button">--}}
-{{--                                <a href="blog-details.html"--}}
-{{--                                ><i class="far fa-long-arrow-left"></i--}}
-{{--                                    ></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-4 col-lg-4 col-md-6">--}}
-{{--                    <div class="blog-wrapper mb-30 pos-rel">--}}
-{{--                        <div class="blog-img">--}}
-{{--                            <a href="blog-details.html"--}}
-{{--                            ><img src="{{asset('main')}}/assets/img/blog/02.jpg" alt=""--}}
-{{--                                /></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="blog-text">--}}
-{{--                            <div class="blog-meta">--}}
-{{--										<span--}}
-{{--                                        ><i class="far fa-calendar-alt"></i>--}}
-{{--											<a href="blog-details.html">25 Nov 2020</a></span--}}
-{{--                                        >--}}
-{{--                                <span--}}
-{{--                                ><i class="far fa-comments"></i>--}}
-{{--											<a href="blog-details.html">Com(30)</a></span--}}
-{{--                                >--}}
-{{--                            </div>--}}
-{{--                            <h4>--}}
-{{--                                <a href="blog-details.html"--}}
-{{--                                >Djang Models Admin And Harness Rela Tional Database</a--}}
-{{--                                >--}}
-{{--                            </h4>--}}
-{{--                            <div class="inner-blog">--}}
-{{--                                <div class="blog-2-img f-left">--}}
-{{--                                    <img src="{{asset('main')}}/assets/img/blog/01.png" alt="" />--}}
-{{--                                </div>--}}
-{{--                                <div class="blog-content">--}}
-{{--                                    <h5>David Simala</h5>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="blog-button">--}}
-{{--                                <a href="blog-details.html"--}}
-{{--                                ><i class="far fa-long-arrow-left"></i--}}
-{{--                                    ></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-4 col-lg-4 col-md-6">--}}
-{{--                    <div class="blog-wrapper mb-30 pos-rel">--}}
-{{--                        <div class="blog-img">--}}
-{{--                            <a href="blog-details.html"--}}
-{{--                            ><img src="{{asset('main')}}/assets/img/blog/03.jpg" alt=""--}}
-{{--                                /></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="blog-text">--}}
-{{--                            <div class="blog-meta">--}}
-{{--										<span--}}
-{{--                                        ><i class="far fa-calendar-alt"></i>--}}
-{{--											<a href="blog-details.html">25 Nov 2020</a></span--}}
-{{--                                        >--}}
-{{--                                <span--}}
-{{--                                ><i class="far fa-comments"></i>--}}
-{{--											<a href="blog-details.html">Com(30)</a></span--}}
-{{--                                >--}}
-{{--                            </div>--}}
-{{--                            <h4>--}}
-{{--                                <a href="blog-details.html"--}}
-{{--                                >Smash Podcast With Laura Kalbag What Is Online Privacy</a--}}
-{{--                                >--}}
-{{--                            </h4>--}}
-{{--                            <div class="inner-blog">--}}
-{{--                                <div class="blog-2-img f-left">--}}
-{{--                                    <img src="{{asset('main')}}/assets/img/blog/01.png" alt="" />--}}
-{{--                                </div>--}}
-{{--                                <div class="blog-content">--}}
-{{--                                    <h5>David Simala</h5>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="blog-button">--}}
-{{--                                <a href="blog-details.html"--}}
-{{--                                ><i class="far fa-long-arrow-left"></i--}}
-{{--                                    ></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- blog-area-end -->--}}
-
-    <!-- brand-area-start -->
     <div class="brand-area theme-bg pb-65 pt-65">
         <div class="container">
             <div class="row brand-active">
@@ -1133,14 +688,83 @@
     </div>
     <!-- brand-area-end -->
 
+
+    <div class="breaking-news-ticker" id="example">
+        <div class="bn-label">آخر أخبار الأكاديمية</div>
+        <div class="bn-news">
+            <ul>
+                <li><a href="{{$home->link1}}">
+                        {{$home->new1}}
+                        <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
+                    </a></li>
+
+                <li><a href="{{$home->link2}}">
+                        {{$home->new2}}
+                        <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
+                    </a></li>
+
+                <li><a href="{{$home->link3}}">
+                        {{$home->new3}}
+                        <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
+                    </a></li>
+
+                <li><a href="{{$home->link4}}">
+                        {{$home->new4}}
+                        <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
+                    </a></li>
+
+                <li><a href="{{$home->link5}}">
+                        {{$home->new5}}
+                        <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
+                    </a></li>
+            </ul>
+        </div>
+        <div class="bn-controls">
+            <button><span class="bn-arrow bn-prev"></span></button>
+            <button><span class="bn-action"></span></button>
+            <button><span class="bn-arrow bn-next"></span></button>
+        </div>
+    </div>
+
+
 @endsection
 
+@section('css')
+
+    <link rel="stylesheet" href="{{asset('main/assets/css/breaking-news-ticker.css')}}">
+
+@endsection
 
 @section('script')
+    <script src="{{asset('main/assets/js/breaking-news-ticker.min.js')}}"></script>
     <script>
         if($("#errorMsg")){
         $("#errorMsg").delay(2000).slideUp(1000);
         }
+
+        $(document).ready(function () {
+            $('#example').breakingNews({
+                position:"fixed-bottom",
+                //effect:'slide-right',
+                direction:"rtl",
+                // enable autoplay
+                play: true,
+
+                // autoplay interval
+                delayTimer: 4000,
+
+                // animation speed
+                scrollSpeed: 2,
+
+                // pause on hover
+                stopOnHover: true,
+
+                //sep
+                seperator:'<span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>',
+
+            });
+        });
+
     </script>
 @endsection
 

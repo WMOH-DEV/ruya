@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -146,7 +148,20 @@ Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
     Route::put('admincp/pages/testimonials/update/{test}', [TestimonialController::class, 'update']);
     Route::delete('admincp/pages/testimonials/delete/{test}', [TestimonialController::class, 'destroy']);
 
+    // Home Statics
+    Route::get('admincp/pages/home', [AdminController::class, 'homeStatics']);
+    Route::put('admincp/pages/home/update/{home}', [AdminController::class, 'updateHomeStatics']);
 
+    // Courses
+    Route::get('admincp/categories', [CategoryController::class, 'index']);
+    Route::post('admincp/categories/add', [CategoryController::class, 'store']);
+    Route::put('admincp/categories/update/{cat}', [CategoryController::class, 'update']);
+    Route::delete('admincp/categories/delete/{cat}', [CategoryController::class, 'destroy']);
+
+    Route::get('admincp/courses', [CourseController::class, 'index']);
+    Route::post('admincp/courses/add', [CourseController::class, 'store']);
+    Route::put('admincp/courses/update/{cat}', [CourseController::class, 'update']);
+    Route::delete('admincp/courses/delete/{cat}', [CourseController::class, 'destroy']);
 
     // Mods
     Route::get('admincp/moderators', [ModController::class, 'index']);
