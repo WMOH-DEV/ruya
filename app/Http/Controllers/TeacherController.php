@@ -113,7 +113,7 @@ class TeacherController extends Controller
     {
         $teachers = Teacher::whereHas('user', function (Builder $query){
                     return $query->where('role_id',1);
-        })->paginate(10);
+        })->orderBy('id', 'desc')->paginate(10);
 
        // dd($teachers);
         return view('cp.teachers.index', compact('teachers'));
@@ -126,6 +126,7 @@ class TeacherController extends Controller
     public function indexPending()
     {
         $teachers = Teacher::where('isAccepted',0)
+            ->orderBy('id', 'desc')
             ->paginate(10);
 
         // dd($teachers);

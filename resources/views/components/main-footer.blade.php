@@ -46,7 +46,7 @@
                         <li><a href="{{url('pages/faq')}}">الأسئلة الشائعة</a></li>
                         <li><a href="{{url('pages/privacy')}}">سياسة الخصوصية</a></li>
                         <li><a href="{{url('pages/terms')}}">شروط الإستخدام</a></li>
-                        <li><a href="{{url('pages/contact')}}">من نحن</a></li>
+                        <li><a href="{{url('pages/about')}}">من نحن</a></li>
                         <li><a href="{{url('pages/contact')}}">إتصل بنا</a></li>
                     </ul>
                 </div>

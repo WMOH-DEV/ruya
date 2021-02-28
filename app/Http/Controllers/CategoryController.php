@@ -42,6 +42,8 @@ class CategoryController extends Controller
 
     public function store(Request $request, ToastrFactory $factory)
     {
+        // disabled By Wael
+        return view('/');
         $data = $request->validate([
             'name'          => ['required', 'string', 'max:200'],
             'short_name'    => ['required', 'string', 'max:100'],

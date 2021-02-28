@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class adminGroup
+class IsModerator
 {
     /**
      * Handle an incoming request.
@@ -17,11 +17,16 @@ class adminGroup
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && (Auth::user()->role_id == 4)) {
-            return $next($request);
+        if (Auth::check()) {
+            if ((Auth::user()->role_id == 3) || (Auth::user()->role_id == 4) ) {
+                return $next($request);
+            }else{
+                return redirect('/');
+            }
+        }else{
+        return redirect('/login');
         }
 
-        return redirect('/');
 
     }
 }

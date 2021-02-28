@@ -41,8 +41,8 @@ class ModController extends Controller
             'phone_number'  =>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
             'whatsapp'      =>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
             'gender'        =>['required', 'string', 'regex:/^(male|female)$/'],
-            'country_id'    =>['required', 'exists:App\Models\Country.id'],
-            'residence_id'  =>['required','exists:App\Models\residence.id']
+            'country_id'    =>['required', 'exists:App\Models\Country,id'],
+            'residence_id'  =>['required','exists:App\Models\residence,id']
         ]);
 
         $createdMod = User::create([

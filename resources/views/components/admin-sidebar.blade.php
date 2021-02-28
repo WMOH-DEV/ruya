@@ -36,6 +36,7 @@
 
                 <li class="nav-header">الأقسام الرئيسية</li>
 
+                @SuperAdmin
                 <!-- Students -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -65,7 +66,7 @@
                         </li>
                     </ul>
                 </li>
-
+                @endSuperAdmin
                 <!-- Teachers -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -117,6 +118,7 @@
                     </a>
                 </li>
 
+                @SuperAdmin
                 <!-- courses -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -143,10 +145,9 @@
                         </li>
                     </ul>
                 </li>
-
+                @endSuperAdmin
 
                 <!-- Countries -->
-
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-flag"></i>
@@ -177,6 +178,8 @@
                         </li>
                     </ul>
                 </li>
+
+                @SuperAdmin
                 <!-- Orders -->
                 <li class="nav-item">
                     <a href="{{url('admincp/orders')}}" class="nav-link">
@@ -294,6 +297,7 @@
 
                     </ul>
                 </li>
+                @endSuperAdmin
 
 
 

@@ -230,7 +230,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <th scope="row">باقي بيانات المعلم</th>
-                                                                        <td><a href="{{url('/teacher/show')}}/{{$order->teacher->id}}"> <span class="">الملف الشخصي</span></a></td>
+                                                                        <td><a href="{{url('/teachers/show')}}/{{$order->teacher_id}}"> <span class="">الملف الشخصي</span></a></td>
                                                                     </tr>
                                                                     </tbody>
                                                                 </table>

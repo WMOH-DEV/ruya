@@ -37,7 +37,8 @@ class CourseController extends Controller
 
     public function store(CourseRequest $request, ToastrFactory $factory)
     {
-
+        //Disabled By Wael
+        return view('/');
         $data = $request->validated();
 
         if ($request->hasFile('intro_image')){

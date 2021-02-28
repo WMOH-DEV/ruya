@@ -36,7 +36,7 @@
 
             <div class="card-body">
 
-                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addCat">
+                <button type="submit" disabled class="btn btn-primary" data-toggle="modal" data-target="#addCatDisabledByWael">
                     <i class="fa fa-plus"></i>
                     إضافة كورس جديد
                 </button>
@@ -135,18 +135,14 @@
                                                 <textarea type="text" class="form-control"
                                                        name="about_instructor"
                                                     cols="5"
-                                                >
-                                                    {{ old('about_instructor') }}
-                                                </textarea>
+                                                >{{ old('about_instructor') }}</textarea>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="intro_text">مقدمة عن الكورس</label>
                                                 <textarea type="text" class="form-control"
                                                           name="intro_text"
                                                           cols="5"
-                                                >
-                                                    {{ old('intro_text') }}
-                                                </textarea>
+                                                >{{ old('intro_text') }}</textarea>
                                             </div>
                                         </div>
 

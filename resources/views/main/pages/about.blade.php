@@ -1,7 +1,7 @@
 @extends('main.main-layout')
 
 @section('title')
-    سياسة الخصوصية
+    من نحن
 @endsection
 
 
@@ -13,11 +13,11 @@
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
                     <div class="page-title text-center">
-                        <h1 style="font-size: 2rem">سياسة الخصوصية</h1>
+                        <h1 style="font-size: 2rem">من نحن</h1>
                         <div class="breadcrumb">
                             <ul class="breadcrumb-list">
                                 <li><a href="/">الرئيسية <i class="far fa-chevron-left"></i></a></li>
-                                <li><a class="active" href="{{url('pages/privacy')}}">صفحة الخصوصية</a></li>
+                                <li><a class="active" href="{{url('pages/privacy')}}">من نحن</a></li>
                             </ul>
                         </div>
                     </div>
@@ -32,9 +32,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="faq-details-area white-bg mb-30">
-                        <h4 class="text-center mb-5">سياسة الخصوصية لمنصة أكاديمية رؤية</h4>
+                        <h4 class="text-center mb-5">من نحن</h4>
                         <div id="accordion">
-                            {!! $privacy !!}
+                            {!! $about !!}
                         </div>
                     </div>
                 </div>

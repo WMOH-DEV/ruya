@@ -28,7 +28,7 @@ class MainFooter extends Component
     {
         $stages = Stage::all()->take(8);
         $social = Home::first();
-        $last_courses = Course::orderBy('id','desc')->take(3)->get();
+        $last_courses = Course::orderBy('id','desc')->take(4)->get();
 
         //dd($last_courses);
         return view('components.main-footer', compact('stages', 'social','last_courses'));

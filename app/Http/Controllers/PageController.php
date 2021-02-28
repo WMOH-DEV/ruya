@@ -83,5 +83,16 @@ class PageController extends Controller
         return view('main.pages.faq', compact('faq'));
     }
 
+    public function termsIndex(){
+
+        $terms = Page::first()->terms;
+        return view('main.pages.terms', compact('terms'));
+    }
+
+    public function aboutIndex(){
+
+        $about = Page::first()->about_us;
+        return view('main.pages.about', compact('about'));
+    }
 
 } // End Page Controller

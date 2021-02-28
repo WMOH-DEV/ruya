@@ -38,8 +38,13 @@ Route::view('user/profile/edit', 'main.user.profile.edit')->middleware('auth');
 //Privacy Page
 Route::get('pages/privacy', [PageController::class, 'privacyIndex']);
 
+//terms Page
+Route::get('pages/terms', [PageController::class, 'termsIndex']);
+
+//About Page
+Route::get('pages/about', [PageController::class, 'aboutIndex']);
+
 //Faq Page
-// Route::get('pages/faq', [PageController::class, 'faqIndex']);
 Route::get('pages/faq', [FaqController::class, 'mainIndex']);
 
 //contact Page
@@ -83,11 +88,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 /********************
- * Admin Routes
+ * Mod Routes
  *******************/
 
-Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
-
+Route::group(['middleware' => ['auth', 'adminMod', 'verified']], function () {
     // Admin Main
     Route::get('admincp', [AdminController::class, 'index']);
 
@@ -99,14 +103,6 @@ Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
     Route::post('admincp/teachers/restore', [TeacherController::class, 'restore']);
     Route::post('admincp/teachers/delete', [TeacherController::class, 'delete']);
     Route::post('admincp/teachers/accept', [TeacherController::class, 'accept']);
-
-    // student routes
-    Route::get('admincp/students', [StudentController::class, 'index']);
-    Route::get('admincp/students/inactive', [StudentController::class, 'inactive']);
-    Route::get('admincp/students/suspended', [StudentController::class, 'suspended']);
-    Route::post('admincp/students/suspend', [StudentController::class, 'destroy']);
-    Route::post('admincp/students/restore', [StudentController::class, 'restore']);
-    Route::post('admincp/students/send', [StudentController::class, 'inactiveMsg']);
 
     // Subject Routes
     Route::get('admincp/subjects', [SubjectController::class, 'index']);
@@ -131,6 +127,24 @@ Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
     Route::post('admincp/residences/add', [ResidenceController::class, 'create']);
     Route::post('admincp/residences/update', [ResidenceController::class, 'update']);
     Route::post('admincp/residences/suspend', [ResidenceController::class, 'destroy']);
+
+    });
+
+/********************
+ * Admin Routes
+ *******************/
+
+Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
+
+
+    // student routes
+    Route::get('admincp/students', [StudentController::class, 'index']);
+    Route::get('admincp/students/inactive', [StudentController::class, 'inactive']);
+    Route::get('admincp/students/suspended', [StudentController::class, 'suspended']);
+    Route::post('admincp/students/suspend', [StudentController::class, 'destroy']);
+    Route::post('admincp/students/restore', [StudentController::class, 'restore']);
+    Route::post('admincp/students/send', [StudentController::class, 'inactiveMsg']);
+
 
     // Order
     Route::get('admincp/orders', [OrderController::class, 'index']);

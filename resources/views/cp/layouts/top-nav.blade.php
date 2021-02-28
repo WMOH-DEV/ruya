@@ -13,9 +13,12 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{url('admincp/teachers/pending')}}" class="nav-link">مُعلمين قيد الانتظار</a>
         </li>
+
+        @SuperAdmin
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{url('admincp/orders')}}" class="nav-link">طلبات الحجز</a>
         </li>
+        @endSuperAdmin
     </ul>
 
 

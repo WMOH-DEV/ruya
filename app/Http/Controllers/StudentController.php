@@ -16,7 +16,7 @@ class StudentController extends Controller
 
     public function index()
     {
-        $students = User::where('role_id','2')->paginate(20);
+        $students = User::where('role_id','2')->orderBy('id', 'desc')->paginate(20);
 
         return view('cp.students.index', compact('students'));
     }
@@ -33,7 +33,7 @@ class StudentController extends Controller
     public function suspended()
     {
 
-        $students = User::onlyTrashed()->where('role_id','2')->paginate(5);
+        $students = User::onlyTrashed()->where('role_id','2')->orderBy('id', 'desc')->paginate(5);
         //dd($students);
         return view('cp.students.suspended', compact('students'));
     }
