@@ -34,12 +34,12 @@ class ResidenceController extends Controller
     {
         //
         $request->validate([
-            'Residence_name' => ['required', 'string', 'max:100'],
+            'residence_name' => ['required', 'string', 'max:100'],
         ]);
 
 
         Residence::create([
-            'Residence_name' => $request->Residence_name
+            'residence_name' => $request->residence_name
         ]);
 
         //session()->flash('Residenceadded', 'تم إضافة المرحلة !!');
@@ -65,7 +65,7 @@ class ResidenceController extends Controller
      * @param \App\Models\Residence $Residence
      * @return Response
      */
-    public function show(Residence $Residence)
+    public function show(Residence $residence)
     {
         //
     }
@@ -76,7 +76,7 @@ class ResidenceController extends Controller
      * @param \App\Models\Residence $Residence
      * @return Response
      */
-    public function edit(Residence $Residence)
+    public function edit(Residence $residence)
     {
         //
     }
@@ -87,19 +87,19 @@ class ResidenceController extends Controller
      * @param \Illuminate\Http\Request $request
      * @param \App\Models\Residence $Residence
      * @param ToastrFactory $factory
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, ToastrFactory $factory)
     {
         //
         $request->validate([
-            'Residence_name' => ['required', 'string', 'max:100'],
+            'residence_name' => ['required', 'string', 'max:100'],
         ]);
 
-        $Residence = Residence::findOrFail($request->Residence_id);
+        $residence = Residence::findOrFail($request->residence_id);
 
-        $Residence->update([
-            'Residence_name' => $request->Residence_name
+        $residence->update([
+            'residence_name' => $request->residence_name
         ]);
 
         $factory->addSuccess('تم تعديل الدولة بنجاح');
@@ -119,10 +119,10 @@ class ResidenceController extends Controller
     {
 
         //dd($request->all());
-        $Residence = Residence::findOrfail("$request->Residence_id");
+        $residence = Residence::findOrfail("$request->residence_id");
         //dd($stage);
 
-        $Residence->delete();
+        $residence->delete();
 
         $factory->addSuccess('تم حذف الدولة');
 

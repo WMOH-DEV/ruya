@@ -127,6 +127,7 @@ class TeacherController extends Controller
     {
         $teachers = Teacher::where('isAccepted',0)
             ->orderBy('id', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(10);
 
         // dd($teachers);
@@ -143,13 +144,17 @@ class TeacherController extends Controller
     /**
      * Ajax request subject
      * @param $array
+     * @param Request $request
      * @return false|string
      */
-    public function getSubjects($array)
+    public function getSubjects($array, Request $request)
     {
-        $array = array_map('intval', explode(',', $array));
-        $subjects = Subject::select('subject_name', 'id')->whereIn('stage_id',$array)->pluck("subject_name","id");
-        return json_encode($subjects);
+        if ($request->ajax()){
+            $array = array_map('intval', explode(',', $array));
+            $subjects = Subject::select('subject_name', 'id')->whereIn('stage_id',$array)->pluck("subject_name","id");
+            return json_encode($subjects);
+        }
+        return redirect()->back();
     }
 
     /**
@@ -322,7 +327,7 @@ class TeacherController extends Controller
 
        // dd($request->subject);
         if ($teachersCount == 0 && $selectedSubject && is_numeric($request->subject)){
-            $factory->addError('لا يوجد معلمين لهذه المادة حالياً');
+            return view('main.not-found');
         }
         return view('main.search', compact('stages', 'teachersCount','teachers' ));
     }

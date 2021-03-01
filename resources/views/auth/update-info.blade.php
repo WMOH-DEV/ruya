@@ -14,8 +14,6 @@
 
 @section('content')
 
-
-
     <!-- contact-area-start -->
     <div class="contact-area grey-bg pb-100 teacher-area register-area">
         <div class="container">

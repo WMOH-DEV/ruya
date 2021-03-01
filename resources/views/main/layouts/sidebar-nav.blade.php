@@ -25,7 +25,9 @@
             <h4 class="offset-title mb-20">معلومات التواصل</h4>
 
             <p><i class="fal fa-phone"></i><span class="number_ltr  ml-2">{{$home->support_whatsapp}}</span> </p>
-            <p><i class="fal fa-envelope-open"></i> info@ruya.academy</p>
+            <p><i class="fal fa-whatsapp"></i><span class="number_ltr  ml-2">{{$home->support_whatsapp}}</span> </p>
+            <p><i class="fal fa-phone"></i><span class="number_ltr  ml-2">{{$home->support_whatsapp}}</span> </p>
+            <p><i class="fal fa-envelope-open"></i> success@ruya.academy</p>
         </div>
     </div>
 </div>

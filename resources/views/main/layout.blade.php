@@ -44,12 +44,13 @@
 
 
     <!-- to open Html5 Elements in Internet Expolrer -->
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
     <script src="{{asset('main')}}/js/html5shiv.min.js"></script>
     <script src="{{asset('main')}}/js/respond.min.js"></script>
     <![endif]-->
 
 </head>
+
 
 <body class="bg-gray-50">
 

@@ -36,7 +36,7 @@
 
             <div class="card-body">
 
-                <button type="submit" disabled class="btn btn-primary" data-toggle="modal" data-target="#addCatDisabledByWael">
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addCat">
                     <i class="fa fa-plus"></i>
                     إضافة كورس جديد
                 </button>

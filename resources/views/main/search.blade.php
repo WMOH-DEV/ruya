@@ -1,8 +1,6 @@
 @extends('main.main-layout')
 
-@section('title')
-    نتيجة البحث
-@endsection
+@section('title')نتيجة البحث@endsection
 
 
 @section('content')
@@ -97,10 +95,14 @@
                                 <div class="col-xl-8 info">
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <a href="{{url('teachers/show')}}/{{$teacher->teacher_id}}"
-                                               class="text-primary">
-                                                <p class="mt-3 h5">{{ $teacher->first_name .' '. $teacher->last_name}}</p>
-                                            </a>
+                                            <p class="mt-3 h5 mb-0 ">{{ $teacher->fullname()}}</p>
+                                            <p class="mb-0"><a href="{{url('teachers/show')}}/{{$teacher->id}}"
+                                                  class="text-primary">
+                                                        <span class="badge
+                                                         badge-pill
+                                                          badge-primary"
+                                                              style="font-size: 11px">الملف الشخصي</span>
+                                                </a></p>
                                             <!-- stars -->
                                             <ul class="d-flex mx-auto align-items-center justify-content-center">
                                                 <li class=" m-0 text-warning">
@@ -152,14 +154,14 @@
                                             </ul>
                                             <!-- divider -->
                                             <hr class="my-2">
-                                            <div class="pref mt-1"
+                                            <div class="pref mt-1 mb-3"
                                                  style="text-overflow: ellipsis ellipsis; height: 60px; overflow: hidden">
                                                 <p>{{$teacher->brief}}</p>
                                             </div>
 
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row mb-3">
                                         <div class="col-5 col-xl-4">
                                             <div class="grade d-flex align-items-center justify-content-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +194,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-2">
+                                <div class="col-xl-2 d-flex flex-column justify-content-center">
                                     <p class="mt-3 text-center">متوسط السعر</p>
                                     <div class="text-center">
                                         <p class="my-2 h2">{{$teacher->pphour}}</p>
@@ -236,6 +238,7 @@
 
             // Ajax for subjects
             let stages = $('#stages');
+            stages.niceSelect('update');
             stages.on('change', function () {
                 let stageId = $(this).val();
                 if (stageId.length >= 1) {
@@ -244,7 +247,7 @@
                         type: "GET",
                         dataType: "json",
                         success: function (data) {
-                            console.log(data);
+                           // console.log(data);
                             $('#subject_id').empty();
                             $.each(data, function (key, value) {
                                 $('#subject_id').append('<option value="' +

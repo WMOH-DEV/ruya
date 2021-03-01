@@ -25,6 +25,8 @@ class SidebarNav extends Component
     public function render()
     {
         $whatsapp = Home::first()->support_whatsapp;
-        return view('components.sidebar-nav',compact('whatsapp'));
+        $whatsapp2 = Home::first()->whatsapp2;
+        $whatsapp3 = Home::first()->whatsapp3;
+        return view('components.sidebar-nav',compact('whatsapp', 'whatsapp2', 'whatsapp3'));
     }
 }

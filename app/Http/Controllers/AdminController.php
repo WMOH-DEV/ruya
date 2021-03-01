@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Code;
 use App\Models\Home;
 use App\Models\Message;
 use App\Models\Order;
@@ -89,6 +90,8 @@ class AdminController extends Controller
             'total_teachers'    => ['required', 'numeric'],
             'total_requests'    => ['required', 'numeric'],
             'support_whatsapp'  => ['required', 'numeric'],
+            'whatsapp2'         => ['nullable', 'numeric'],
+            'whatsapp3'         => ['nullable', 'numeric'],
             'facebook'          => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
             'youtube'           => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
             'twitter'           => ['regex:/(^(http|https)\:\/\/)[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'],
@@ -115,5 +118,25 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function getCodes()
+    {
+        $code = Code::first();
+        return view('cp.codes.index', compact('code'));
+    }
+
+    public function updateCodes(Code $code, Request $request, ToastrFactory $factory)
+    {
+        $data = $request->validate([
+            'google_console'    => ['nullable', 'string'],
+            'facebook'          => ['nullable', 'string'],
+            'adsense'           => ['nullable', 'string'],
+        ]);
+
+        $code->update($data);
+
+        $factory->addSuccess('تم تحديث الاكواد');
+
+        return redirect()->back();
+    }
 
 } // End Admin Controller

@@ -1,11 +1,7 @@
 @extends('main.main-layout')
 
 
-@section('title')
-
-أكاديمية رؤية
-
-@endsection
+@section('title')أكاديمية رؤية@endsection
 
 
 

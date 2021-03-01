@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Code;
 use Illuminate\View\Component;
 
 class HeaderCodes extends Component
@@ -23,6 +24,9 @@ class HeaderCodes extends Component
      */
     public function render()
     {
-        return view('components.header-codes');
+        $google_console = Code::first()->google_console;
+        $adsense        = Code::first()->adsense;
+        $facebook       = Code::first()->facebook;
+        return view('components.header-codes', compact('google_console', 'adsense', 'facebook'));
     }
 }

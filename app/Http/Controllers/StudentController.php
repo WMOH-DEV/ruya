@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\User;
 use App\Notifications\lazyMsg;
 use Flasher\Toastr\Prime\ToastrFactory;
@@ -19,6 +20,13 @@ class StudentController extends Controller
         $students = User::where('role_id','2')->orderBy('id', 'desc')->paginate(20);
 
         return view('cp.students.index', compact('students'));
+    }
+
+    public function detailsIndex(User $student)
+    {
+        $orders = Order::where('user_id', "$student->id")->orderby('id','desc')->paginate(20);
+        //dd($orders);
+        return view('cp.students.details.index', compact('student','orders'));
     }
 
     public function inactive()

@@ -25,7 +25,13 @@
             <h4 class="offset-title mb-20">معلومات التواصل</h4>
 
             <p><i class="fal fa-phone"></i><span class="number_ltr  ml-2">{{$whatsapp}}</span> </p>
-            <p><i class="fal fa-envelope-open"></i> info@ruya.academy</p>
+            @if(isset($whatsapp2))
+                <p><i class="fab fa-whatsapp"></i><span class="number_ltr  ml-2">{{$whatsapp2}}</span> </p>
+            @endif
+            @if(isset($whatsapp3))
+                <p><i class="fab fa-whatsapp"></i><span class="number_ltr  ml-2">{{$whatsapp3}}</span> </p>
+            @endif
+            <p><i class="fal fa-envelope-open"></i> success@ruya.academy</p>
         </div>
     </div>
 </div>

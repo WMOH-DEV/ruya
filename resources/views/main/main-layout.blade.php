@@ -1,38 +1,7 @@
 <!DOCTYPE html>
-<html class="no-js" lang="ar">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>RUYA - @yield('title')</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-        rel="shortcut icon"
-        type="image/x-icon"
-        href="{{asset('main')}}/assets/img/favicon.ico"
-    />
-    <!-- Place favicon.ico in the root directory -->
+<html class="no-js" lang='ar'>
 
-    <!-- CSS here -->
-    <!--    <link rel="stylesheet" href="{{asset('main')}}/assets/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/bootstrap.rtl.min.css" />
-
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/animate.min.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/magnific-popup.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/nice-select.css" />
-{{--    <link rel="stylesheet" href="{{asset('main')}}/assets/css/nice-search-multiple.css" />--}}
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/themify-icons.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/metisMenu.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/meanmenu.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/slick.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/alerts-css.min.css" />
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/main.css" />
-    <!-- Main Css File -->
-    @yield('css')
-    <link rel="stylesheet" href="{{asset('main')}}/assets/css/custom.css" />
-</head>
+<x-header-codes />
 
 <body>
 <!-- header-start -->
@@ -113,6 +82,7 @@
 {{--<script src="{{asset('main')}}/assets/js/jquery.nice-select-with-search-multiple.js"></script>--}}
 <script src="{{asset('main')}}/assets/js/jquery.easypiechart.js"></script>
 <script src="{{asset('main')}}/assets/js/alerts.min.js"></script>
+<script src="{{asset('main')}}/assets/js/cookieconsent.min.js" data-cfasync="false"></script>
 <script src="{{asset('main')}}/assets/js/main.js"></script>
 @yield('script')
 <script src="{{asset('main')}}/assets/js/app.js"></script>

@@ -1,3 +1,60 @@
-<div>
-    <!-- Waste no more time arguing what a good man should be, be one. - Marcus Aurelius -->
-</div>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>RUYA - @yield('title')</title>
+
+    <!-- additional meta -->
+    <!-- Primary Meta Tags -->
+    <meta name="{{env('app_name')}}" content="منصة أكاديمية رؤية التعليمية">
+    <meta name="description" content="{{env('app_url')}}">
+
+    <!-- Google Console -->
+    {!!  $google_console ?? '<meta name="google-site-verification" content="xxxx" />' !!}
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{env('app_url')}}">
+    <meta property="og:title" content="RUYA Academy - @yield('title')">
+    <meta property="og:description" content="منصة أكاديمية رؤية التعليمية">
+    <meta property="og:image" content="https://i.imgur.com/nJgh9n8.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{env('app_url')}}">
+    <meta property="twitter:title" content="RUYA Academy - @yield('title')">
+    <meta property="twitter:description" content="منصة أكاديمية رؤية التعليمية">
+    <meta property="twitter:image" content="https://i.imgur.com/nJgh9n8.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+        rel="shortcut icon"
+        type="image/x-icon"
+        href="{{asset('main')}}/assets/img/favicon.ico"
+    />
+
+    <!-- CSS here -->
+<!--<link rel="stylesheet" href="{{asset('main')}}/assets/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="{{asset('main')}}/assets/css//cookieconsent.min.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/animate.min.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/nice-select.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/themify-icons.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/metisMenu.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/meanmenu.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/slick.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/alerts-css.min.css" />
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/main.css" />
+    <!-- Main Css File -->
+    @yield('css')
+    <link rel="stylesheet" href="{{asset('main')}}/assets/css/custom.css" />
+
+    <!-- Adsense verification -->
+    {!! $adsense ?? "<script></script>" !!}
+    <!-- End Adsense Verification -->
+
+    <!-- Facebook verification -->
+    {!! $facebook ?? "<script></script>" !!}
+    <!-- End Facebook Verification -->
+</head>

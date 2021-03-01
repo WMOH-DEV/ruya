@@ -74,21 +74,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Show teacher
     Route::get('teachers/show/{id}', [TeacherController::class, 'show']);
 
+    // Show profile
+    Route::get('user/profile', [HomeController::class, 'UserProfile']);
+
     // Access order pages
     Route::get('booking/teacher/{id}', [OrderController::class, 'create']);
 
     // create order
     Route::post('booking/teacher/create', [OrderController::class, 'store'])->name('create-order');
-    //Route::get('booking/teacher/done', [OrderController::class, 'store'])->name('thanks-message');
 });
 
 
 
-
-
-
 /********************
- * Mod Routes
+ * Admin and Mod Routes
  *******************/
 
 Route::group(['middleware' => ['auth', 'adminMod', 'verified']], function () {
@@ -144,6 +143,7 @@ Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
     Route::post('admincp/students/suspend', [StudentController::class, 'destroy']);
     Route::post('admincp/students/restore', [StudentController::class, 'restore']);
     Route::post('admincp/students/send', [StudentController::class, 'inactiveMsg']);
+    Route::get('admincp/students/details/{student}', [StudentController::class, 'detailsIndex']);
 
 
     // Order
@@ -170,6 +170,12 @@ Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
     // Home Statics
     Route::get('admincp/pages/home', [AdminController::class, 'homeStatics']);
     Route::put('admincp/pages/home/update/{home}', [AdminController::class, 'updateHomeStatics']);
+
+
+    // Codes
+    Route::get('admincp/home/codes', [AdminController::class, 'getCodes']);
+    Route::put('admincp/home/codes/update/{code}', [AdminController::class, 'updateCodes']);
+
 
     // Courses
     Route::get('admincp/categories', [CategoryController::class, 'index']);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\Home;
+use App\Models\Order;
 use App\Models\Stage;
 use App\Models\Teacher;
 use App\Models\Testimonial;
@@ -15,6 +16,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
@@ -87,6 +89,93 @@ class HomeController extends Controller
     {
         $tests = Testimonial::orderBy('id','desc')->take(5)->get();
         return view('home', compact('tests'));
+    }
+
+    public function userProfile()
+    {
+        $user = User::findOrFail(Auth::user()->id);
+        if ($user->role_id == 2){
+                $completedOrders    = Order::where('user_id', Auth::user()->id)
+                                        ->where('admin_status', 'مكتمل')
+                                        ->orderby('id','desc')
+                                        ->paginate(20);
+
+                $waitingOrders      = Order::where('user_id', Auth::user()->id)
+                                        ->where('admin_status', 'قيد الانتظار')
+                                        ->orderby('id','desc')
+                                        ->paginate(20);
+
+                $onProgressOrders   = Order::where('user_id', Auth::user()->id)
+                                        ->where('admin_status', 'جاري')
+                                        ->orderby('id','desc')
+                                        ->paginate(20);
+
+                $deniedOrders       = Order::where('user_id', Auth::user()->id)
+                                        ->where('admin_status', 'مرفوض')
+                                        ->orderby('id','desc')
+                                        ->paginate(20);
+
+                $acceptOrders       = Order::where('user_id', Auth::user()->id)
+                                        ->where('admin_status', 'مقبول')
+                                        ->orderby('id','desc')
+                                        ->paginate(20);
+
+
+                //dd($orders);
+                return view('main.user.profile.index',
+                    compact('user',
+                        'completedOrders',
+                        'onProgressOrders',
+                        'deniedOrders',
+                        'acceptOrders',
+                        'waitingOrders'
+                    ));
+
+        }
+
+        if ($user->role_id == 1){
+            $completedOrders    = Order::where('teacher_id', Auth::user()->id)
+                ->where('admin_status', 'مكتمل')
+                ->orderby('id','desc')
+                ->paginate(20);
+
+            $waitingOrders      = Order::where('teacher_id', Auth::user()->id)
+                ->where('admin_status', 'قيد الانتظار')
+                ->orderby('id','desc')
+                ->paginate(20);
+
+            $onProgressOrders   = Order::where('teacher_id', Auth::user()->id)
+                ->where('admin_status', 'جاري')
+                ->orderby('id','desc')
+                ->paginate(20);
+
+            $deniedOrders       = Order::where('teacher_id', Auth::user()->id)
+                ->where('admin_status', 'مرفوض')
+                ->orderby('id','desc')
+                ->paginate(20);
+
+            $acceptOrders       = Order::where('teacher_id', Auth::user()->id)
+                ->where('admin_status', 'مقبول')
+                ->orderby('id','desc')
+                ->paginate(20);
+
+
+            //dd($orders);
+            return view('main.user.profile.index',
+                compact('user',
+                    'completedOrders',
+                    'onProgressOrders',
+                    'deniedOrders',
+                    'acceptOrders',
+                    'waitingOrders'
+                ));
+        }
+
+        if ($user->rol_id == 3 or $user->role_id == 4){
+            return view('main.user.profile.index', compact('user'));
+        }
+
+
     }
 
 }// End HomeController

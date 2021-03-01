@@ -1003,3 +1003,16 @@ p {
     margin-bottom: 30px;
 }
 
+
+.cc-window{
+    font-family: unset;
+}
+
+@media (max-width: 767px) {
+    .res-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

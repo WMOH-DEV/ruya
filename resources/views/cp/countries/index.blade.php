@@ -21,13 +21,18 @@
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div>
-
+        @if ($errors->any())
+            <div class=" py-3" id="errorMsg">
+                <ul class="inline-block py-3 px-3 text-danger rounded-md">
+                    @foreach ($errors->all() as $error)
+                        <li><i class="far fa-exclamation-circle"></i> {{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <div class="card mb-4">
-{{--                        <div class="card-header">--}}
-{{--                            <i class="fas fa-table mr-1"></i>--}}
-{{--                            القائمة--}}
-{{--                        </div>--}}
+
             <div class="card-body">
 
                 <form action="{{url('admincp/countries/add')}}" method="post" class="form-row">
@@ -191,6 +196,10 @@
             $('.xalert').click(function () {
                 $(this).fadeOut(200);
             })
+
+            if($("#errorMsg")){
+                $("#errorMsg").delay(5000).slideUp(1000);
+            }
         })
     </script>
 @endsection

@@ -24,10 +24,6 @@
 
 
         <div class="card mb-4">
-            {{--            <div class="card-header">--}}
-            {{--                <i class="fas fa-table mr-1"></i>--}}
-            {{--                القائمة--}}
-            {{--            </div>--}}
             <div class="card-body">
                 <div class="table-responsive">
 
@@ -58,45 +54,12 @@
                                         طالبة @endif</td>
                                 <td>{{$student->lastLogin()}}</td>
                                 <td>
+                                    <a href="{{url("admincp/students/details/$student->id")}}" class="text-decoration-none">
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    </a>
 
-{{--                                    <button class="btn btn-primary" data-toggle="modal"--}}
-{{--                                            data-target="#editbtn{{$student->id}}">--}}
-{{--                                        <i class="fa fa-envelope"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <!-- Modal -->--}}
-{{--                                    <div class="modal fade" id="editbtn{{$student->id}}" tabindex="-1" role="dialog"--}}
-{{--                                         aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
-{{--                                        <div class="modal-dialog" role="document">--}}
-{{--                                            <div class="modal-content">--}}
-{{--                                                <div class="modal-header">--}}
-{{--                                                    <h5 class="modal-title" id="exampleModalLabel">إرسال رسالة تذكير</h5>--}}
-{{--                                                    <button type="button" class="close" data-dismiss="modal"--}}
-{{--                                                            aria-label="Close">--}}
-{{--                                                        <span aria-hidden="true">&times;</span>--}}
-{{--                                                    </button>--}}
-{{--                                                </div>--}}
-{{--                                                <form action="{{url('admincp/countries/update')}}" method="post">--}}
-{{--                                                    @csrf--}}
-{{--                                                    <div class="modal-body">--}}
-{{--                                                        <input type="text" hidden value="{{$student->id}}" name="country_id">--}}
-{{--                                                        <div class="form-group col-12">--}}
-{{--                                                            هل أنت متأكد من إرسال رسالة تذكير إلى {{$student->fullName()}} ؟--}}
-{{--                                                        </div>--}}
-
-{{--                                                    </div>--}}
-{{--                                                    <div class="modal-footer">--}}
-{{--                                                        <button type="submit" class="btn btn-primary">--}}
-{{--                                                            <i class="fa fa-paper-plane"></i>--}}
-{{--                                                            إرسال--}}
-{{--                                                        </button>--}}
-{{--                                                        <button type="button" class="btn btn-secondary"--}}
-{{--                                                                data-dismiss="modal">إلغاء--}}
-{{--                                                        </button>--}}
-{{--                                                    </div>--}}
-{{--                                                </form>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
 
                                     <!-- Delete Button -->
                                     <button class="btn btn-danger"  data-toggle="modal"

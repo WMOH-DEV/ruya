@@ -5,12 +5,7 @@
 
         </li>
         <li class="has-dropdown">
-            <a href="#">الدورات</a>
-            <ul class="sub-menu">
-                <li><a href="courses.html">Course</a></li>
-                <li><a href="courses -2.html">Course List</a></li>
-                <li><a href="courses-details.html">Course Details</a></li>
-            </ul>
+            <a href="{{url('courses')}}">الدورات</a>
         </li>
         <li>
             <a href="{{url('teachers')}}">قائمة المعلمين </a>
@@ -29,16 +24,20 @@
 
         @if(Auth::user()->role_id == 1)
             <li>
-                <a href="{{url('user/teacher/cp')}}"><i class="fal fa-users-cog mr-2"></i>لوحة التحكم</a>
+                <a href="{{url('user/profile')}}"><i class="fal fa-users-cog mr-2"></i>الملف الشخصي</a>
             </li>
             @endif
 
             @if(Auth::user()->role_id == 2)
                 <li>
-                    <a href="{{url('user/student/cp')}}"><i class="fal fa-users-cog mr-2"></i>لوحة التحكم</a>
+                    <a href="{{url('user/profile')}}"><i class="fal fa-users-cog mr-2"></i>الملف الشخصي</a>
                 </li>
             @endif
             @if(Auth::user()->role_id == 3 OR Auth::user()->role_id == 4)
+                <li>
+                    <a href="{{url('user/profile')}}"><i class="fal fa-users-cog mr-2"></i> الملف الشخصي</a>
+                </li>
+
                 <li>
                     <a href="{{url('admincp')}}"><i class="fal fa-users-cog mr-2"></i>لوحة التحكم</a>
                 </li>

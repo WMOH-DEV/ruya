@@ -35,11 +35,11 @@
                 {{Auth::user()->first_name}}
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <a href="{{url('user/student/profile')}}" class="dropdown-item">
+                <a href="{{url('user/profile')}}" class="dropdown-item">
                     <i class="far fa-users-cog mx-1"></i>الملف الشخصي</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                    <i class="fal fa-cog mx-1"></i>لوحة التحكم</a>
+                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fad fa-sign-out mx-1" style="transform: rotateY(180deg)"></i>تسجيل الخروج</a>
 
 
         </div>

@@ -44,14 +44,14 @@
                         <div class="container">
 
                             <div class="row">
-                                <div class="form-group col-md-2">
+                                <div class="form-group col-md-3">
                                     <label for="trusted_student">الطلاب</label>
                                     <input type="number" class="form-control"
                                            name="trusted_student"
                                            value="{{$home->trusted_student}}"
                                     >
                                 </div>
-                                <div class="form-group col-md-2">
+                                <div class="form-group col-md-3">
                                     <label for="courses_student">الكورسات</label>
                                     <input type="number" class="form-control"
                                            name="courses_student"
@@ -59,7 +59,7 @@
                                     >
                                 </div>
 
-                                <div class="form-group col-md-2">
+                                <div class="form-group col-md-3">
                                     <label for="total_teachers">المعلمين</label>
                                     <input type="number" class="form-control"
                                            name="total_teachers"
@@ -67,7 +67,7 @@
                                     >
                                 </div>
 
-                                <div class="form-group col-md-2">
+                                <div class="form-group col-md-3">
                                     <label for="total_requests">الطلبات</label>
                                     <input type="number" class="form-control"
                                            name="total_requests"
@@ -75,14 +75,30 @@
                                     >
                                 </div>
 
+                            </div>
+
+                            <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="support_whatsapp">رقم الواتسآب للتواصل</label>
+                                    <label for="support_whatsapp">رقم الواتسآب الرئيسي</label>
                                     <input type="tel" class="form-control"
                                            name="support_whatsapp"
                                            value="{{$home->support_whatsapp}}"
                                     >
                                 </div>
-
+                                <div class="form-group col-md-4">
+                                    <label for="whatsapp2">رقم الواتسآب الثاني</label>
+                                    <input type="tel" class="form-control"
+                                           name="whatsapp2"
+                                           value="{{$home->whatsapp2}}"
+                                    >
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="whatsapp3">رقم الواتسآب الثالث</label>
+                                    <input type="tel" class="form-control"
+                                           name="whatsapp3"
+                                           value="{{$home->whatsapp3}}"
+                                    >
+                                </div>
                             </div>
 
                             <div class="row">

@@ -293,6 +293,14 @@
                             </a>
                         </li>
 
+                        <!-- Testimonial -->
+                        <li class="nav-item">
+                            <a href="{{url('admincp/home/codes')}}" class="nav-link">
+                                <i class="fas fa-arrow-circle-left nav-icon"></i>
+                                <p>أدسنس والكونسول</p>
+                            </a>
+                        </li>
+
 
 
                     </ul>
