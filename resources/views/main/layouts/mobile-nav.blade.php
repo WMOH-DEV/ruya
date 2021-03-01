@@ -4,7 +4,7 @@
             <a href="{{url(asset('/'))}}">الرئيسية</a>
 
         </li>
-        <li class="has-dropdown">
+        <li>
             <a href="{{url('courses')}}">الدورات</a>
         </li>
         <li>

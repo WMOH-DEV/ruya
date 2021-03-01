@@ -5,51 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb078715-45b3-4082-af16-bf30e1276e8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CodeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Code.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_28_022702_create_codes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/main/assets/css/cookieconsent.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/main/assets/js/cookieconsent.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cp/codes/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cp/students/details/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/not-found.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/user/profile/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/welcomeTeacher.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/UpdateUserPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/UpdateUserPassword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResidenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResidenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Residence.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Residence.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/HeaderCodes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/HeaderCodes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/SidebarNav.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/SidebarNav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/update-info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/update-info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/admin-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/admin-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/header-codes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header-codes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/sidebar-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sidebar-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cp/countries/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/countries/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cp/courses/cats.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/courses/cats.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cp/courses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/courses/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cp/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/pages/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cp/residences/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/residences/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cp/students/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/students/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/left-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/left-nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/mobile-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/mobile-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/sidebar-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/sidebar-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/main-layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/main-layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/pages/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/pages/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/teachers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/teachers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +251,7 @@
       <workItem from="1614349521497" duration="43200000" />
       <workItem from="1614431637762" duration="32406000" />
       <workItem from="1614524464776" duration="8283000" />
-      <workItem from="1614598522394" duration="18559000" />
+      <workItem from="1614598522394" duration="20568000" />
     </task>
     <servers />
   </component>

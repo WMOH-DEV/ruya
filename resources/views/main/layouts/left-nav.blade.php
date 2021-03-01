@@ -23,10 +23,28 @@
 
 @auth
 @if(Auth::user()->role_id == 3 OR Auth::user()->role_id == 4)
-<div class="header-reg d-none d-md-inline-block ml-1">
-    <a href="{{url('admincp')}}">
-        <i class="far fa-users-cog"></i>لوحة التحكم</a>
-</div>
+    <div class="d-none d-md-inline-block dropdown ml-1">
+
+        <button class="btn profile-btn position-relative" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fad fa-user-circle"></i>
+            {{Auth::user()->first_name}}
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a href="{{url('admincp')}}" class="dropdown-item">
+                <i class="far fa-tools mx-2"></i>الإدارة</a>
+            <div class="dropdown-divider"></div>
+
+            <a href="{{url('user/profile')}}" class="dropdown-item">
+                <i class="far fa-users-cog mx-2"></i>الملف الشخصي</a>
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="fad fa-sign-out mx-2" style="transform: rotateY(180deg)"></i>تسجيل الخروج</a>
+
+
+        </div>
+
+    </div>
     @elseif(Auth::user()->role_id == 2)
     <div class="d-none d-md-inline-block dropdown ml-1">
 
@@ -43,8 +61,6 @@
 
 
         </div>
-
-
 
     </div>
     @elseif(Auth::user()->role_id == 1)

@@ -6,6 +6,7 @@ use App\Models\Stage;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\User;
+use App\Notifications\welcomeTeacher;
 use Flasher\Toastr\Prime\ToastrFactory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -14,6 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
@@ -94,12 +96,17 @@ class TeacherController extends Controller
         return view('cp.teachers.suspended', compact('teachers'));
     }
 
+    use Notifiable;
 
     public function accept(Request $request, ToastrFactory $factory)
     {
         $teacher = Teacher::where('id',"$request->teacher_id")->first();
         $teacher->isAccepted = 1 ;
         $teacher->save();
+
+        $teacherMail = $teacher->user;
+
+        Notification::send($teacherMail, new welcomeTeacher());
 
         $factory->addInfo('تمت الموافقة على المُعلم');
         return back();
