@@ -148,7 +148,10 @@
                         </div>
                     </div>
                 @endforeach
+
+
             </div>
+
         </div>
     </div>
     <!-- course-area-end -->

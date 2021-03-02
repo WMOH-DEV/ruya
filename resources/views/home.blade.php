@@ -102,7 +102,7 @@
                                             </div>
                                             <div class="support-text">
                                                 <span>تواصل معنا</span>
-                                                <h6 class="number_ltr">{{$home->support_whatsapp}}</h6>
+                                                <h6 class="number_ltr">{{$home->support_whatsapp ?? "000"}}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -127,7 +127,7 @@
                                 <i class="fal fa-users"></i>
                             </div>
                             <div class="counter-text">
-                                <h1><span class="counter">{{$home->trusted_student}}</span>+</h1>
+                                <h1><span class="counter">{{$home->trusted_student ?? "00"}}</span>+</h1>
                                 <span>طلاب وثقوا بنا</span>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                                 <i class="fal fa-books"></i>
                             </div>
                             <div class="counter-text">
-                                <h1><span class="counter">{{$home->courses_student}}</span>+</h1>
+                                <h1><span class="counter">{{$home->courses_student ?? "00"}}</span>+</h1>
                                 <span>دورات متاحة</span>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                                 <i class="fal fa-graduation-cap"></i>
                             </div>
                             <div class="counter-text">
-                                <h1><span class="counter">{{$home->total_teachers}}</span>+</h1>
+                                <h1><span class="counter">{{$home->total_teachers ?? "00"}}</span>+</h1>
                                 <span>المُعلمين</span>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                                 <i class="fal fa-laptop-code"></i>
                             </div>
                             <div class="counter-text">
-                                <h1><span class="counter">{{$home->total_requests}}</span>+</h1>
+                                <h1><span class="counter">{{$home->total_requests ?? "00"}}</span>+</h1>
                                 <span>طلبات الدراسة</span>
                             </div>
                         </div>
@@ -498,28 +498,28 @@
         <div class="bn-label">آخر أخبار الأكاديمية</div>
         <div class="bn-news">
             <ul>
-                <li><a href="{{$home->link1}}">
-                        {{$home->new1}}
+                <li><a href="{{$home->link1 ?? "#"}}">
+                        {{$home->new1 ?? "#"}}
                         <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
                     </a></li>
 
-                <li><a href="{{$home->link2}}">
-                        {{$home->new2}}
+                <li><a href="{{$home->link2 ?? "#"}}">
+                        {{$home->new2 ?? "#"}}
                         <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
                     </a></li>
 
-                <li><a href="{{$home->link3}}">
-                        {{$home->new3}}
+                <li><a href="{{$home->link3 ?? "#"}}">
+                        {{$home->new3 ?? "#"}}
                         <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
                     </a></li>
 
-                <li><a href="{{$home->link4}}">
-                        {{$home->new4}}
+                <li><a href="{{$home->link4 ?? "#"}}">
+                        {{$home->new4 ?? "#"}}
                         <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
                     </a></li>
 
-                <li><a href="{{$home->link5}}">
-                        {{$home->new5}}
+                <li><a href="{{$home->link5 ?? "#"}}">
+                        {{$home->new5 ?? "#"}}
                         <span class="bn-seperator" style="background-image: url({{asset('main/assets/img/mini-logo.png')}}); height: 38px;"></span>
                     </a></li>
             </ul>
