@@ -130,6 +130,8 @@ class AdminController extends Controller
             'google_console'    => ['nullable', 'string'],
             'facebook'          => ['nullable', 'string'],
             'adsense'           => ['nullable', 'string'],
+            'header_codes'      => ['nullable', 'string'],
+            'footer_codes'      => ['nullable', 'string'],
         ]);
 
         $code->update($data);

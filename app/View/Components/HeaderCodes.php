@@ -27,6 +27,7 @@ class HeaderCodes extends Component
         $google_console = Code::first()->google_console;
         $adsense        = Code::first()->adsense;
         $facebook       = Code::first()->facebook;
-        return view('components.header-codes', compact('google_console', 'adsense', 'facebook'));
+        $headerCode     = Code::first()->header_code;
+        return view('components.header-codes', compact('google_console','headerCode', 'adsense', 'facebook'));
     }
 }

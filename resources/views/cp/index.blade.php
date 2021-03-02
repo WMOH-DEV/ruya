@@ -74,6 +74,8 @@
         </div>
         <!-- /.row -->
         <!-- Small boxes (Stat box) -->
+
+        @SuperAdmin
         <div class="row">
             <div class="col-lg-3 col-6">
                 <!-- info box -->
@@ -135,6 +137,7 @@
             <!-- ./col -->
         </div>
         <!-- /.row -->
+
 
         <!-- Requests Row -->
         <div class="row">
@@ -199,7 +202,7 @@
         </div>
         <!-- /.row -->
 
-
+        @endSuperAdmin
 
 
 
@@ -244,6 +247,8 @@
             </section>
             <!-- /.Left col -->
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+            @SuperAdmin
             <section class="col-lg-6 connectedSortable">
                 <div class="card lastTeachers">
                     <div class="card-header d-flex p-0">
@@ -296,6 +301,8 @@
 
             </section>
             <!-- right col -->
+
+            @endSuperAdmin
         </div>
 
     </div><!-- /.container-fluid -->

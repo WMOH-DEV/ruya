@@ -74,6 +74,21 @@
                             </div>
 
 
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="trusted_student">أي أكواد في الHeader</label>
+                                    <textarea class="form-control" style="direction: ltr !important"  name="header_codes" id="header_codes" cols="30">{{$code->header_codes}}</textarea>
+                                    <span class="text-sm text-danger">غير إلزامي</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="trusted_student">أي أكواد في Footer</label>
+                                    <textarea class="form-control" style="direction: ltr !important"  name="footer_codes" id="footer_codes" cols="30">{{$code->footer_codes}}</textarea>
+                                    <span class="text-sm text-danger">غير إلزامي</span>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="alert alert-info alert-dismissible col-12">

@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb078715-45b3-4082-af16-bf30e1276e8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Notifications/welcomeTeacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/left-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/left-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/mobile-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/mobile-nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/Components/HeaderCodes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/HeaderCodes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/Components/MainFooter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/MainFooter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/admin-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/admin-sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/footer-codes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/footer-codes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/header-codes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header-codes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/main-footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/main-footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/codes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/codes/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/teachers/suspended.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/teachers/suspended.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,9 +184,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/main/user/profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.17206624" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -251,7 +259,12 @@
       <workItem from="1614349521497" duration="43200000" />
       <workItem from="1614431637762" duration="32406000" />
       <workItem from="1614524464776" duration="8283000" />
-      <workItem from="1614598522394" duration="20568000" />
+      <workItem from="1614598522394" duration="21757000" />
+      <workItem from="1614680730970" duration="11000" />
+      <workItem from="1614682190323" duration="116000" />
+      <workItem from="1614682337770" duration="153000" />
+      <workItem from="1614682500217" duration="583000" />
+      <workItem from="1614683103370" duration="3019000" />
     </task>
     <servers />
   </component>

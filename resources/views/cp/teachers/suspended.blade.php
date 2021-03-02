@@ -125,6 +125,7 @@
 
 
 
+                                @SuperAdmin
                                 <!-- Delete Button -->
                                 <button class="btn btn-danger  py-1 px-2"  data-toggle="modal"
                                         data-target="#delbtn{{$teacher->id}}">
@@ -162,7 +163,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                            @endSuperAdmin
 
                             </td>
 

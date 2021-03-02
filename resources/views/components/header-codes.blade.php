@@ -51,10 +51,14 @@
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/custom.css" />
 
     <!-- Adsense verification -->
-    {!! $adsense ?? "<script></script>" !!}
+    {!! $adsense ?? " <!-- Adsense Codes will be here --> " !!}
     <!-- End Adsense Verification -->
 
     <!-- Facebook verification -->
-    {!! $facebook ?? "<script></script>" !!}
+    {!! $facebook ?? " <!-- Facebook Codes will be here --> " !!}
     <!-- End Facebook Verification -->
+
+    <!-- Header Codes -->
+    {!! $headerCode ?? " <!-- Header Codes will be here --> " !!}
+    <!-- / End Header Codes -->
 </head>

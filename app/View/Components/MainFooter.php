@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Code;
 use App\Models\Course;
 use App\Models\Home;
 use App\Models\Stage;
@@ -29,8 +30,8 @@ class MainFooter extends Component
         $stages = Stage::all()->take(8);
         $social = Home::first();
         $last_courses = Course::orderBy('id','desc')->take(4)->get();
-
+        $footerCode = Code::first()->footer_code;
         //dd($last_courses);
-        return view('components.main-footer', compact('stages', 'social','last_courses'));
+        return view('components.main-footer', compact('stages', 'social','last_courses','footerCode'));
     }
 }
