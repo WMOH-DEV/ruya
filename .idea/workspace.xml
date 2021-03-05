@@ -6,8 +6,60 @@
   <component name="ChangeListManager">
     <list default="true" id="eb078715-45b3-4082-af16-bf30e1276e8a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/courses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/courses/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Residence.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Residence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/1/PeGOTslxmXZdCDLoMwIugaITxYJLm4pTExdiUHME.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/1/e3Bu3pHSyqpD31DyQfV5cDlcBeJVD7f41LqVMfh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/10/A3jVhmPeWi77S7O0q3EQR0hDwcCnruLZtycwDkeI.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/10/WemFpwbKmUszcx112SWJ2xxWwIUxE08D239G07oT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/10/Z5whWLfS3PJwbJMZpOJ0AdPhFFgcKuIS6hVDuQDU.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/11/7BjxLk5K7iE993ZflAinkANksVAdA4ZeygSWvGzs.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/11/a5koORTdRooPlRWqpT3ridBd4P7XYoyGRIb70UV4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/11/hMxF1sQMsIr215azc1ujZi7eYBTr8LAVPCm4Ukop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/13/R4NKjhhrGCbSQ9RMecxDuQ35JUkioNNSG7boh3P6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/13/cWaCb9kU2ciE2fLJWkrMcZfOWDVX0LaarATRaoZ1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/13/d7MifuOEfqexSZLddiWDC1eULHiXe1DLK5ZN428o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/13/dYfo6TemMWksjz4TbOiH0qCfMTF2W4DMU3xEOhrc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/14/95EbE7hCEFnic8U2aIbn7GnMc1kMtudFFrZuG0BI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/14/eFZLYGbDQ81y9hQHkNFMos3sE5UP1xbxiV67R3jj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/15/E48nUuopTkG1f4S83LAS5aaTt4g5oStNahEfza8g.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/15/NcMluAw33mkkHY9xE25tBX0DkGloXuDY8w3anlMU.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/16/4G8sTXnikiOLPmhNDpY9g0LxuAraxPAZpxCNKXGP.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/16/B1xxcNODLIaMRqvYXpvPcewtNzC7Hhj0IWczpQ2D.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/16/mDZcyXNOd1EaWecmK04jcH9jNWeCKUrkLk3qbdZk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/16/utelUaupUsakAoZvTdPmPaiLMhZ9yCPyjTx1mSyD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/2/iYyuGFU2uoX8R3fMTXe17hEUAzxqtdwdbqVT1c6G.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/2/t4iXDG1wL5HV2ZpmzgxIIPo7PO3YGTZBnoKriqJg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/20/LLaCmO36vGixV1dE2vmU5WJJqU7gYB4wZSXO9oTu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/20/lhqO7PBIYrQvu7Adf9kFKdqFXoGx9oMUSegfPxrg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/22/GhQGTTO50rCTd8J9Yeyjmx9rKlYiwFePi2p4hi0b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/22/q37J9Nw65RlklYdC2dLBW1MgxX3RaU3oZBL8H1cr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/26/O0n4zWjPVbm89hvV1LuiwyxbnTgyRJn10wdAG6EP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/27/mJSN8Oe8u9CAN2cXkOKEiYsT67wsITA8ROmICK3B.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/27/uzMwPp9ItH1osBFBaiShwroYnRDe5nxIWjTPKeKr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/3/JjI9oFSMgmObebbanyk3IIVFnQ9oEFQrf8k4gZa1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/3/zR01yHFtV9toQlUIpGBPUhC3C5QSntE38eQbOUx0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/34/A8IyUg6fu5xDzaeLywlZxpdd0ghghc1fUK0EOOgg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/34/Yl0p2HDsM9E5fLUdrwzfYB8CrQBNGjgRTjrrrnSP.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/5/8w9C5xxLy0SuTVQuQb5vQSEBSHouz4Gjm2PzQunI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/5/nwLOk4gIMqCr1rZOaZCnOAPBR21m7MNMIUkre4VQ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/5/sf6ZZnpNhia1PFTYbRo0I9fthuPramLOYt8FImF6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/5/tBVEsI2SwoCWXVWpGm4IqSESVrkPQzYBCUtiCFpg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/6/A7zbNOQmSeHgaBGaXZofJsWfS9kVxkEDsOI7TpWA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/6/bw4HWcKPYY5Nzh6gItn1hoNtPiIIGjjDDtxzLnjM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/6/jaaicjPS33BlDM41JnBAmDbtpmAi038gPUTNoPTJ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/7/DPe1nzRghMYZp0DOWOhDPJXcdGzVT7oUy03mPelA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/7/u3FIeTxptpn7O1AaZaO0b3aIR0S7GG7d5TsyQKGw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/7/xMUDROQt9DPM6Rr565Raw9KYMOLfxnbS6R7wCcXa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/8/YlTemC18qAto7G2q08hudboY82JQ5iCcUIYtUTQf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/8/rDq0cSKo93I0V3kW7XzTriYV2mM20KGB3LO92MpB.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/8/zHqVhJhBwcof2Z4ARljX2BrZ1ygtjolvgeVApBKA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/teachers/9/u3YQBLh1qx5BfjhQ9YznUYAzeYvxb1aem66prpLj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/admin-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/admin-sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/header-codes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header-codes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/profile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +307,9 @@
       <workItem from="1614682190323" duration="116000" />
       <workItem from="1614682337770" duration="153000" />
       <workItem from="1614682500217" duration="583000" />
-      <workItem from="1614683103370" duration="7489000" />
+      <workItem from="1614683103370" duration="8148000" />
+      <workItem from="1614797214008" duration="250000" />
+      <workItem from="1614965804954" duration="3592000" />
     </task>
     <servers />
   </component>

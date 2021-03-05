@@ -109,7 +109,7 @@
                                                 <i class="fal fa-globe-stand"></i>                                            </div>
                                             <div class="col-name">
                                                 <h6>دولة الإقامة</h6>
-                                                <p>{{$teacher->user->residence->residence_name ?? "غير متوفر"}}</p>
+                                                <p>{{$teacher->user->residence->residence_name}}</p>
                                             </div>
                                         </div>
                                     </li>

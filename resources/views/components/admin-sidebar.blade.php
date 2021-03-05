@@ -4,7 +4,7 @@
         <img src="{{asset('cp')}}/img/AdminLTELogo.png" alt="RUYA"
              class="brand-image"
              style="opacity: .8">
-        <span class="brand-text font-weight-light" style="font-family: 'cairo', sans-serif;">{{env('app_name')}}</span>
+        <span class="brand-text font-weight-light" style="font-family: 'cairo', sans-serif;">أكاديمية رؤية</span>
     </a>
 
     <!-- Sidebar -->

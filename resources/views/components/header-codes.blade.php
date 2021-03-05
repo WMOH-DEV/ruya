@@ -5,21 +5,21 @@
 
     <!-- additional meta -->
     <!-- Primary Meta Tags -->
-    <meta name="{{env('app_name')}}" content="منصة أكاديمية رؤية التعليمية">
-    <meta name="description" content="{{env('app_url')}}">
+    <meta name="أكاديمية رؤية" content="منصة أكاديمية رؤية التعليمية">
+    <meta name="description" content="https://ruya.academy">
 
     <!-- Google Console -->
     {!!  $google_console ?? '<meta name="google-site-verification" content="xxxx" />' !!}
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{env('app_url')}}">
+    <meta property="og:url" content="https://ruya.academy">
     <meta property="og:title" content="RUYA Academy - @yield('title')">
     <meta property="og:description" content="منصة أكاديمية رؤية التعليمية">
     <meta property="og:image" content="https://i.imgur.com/nJgh9n8.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{env('app_url')}}">
+    <meta property="twitter:url" content="https://ruya.academy">
     <meta property="twitter:title" content="RUYA Academy - @yield('title')">
     <meta property="twitter:description" content="منصة أكاديمية رؤية التعليمية">
     <meta property="twitter:image" content="https://i.imgur.com/nJgh9n8.png">
