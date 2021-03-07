@@ -134,27 +134,28 @@ class HomeController extends Controller
         }
 
         if ($user->role_id == 1){
-            $completedOrders    = Order::where('teacher_id', Auth::user()->id)
+            $id = Auth::user()->teacher->id;
+            $completedOrders    = Order::where('teacher_id', $id)
                 ->where('admin_status', 'مكتمل')
                 ->orderby('id','desc')
                 ->paginate(20);
 
-            $waitingOrders      = Order::where('teacher_id', Auth::user()->id)
+            $waitingOrders      = Order::where('teacher_id', $id)
                 ->where('admin_status', 'قيد الانتظار')
                 ->orderby('id','desc')
                 ->paginate(20);
 
-            $onProgressOrders   = Order::where('teacher_id', Auth::user()->id)
+            $onProgressOrders   = Order::where('teacher_id', $id)
                 ->where('admin_status', 'جاري')
                 ->orderby('id','desc')
                 ->paginate(20);
 
-            $deniedOrders       = Order::where('teacher_id', Auth::user()->id)
+            $deniedOrders       = Order::where('teacher_id', $id)
                 ->where('admin_status', 'مرفوض')
                 ->orderby('id','desc')
                 ->paginate(20);
 
-            $acceptOrders       = Order::where('teacher_id', Auth::user()->id)
+            $acceptOrders       = Order::where('teacher_id', $id)
                 ->where('admin_status', 'مقبول')
                 ->orderby('id','desc')
                 ->paginate(20);

@@ -29,8 +29,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section-title text-center mb-60">
-                        <span><i class="fal fa-ellipsis-h"></i>اهلا بك في منصة رؤية اكادمي <i class="fal fa-ellipsis-h"></i></span>
-                        <h1 class=" mt-2" style="font-size: 1.5rem">يرجى تعبأة البيانات ورفع الوثائق المطلوبة بصورة صحيحة</h1>
+                        <span><i class="fal fa-ellipsis-h"></i>اهلا بك في منصة أكاديمية رؤية <i class="fal fa-ellipsis-h"></i></span>
+                        <h1 class=" mt-2" style="font-size: 1.5rem">يرجى تعبئة البيانات ورفع الوثائق المطلوبة بصورة صحيحة</h1>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                                     <div class="input-text email-text " style="margin-bottom: 10px">
                                         <input class="form-control pl-4"
                                                type="number"
-                                               placeholder="ثمن الساعة"
+                                               placeholder="متوسط سعر الساعة"
                                                value="{{old('email')}}"
                                                required
                                                name="pphour">
@@ -164,7 +164,7 @@
                                                   rows="10"
                                                   maxlength="500"
                                                   placeholder="محتوى الرسالة">@if(old('message')) {{old('message')}} @endif  </textarea>
-                                        <small class="form-text text-danger"> نبذه مختصرة عن اختصاصك وخبراتك ( ستظر للطلاب على صفحتك الشخصية)</small>
+                                        <small class="form-text text-danger"> نبذه مختصرة عن اختصاصك وخبراتك ( ستظهر للطلاب على صفحتك الشخصية)</small>
 
                                     </div>
                                 </div>

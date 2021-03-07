@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+/*@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);*/
 .number_ltr {
 	direction: ltr !important;
 	unicode-bidi: embed;
@@ -6,12 +6,12 @@
 html,
 body {
 	direction: rtl;
-	font-family: 'Droid Arabic Kufi', serif;
+	font-family: 'Droid Arabic Kufi', 'DroidArabicKufiRegular','DroidKufi-Regular', serif;
 }
 
 header,
 .main-menu nav > ul > li > a {
-	font-family: 'Droid Arabic Kufi', serif !important;
+	font-family: 'Droid Arabic Kufi', 'DroidArabicKufiRegular', 'DroidKufi-Regular', serif !important;
 }
 .hero-area .slider-img {
 	left: 0;

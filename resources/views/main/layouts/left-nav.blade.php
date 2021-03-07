@@ -45,7 +45,7 @@
         </div>
 
     </div>
-    @elseif(Auth::user()->role_id == 2)
+    @elseif(Auth::user()->role_id == 2 or Auth::user()->role_id == 1)
     <div class="d-none d-md-inline-block dropdown ml-1">
 
             <button class="btn profile-btn position-relative" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,12 +62,6 @@
 
         </div>
 
-    </div>
-    @elseif(Auth::user()->role_id == 1)
-    <div class="header-reg d-none d-md-inline-block ml-1">
-        <a href="{{url('user/teacher/profile')}}">
-            <i class="far fa-users-cog"></i>الملف الشخصي</a
-        >
     </div>
 @endif
 

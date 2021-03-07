@@ -33,7 +33,7 @@
 
     <!-- CSS here -->
 <!--<link rel="stylesheet" href="{{asset('main')}}/assets/css/bootstrap.min.css">-->
-    <link rel="stylesheet" type="text/css" href="{{asset('main')}}/assets/css//cookieconsent.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('main')}}/assets/css/cookieconsent.min.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/bootstrap.rtl.min.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/animate.min.css" />
@@ -49,6 +49,9 @@
     <!-- Main Css File -->
     @yield('css')
     <link rel="stylesheet" href="{{asset('main')}}/assets/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=DroidKufi-Regular" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
+
 
     <!-- Adsense verification -->
     {!! $adsense ?? " <!-- Adsense Codes will be here --> " !!}

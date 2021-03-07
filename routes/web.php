@@ -65,11 +65,13 @@ Route::get('results', [HomeController::class, 'mainSearch'])->name('results');
 Route::get('courses/{course}', [CourseController::class, 'show']);
 Route::get('courses', [CategoryController::class, 'show']);
 
-
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified', 'updatedAlready'])->group(function (){
     // Access to the Teacher update form
     Route::get('update-info', [TeacherController::class, 'getUpdateView']);
     Route::post('update-info', [TeacherController::class, 'updateInfo'])->name('updateInfo');
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
 
     // Show teacher
     Route::get('teachers/show/{id}', [TeacherController::class, 'show']);

@@ -25,6 +25,9 @@ class OrderController extends Controller
     {
         //
         $orders = Order::paginate(10);
+//        $order = Order::first();
+//        dd($order->user);
+       // dd($orders);
         Order::where('status', 0)->update(['status' => 1]);
         return view('cp.orders.index', compact('orders'));
     }

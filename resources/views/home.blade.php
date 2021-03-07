@@ -9,9 +9,9 @@
 
     <!-- hero-area start -->
     <section class="hero-area pos-rel">
-        <div class="slider-img d-none d-sm-block">
-            <img class="img-fluid" alt="" />
-        </div>
+{{--        <div class="slider-img d-none d-sm-block">--}}
+{{--            <img class="img-fluid" alt="" />--}}
+{{--        </div>--}}
         <div class="hero-slider">
             <div
                 class="single-slider slider-height d-flex align-items-center"
@@ -36,6 +36,20 @@
                                             <i class="far fa-times-circle"></i>
                                         </div>
                                     </div>
+                                    @endif
+
+                                    @if( session()->has('status'))
+                                        <div class="alert alert-danger" style="animation-delay: .2s">
+                                            <div class="alert--icon">
+                                                <i class="fas fa-bell"></i>
+                                            </div>
+                                            <div class="alert--content">
+                                                {{session()->get('status')}}
+                                            </div>
+                                            <div class="alert--close">
+                                                <i class="far fa-times-circle"></i>
+                                            </div>
+                                        </div>
                                     @endif
 
 

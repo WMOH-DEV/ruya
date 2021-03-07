@@ -82,7 +82,7 @@
 {{--<script src="{{asset('main')}}/assets/js/jquery.nice-select-with-search-multiple.js"></script>--}}
 <script src="{{asset('main')}}/assets/js/jquery.easypiechart.js"></script>
 <script src="{{asset('main')}}/assets/js/alerts.min.js"></script>
-<script src="{{asset('main')}}/assets/js/cookieconsent.min.js" data-cfasync="false"></script>
+{{--<script src="{{asset('main')}}/assets/js/cookieconsent.min.js" data-cfasync="false"></script>--}}
 <script src="{{asset('main')}}/assets/js/main.js"></script>
 @yield('script')
 <script src="{{asset('main')}}/assets/js/app.js"></script>

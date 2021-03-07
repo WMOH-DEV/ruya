@@ -192,6 +192,7 @@ class TeacherController extends Controller
 
         $attach = Storage::putFile('teachers/'.Auth::user()->id , $request->file('attachment'));
 
+
         // Insert Teacher Infos
         $createdTeacher = Teacher::create([
             'first_name'=> Auth::user()->first_name,
@@ -205,6 +206,7 @@ class TeacherController extends Controller
             'attachment' =>  $attach
         ]);
 
+
         // Insert stages [multi relation]
         $createdTeacher->stages()->sync($request->stages);
 
@@ -213,7 +215,18 @@ class TeacherController extends Controller
             $profileImg = Storage::putFile('teachers/'.Auth::user()->id , $request->file('profile_img'));
             $createdTeacher->profile_img = $profileImg;
             $createdTeacher->save();
+        }elseif (!$request->hasFile('profile_img')) {
+            if (Auth::user()->gender == 'male') {
+                $profileImg = 'default.png';
+                $createdTeacher->profile_img = $profileImg;
+                $createdTeacher->save();
+            }elseif (Auth::user()->gender == 'female') {
+                $profileImg = 'default2.png';
+                $createdTeacher->profile_img = $profileImg;
+                $createdTeacher->save();
+            }
         }
+
 
         // check if the user uploaded second attach
         if ($request->hasFile('attachment2')){

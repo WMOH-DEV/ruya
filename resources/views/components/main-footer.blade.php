@@ -12,17 +12,17 @@
                 </div>
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-12">
-                <div class="footer-social-icon text-right pb-70">
-                    <a class="fot-fb active pb-70" href="{{URL::to("$social->facebook")}}"
+                <div class="footer-social-icon text-right pb-70 d-flex flex-wrap">
+                    <a class="fot-fb active pb-70  col-6 col-md-3" href="{{URL::to("$social->facebook")}}"
                     ><i class="fab fa-facebook-f"></i> Facebook</a
                     >
-                    <a class="fot-twitter pb-70" href="{{$social->twitter}}"
+                    <a class="fot-twitter pb-70  col-6 col-md-3" href="{{$social->twitter}}"
                     ><i class="fab fa-twitter"></i> Twitter</a
                     >
-                    <a class="fot-google pb-70" href="{{$social->youtube}}"
+                    <a class="fot-google pb-70  col-6 col-md-3" href="{{$social->youtube}}"
                     ><i class="fab fa-youtube"></i> Youtube</a
                     >
-                    <a class="fot-insta pb-70" href="{{$social->instagram}}"
+                    <a class="fot-insta pb-70  col-6 col-md-3" href="{{$social->instagram}}"
                     ><i class="fab fa-instagram"></i> Instagram</a
                     >
                 </div>

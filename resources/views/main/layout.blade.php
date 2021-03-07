@@ -17,6 +17,7 @@
     @yield('css')
     <link rel="stylesheet" href="{{asset('main')}}/css/main.css">
     <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=DroidKufi-Regular" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
 
 
     <!------- Title-------->

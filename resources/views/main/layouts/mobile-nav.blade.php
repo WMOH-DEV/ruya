@@ -29,9 +29,16 @@
             @endif
 
             @if(Auth::user()->role_id == 2)
+
+                <li>
+                    <a href="{{url('update-info')}}"><i class="far fa-graduation-cap mr-2"></i>الإنضمام للمُعلمين</a>
+                </li>
+
                 <li>
                     <a href="{{url('user/profile')}}"><i class="fal fa-users-cog mr-2"></i>الملف الشخصي</a>
                 </li>
+
+
             @endif
             @if(Auth::user()->role_id == 3 OR Auth::user()->role_id == 4)
                 <li>
