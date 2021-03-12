@@ -79,7 +79,7 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="{{url('admincp/students/suspend')}}" method="post">
+                                                <form action="{{url('admincp/students/delete')}}" method="post">
                                                     @csrf
                                                     <div class="modal-body">
                                                         <input type="text" hidden value="{{$student->id}}" name="student_id">

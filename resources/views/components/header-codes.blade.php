@@ -64,4 +64,5 @@
     <!-- Header Codes -->
     {!! $headerCode ?? " <!-- Header Codes will be here --> " !!}
     <!-- / End Header Codes -->
+
 </head>

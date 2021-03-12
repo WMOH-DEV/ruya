@@ -67,6 +67,7 @@ class TeacherController extends Controller
         //Get Teacher account
         $teacher = Teacher::withTrashed()->where('id',"$request->teacher_id")->first();
         // Delete both Of them
+        Storage::deleteDirectory("teachers/$teacherMainID");
         $teacher->forceDelete();
         $teacherMainUser->forceDelete();
 
@@ -179,12 +180,12 @@ class TeacherController extends Controller
         $request->validate([
             'experience'=> ['required','string','regex:/(1-3|3-5|5-(10)|(10)\+)$/'],
             'qualification'=> ['regex:/^(دبلوم|بكالوريوس|ليسانس|ماجستير|دكتوراه)$/'],
-            'profile_img'=>['nullable','max:512', 'mimes:jpg,png,jpeg'],
+            'profile_img'=>['nullable','max:1024', 'mimes:jpg,png,jpeg'],
             'subject_id'=>['required', 'exists:subjects,id'],
-            'attachment'=>['required','max:512', 'mimes:jpg,png,jpeg,pdf'],
-            'attachment2'=>['nullable','max:512', 'mimes:jpg,png,jpeg,pdf'],
+            'attachment'=>['required','max:1536', 'mimes:jpg,png,jpeg,pdf'],
+            'attachment2'=>['nullable','max:1536', 'mimes:jpg,png,jpeg,pdf'],
             'pphour'=>['regex:/^[1-9]*[1-9][0-9]*$/'],
-            'brief'=>['required', 'max:300', 'string' ],
+            'brief'=>['required', 'max:350', 'string' ],
             'other_subjects'=>['max:200', 'nullable'],
             'stages' => ['required', 'array'],
             'stages.*' => ['required', 'exists:stages,id'],
@@ -302,6 +303,8 @@ class TeacherController extends Controller
                     ->join('subjects', 'teachers.subject_id', '=', 'subjects.id')
                     ->where('gender', "$selectedType")
                     ->where('subject_id', "$selectedSubject")
+                   // TODO : adding other subject to the search query
+                   // ->OrWhere('other_subjects', 'like', "%$selectedSubject%")
                     ->where('teachers.isAccepted', '1')
                     ->select(['users.*','teachers.id as teacher_id', 'teachers.*','subjects.*']);
 
@@ -310,6 +313,8 @@ class TeacherController extends Controller
                 $teachers = $teacherQuery->paginate(5);
                 if ($teachersCount == 0){
                     $factory->addError('لا يتوفر مُعلم بهذه الاختيارات حالياً');
+                    return view('main.not-found');
+
                 }
                 return view('main.search', compact('stages', 'teachers', 'teachersCount' ));
             }
@@ -319,6 +324,8 @@ class TeacherController extends Controller
                 $teachersQuery = User::join('teachers', 'users.id', '=', 'teachers.user_id')
                     ->join('subjects', 'teachers.subject_id', '=', 'subjects.id')
                     ->where('subject_id', "$selectedSubject")
+                    // TODO : adding other subject to the search query
+                    // ->OrWhere('other_subjects', 'like', "%$selectedSubject%")
                     ->where('teachers.isAccepted', '1')
                     ->select(['users.*','teachers.id as teacher_id', 'teachers.*','subjects.*']);
 
@@ -328,6 +335,7 @@ class TeacherController extends Controller
 
                 if ($teachersCount == 0){
                     $factory->addError('لا يوجد معلمين لهذه المادة حالياً');
+                    return view('main.not-found');
                 }
                 return view('main.search', compact('stages', 'teachers', 'teachersCount' ));
             }
@@ -338,6 +346,8 @@ class TeacherController extends Controller
         $tQuery = User::join('teachers', 'users.id', '=', 'teachers.user_id')
             ->join('subjects', 'teachers.subject_id', '=', 'subjects.id')
             ->where('subject_id', "$selectedSubject")
+            // TODO : adding other subject to the search query
+            // ->OrWhere('other_subjects', 'like', "%$selectedSubject%")
             ->where('teachers.isAccepted', '1')
             ->select(['users.*','teachers.id as teacher_id', 'teachers.*','subjects.*']);
 

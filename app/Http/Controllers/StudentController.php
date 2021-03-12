@@ -46,13 +46,25 @@ class StudentController extends Controller
         return view('cp.students.suspended', compact('students'));
     }
 
-    public function destroy(Request $request, ToastrFactory $factory)
+    public function delete(Request $request, ToastrFactory $factory)
     {
+
         $student = User::findorFail("$request->student_id");
        // dd($student);
         $student->delete();
 
         $factory->addSuccess('تم إيقاف الطالب');
+
+        return redirect()->back();
+    }
+
+    public function destroy(Request $request, ToastrFactory $factory)
+    {
+        $student = User::withTrashed()->find($request->student_id);
+        $student->forceDelete();
+
+
+        $factory->addSuccess('تم حذف الطالب');
 
         return redirect()->back();
     }

@@ -42,6 +42,7 @@
                                         <input type="text" placeholder="الإسم الأول"
                                                class="form-control"
                                                value="{{old('first_name')}}"
+                                               autocomplete="off"
                                                name="first_name" required>
                                     </div>
                                 </div>
@@ -51,6 +52,7 @@
                                         <input type="text" placeholder="الإسم الأخير"
                                                class="form-control"
                                                value="{{old('last_name')}}"
+                                               autocomplete="off"
                                                name="last_name" required>
                                     </div>
                                 </div>
@@ -80,6 +82,7 @@
                                     <div class="input-text email-text">
                                         <input class="form-control"
                                                type="email"
+                                               autocomplete="off"
                                                placeholder="البريد الإلكتروني"
                                                value="{{old('email')}}"
                                                required
@@ -96,7 +99,9 @@
                                                type="tel"
                                                placeholder="رقم الهاتف"
                                                value="{{old('phone')}}"
-                                               name="phone_number">
+                                               name="phone_number"
+                                        autocomplete="off"
+                                        >
                                     </div>
                                 </div>
 
@@ -107,7 +112,9 @@
                                                type="tel"
                                                placeholder="رقم الواتسآب"
                                                value="{{old('whatsapp')}}"
-                                               name="whatsapp">
+                                               name="whatsapp"
+                                            autocomplete="off"
+                                        >
                                     </div>
                                 </div>
 
@@ -125,7 +132,7 @@
                                 </div>
 
                                 <!-- country -->
-                                <div class="col-xl-6 country">
+                                <div class="col-xl-4 country">
                                     <div class="input-text phone-text">
                                         <select
                                             class="form-control @if($errors->has('country_id')) is-invalid @endif text-right"
@@ -139,7 +146,7 @@
                                 </div>
 
                                 <!-- residence -->
-                                <div class="col-xl-6 residence">
+                                <div class="col-xl-4 residence">
                                     <div class="input-text phone-text">
                                         <select
                                             class="form-control @if($errors->has('residence_id')) is-invalid @endif text-right"
@@ -148,6 +155,19 @@
                                             @foreach($residences as $residence)
                                             <option value="{{$residence->id}}">{{$residence->residence_name}}</option>
                                                 @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Gender -->
+                                <div class="col-xl-4 gender">
+                                    <div class="input-text phone-text">
+                                        <select
+                                            class="form-control @if($errors->has('gender')) is-invalid @endif text-right"
+                                            name="role_id" required>
+                                            <option data-display="نوع العضوية">نوع العضوية</option>
+                                            <option value="1">مُعلم</option>
+                                            <option value="2">طالب</option>
                                         </select>
                                     </div>
                                 </div>

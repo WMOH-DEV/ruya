@@ -31,6 +31,20 @@
                     <div class="section-title text-center mb-60">
                         <span><i class="fal fa-ellipsis-h"></i>اهلا بك في منصة أكاديمية رؤية <i class="fal fa-ellipsis-h"></i></span>
                         <h1 class=" mt-2" style="font-size: 1.5rem">يرجى تعبئة البيانات ورفع الوثائق المطلوبة بصورة صحيحة</h1>
+                        <div class="alert alert_info" style="animation-delay: .2s">
+                            <div class="alert--icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="alert--content">
+                                <h1 class=" mt-2" style="font-size: 1rem">
+                                    هذه البيانات خاصة بأكاديمية رؤية من أجل ضمان وجود كفاءات وخبرات عالية بالأكاديمية من أصحاب التخصصات ولن تقوم الأكاديمية بتنزيل او تحميل اي مستند فقط سيتم الاطلاع عليها لضمان المصداقية ولن يتم استخدام البيانات لاي اغراض اخرى وان ثبت عكس ذلك من حق العضو اتخاذ مايلزم من اجراءات
+                                </h1>
+                            </div>
+                            <div class="alert--close">
+                                <i class="far fa-times-circle"></i>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -78,7 +92,7 @@
                                 </div>
 
                                 <!-- Stages -->
-                                <div class="col-xl-6 stages mb-4">
+                                <div class="col-xl-5 stages mb-4">
                                     <div class="input-text">
                                         <select name="stages[]" id="stages" multiple="multiple"
                                                 class="multi-select @if($errors->has('stages')) is-invalid  @endif"
@@ -104,13 +118,14 @@
                                 </div>
 
                                 <!-- PRice-->
-                                <div class="col-xl-2 pphour">
+                                <div class="col-xl-3 pphour">
                                     <div class="input-text email-text " style="margin-bottom: 10px">
                                         <input class="form-control pl-4"
                                                type="number"
                                                placeholder="متوسط سعر الساعة"
                                                value="{{old('email')}}"
                                                required
+                                               autocomplete="off"
                                                name="pphour">
                                         <small class="form-text text-danger pl-4">بالريال السعودي</small>
 
@@ -122,6 +137,7 @@
                                     <div class="input-text email-text">
                                         <input class="form-control"
                                                type="text"
+                                               autocomplete="off"
                                                placeholder="مواد تدريس ثانوية"
                                                value="{{old('other_subjects')}}"
                                                name="other_subjects">
@@ -163,6 +179,7 @@
                                                   cols="30"
                                                   rows="10"
                                                   maxlength="500"
+                                                  autocomplete="off"
                                                   placeholder="محتوى الرسالة">@if(old('message')) {{old('message')}} @endif  </textarea>
                                         <small class="form-text text-danger"> نبذه مختصرة عن اختصاصك وخبراتك ( ستظهر للطلاب على صفحتك الشخصية)</small>
 

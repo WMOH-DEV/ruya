@@ -143,6 +143,7 @@ Route::group(['middleware' => ['auth', 'isAdmin', 'verified']], function () {
     Route::get('admincp/students/inactive', [StudentController::class, 'inactive']);
     Route::get('admincp/students/suspended', [StudentController::class, 'suspended']);
     Route::post('admincp/students/suspend', [StudentController::class, 'destroy']);
+    Route::post('admincp/students/delete', [StudentController::class, 'delete']);
     Route::post('admincp/students/restore', [StudentController::class, 'restore']);
     Route::post('admincp/students/send', [StudentController::class, 'inactiveMsg']);
     Route::get('admincp/students/details/{student}', [StudentController::class, 'detailsIndex']);

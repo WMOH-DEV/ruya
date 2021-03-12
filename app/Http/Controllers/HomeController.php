@@ -67,6 +67,7 @@ class HomeController extends Controller
         $teacherQuery = User::join('teachers', 'users.id', '=', 'teachers.user_id')
             ->join('subjects', 'teachers.subject_id', '=', 'subjects.id')
             ->where('subject_name','like', "%$selectedSubject%")
+            ->OrWhere('other_subjects', 'like', "%$selectedSubject%")
             ->where('stage_id', '=', "$selectedStage")
             ->where('teachers.isAccepted', '1') // Only Accepted Teachers will appear
             ->select(['users.*','teachers.id as teacher_id', 'teachers.*','subjects.*']);
@@ -79,7 +80,9 @@ class HomeController extends Controller
 
         if ($teachersCount == 0){
             $factory->addError('لا يوجد نتائج بحث لهذه المادة');
+            return view('main.not-found');
         }
+
 
         return view('main.results', compact('stages', 'teachersCount','teachers' ));
 

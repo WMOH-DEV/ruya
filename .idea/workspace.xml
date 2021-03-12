@@ -5,24 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb078715-45b3-4082-af16-bf30e1276e8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/TeacherUpdatedInfo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ModController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ModController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/Components/HeaderCodes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/HeaderCodes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main/assets/js/jquery.nice-select-with-search-multiple.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/js/jquery.nice-select-with-search-multiple.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/update-info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/update-info.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/components/header-codes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header-codes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/main-footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/main-footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/left-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/left-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/layouts/mobile-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/layouts/mobile-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/main-layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/main-layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cp/students/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cp/students/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +44,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -276,7 +272,11 @@
       <workItem from="1614965804954" duration="8027000" />
       <workItem from="1615030685921" duration="4129000" />
       <workItem from="1615049503928" duration="2164000" />
-      <workItem from="1615124022125" duration="5435000" />
+      <workItem from="1615124022125" duration="9216000" />
+      <workItem from="1615199267760" duration="8495000" />
+      <workItem from="1615282185726" duration="3266000" />
+      <workItem from="1615393354180" duration="243000" />
+      <workItem from="1615400086516" duration="1169000" />
     </task>
     <servers />
   </component>

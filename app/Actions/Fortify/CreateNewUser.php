@@ -36,8 +36,8 @@ class CreateNewUser implements CreatesNewUsers
             'whatsapp'      =>['required', 'string', 'regex:/^[0-9\-\(\)\/\+\s]*$/'],
             'gender'        =>['required', 'string', 'regex:/^(male|female)$/'],
             'country_id'    =>['required', 'exists:App\Models\Country,id'],
-            'residence_id'    =>['required', 'exists:App\Models\Residence,id'],
-          //  'role_id'       =>['required','regex:/^[1-2]$/'],
+            'residence_id'  =>['required', 'exists:App\Models\Residence,id'],
+            'role_id'       =>['required','regex:/^[1-2]$/'],
             'g-recaptcha-response' => 'required|captcha'
 
         ])->validate();
@@ -50,7 +50,8 @@ class CreateNewUser implements CreatesNewUsers
             'last_name'     => $input['last_name'],
             'email'         => $input['email'],
             'password'      => Hash::make($input['password']),
-            'role_id'       => 2,
+          //  'role_id'       => 2,
+            'role_id'       => $input['role_id'],
             'gender'        => $input['gender'],
             'country_id'    => $input['country_id'],
             'residence_id'  => $input['residence_id'],
